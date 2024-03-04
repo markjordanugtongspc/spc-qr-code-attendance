@@ -37,8 +37,11 @@ Route::get('/download/{filename}', function ($filename) {
     return abort(404);
 })->name('download');
 
+// Route for the admin page
+Route::get('/admin', function () {
+    return view('admin');
+})->name('admin');
 
-// Added by OpenAI to fix the root route issue
 Route::get('/', function () {
     return view('student_form');
 });
