@@ -59,5 +59,5 @@ Route::get('/attendance_log', function () {
 
 // Route for the student page
 Route::get('/student', function () {
-    return view('students_admin');
+    return view('student_admin');
 })->name('student');

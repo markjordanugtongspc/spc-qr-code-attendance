@@ -1,0 +1,437 @@
+.students-container {
+  width: 100%;
+  display: flex;
+  overflow: auto;
+  min-height: 100vh;
+  align-items: center;
+  flex-direction: column;
+}
+.students-students {
+  width: 100%;
+  height: 1024px;
+  display: flex;
+  overflow: hidden;
+  position: relative;
+  align-items: center;
+  flex-shrink: 0;
+  justify-content: flex-end;
+  background-color: rgba(255, 255, 255, 1);
+}
+.students-rectangle168 {
+  top: 392px;
+  left: 407px;
+  width: 958px;
+  height: 125px;
+  position: absolute;
+}
+.students-rectangle169 {
+  top: 701px;
+  left: 407px;
+  width: 958px;
+  height: 125px;
+  position: absolute;
+}
+.students-rectangle171 {
+  top: 545px;
+  left: 407px;
+  width: 958px;
+  height: 125px;
+  position: absolute;
+}
+.students-rectangle170 {
+  left: 407px;
+  width: 958px;
+  bottom: 55px;
+  height: 125px;
+  position: absolute;
+}
+.students-rectangle166 {
+  top: 109px;
+  left: 407px;
+  width: 958px;
+  height: 125px;
+  position: absolute;
+}
+.students-rectangle167 {
+  top: 249px;
+  left: 407px;
+  width: 958px;
+  height: 125px;
+  position: absolute;
+}
+.students-rectangle155 {
+  top: 0px;
+  left: -1px;
+  width: 282px;
+  height: 1024px;
+  position: absolute;
+}
+.students-group18 {
+  top: 20px;
+  left: -1px;
+  width: 284px;
+  height: 983.4418334960938px;
+  display: flex;
+  position: absolute;
+  align-items: flex-start;
+  flex-shrink: 1;
+}
+.students-image5 {
+  top: 971px;
+  left: 14px;
+  width: 15px;
+  height: 12px;
+  position: absolute;
+}
+.students-spcnremovebgpreview14 {
+  top: 0px;
+  left: 11px;
+  width: 46px;
+  height: 45px;
+  position: absolute;
+}
+.students-text {
+  top: 10px;
+  left: 64px;
+  color: rgba(255, 255, 255, 1);
+  width: 220px;
+  height: auto;
+  position: absolute;
+  font-size: 25px;
+  font-style: Medium;
+  text-align: left;
+  font-family: Roboto;
+  font-weight: 500;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.students-image8 {
+  top: 930px;
+  left: 14px;
+  width: 15px;
+  height: 14px;
+  position: absolute;
+}
+.students-rectangle156 {
+  top: 110px;
+  left: 0px;
+  width: 282px;
+  height: 30px;
+  position: absolute;
+}
+.students-rectangle157 {
+  top: 157px;
+  left: 0px;
+  width: 282px;
+  height: 28px;
+  position: absolute;
+}
+.students-rectangle158 {
+  top: 202px;
+  left: 0px;
+  width: 282px;
+  height: 29px;
+  position: absolute;
+}
+.students-text02 {
+  top: 116px;
+  left: 98px;
+  color: rgba(74, 3, 11, 1);
+  width: 116px;
+  height: auto;
+  position: absolute;
+  font-size: 16px;
+  font-style: Extra Bold;
+  text-align: left;
+  font-family: Inter;
+  font-weight: 700;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.students-text04 {
+  top: 163px;
+  left: 93px;
+  color: rgba(74, 3, 11, 1);
+  width: 113px;
+  height: auto;
+  position: absolute;
+  font-size: 15px;
+  font-style: Extra Bold;
+  text-align: left;
+  font-family: Inter;
+  font-weight: 700;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.students-text06 {
+  top: 208px;
+  left: 76px;
+  color: rgba(74, 3, 11, 1);
+  width: 142px;
+  height: auto;
+  position: absolute;
+  font-size: 15px;
+  font-style: Extra Bold;
+  text-align: left;
+  font-family: Inter;
+  font-weight: 700;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.students-text08 {
+  top: 973.72314453125px;
+  left: 34px;
+  color: rgba(255, 255, 255, 1);
+  width: 84px;
+  height: auto;
+  position: absolute;
+  font-size: 6.461538791656494px;
+  font-style: Bold;
+  text-align: left;
+  font-family: Roboto;
+  font-weight: 700;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: underline;
+}
+.students-text10 {
+  top: 954.861572265625px;
+  left: 34.292236328125px;
+  color: rgba(255, 255, 255, 1);
+  width: 68px;
+  height: auto;
+  position: absolute;
+  font-size: 6.461538791656494px;
+  font-style: Bold;
+  text-align: left;
+  font-family: Roboto;
+  font-weight: 700;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: underline;
+}
+.students-image6 {
+  top: 952px;
+  left: 14px;
+  width: 15px;
+  height: 11px;
+  position: absolute;
+}
+.students-text12 {
+  top: 935px;
+  left: 34px;
+  color: rgba(255, 255, 255, 1);
+  width: 50px;
+  height: auto;
+  position: absolute;
+  font-size: 6.461538791656494px;
+  font-style: Bold;
+  text-align: left;
+  font-family: Roboto;
+  font-weight: 700;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.students-cba1 {
+  top: 120px;
+  left: 436px;
+  width: 100px;
+  height: 100px;
+  position: absolute;
+}
+.students-coc1 {
+  top: 262px;
+  left: 436px;
+  width: 100px;
+  height: 100px;
+  position: absolute;
+}
+.students-coe1 {
+  top: 713px;
+  left: 436px;
+  width: 100px;
+  height: 100px;
+  position: absolute;
+}
+.students-ced1 {
+  left: 436px;
+  width: 100px;
+  bottom: 67px;
+  height: 102px;
+  position: absolute;
+}
+.students-rectangle160 {
+  top: -84px;
+  left: 278px;
+  width: 156px;
+  height: 306px;
+  position: absolute;
+}
+.students-rectangle164 {
+  top: 1024.4193115234375px;
+  left: 1217px;
+  width: 156px;
+  height: 306px;
+  position: absolute;
+}
+.students-rectangle165 {
+  top: 1025.4193115234375px;
+  left: 506.0211486816406px;
+  width: 156px;
+  height: 306px;
+  position: absolute;
+}
+.students-ccs1 {
+  top: 404px;
+  left: 436px;
+  width: 100px;
+  height: 100px;
+  position: absolute;
+}
+.students-text14 {
+  top: 29px;
+  left: 513px;
+  color: rgba(0, 0, 0, 1);
+  width: 687px;
+  height: auto;
+  position: absolute;
+  font-size: 50px;
+  font-style: Black;
+  text-align: center;
+  font-family: Inter;
+  font-weight: 900;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.students-text16 {
+  top: 157px;
+  left: 657px;
+  color: rgba(0, 0, 0, 1);
+  width: 459px;
+  height: auto;
+  position: absolute;
+  font-size: 20px;
+  font-style: Black;
+  text-align: center;
+  font-family: Inter;
+  font-weight: 900;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.students-text18 {
+  top: 298px;
+  left: 657px;
+  color: rgba(0, 0, 0, 1);
+  width: 459px;
+  height: auto;
+  position: absolute;
+  font-size: 20px;
+  font-style: Black;
+  text-align: center;
+  font-family: Inter;
+  font-weight: 900;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.students-text20 {
+  top: 440px;
+  left: 657px;
+  color: rgba(0, 0, 0, 1);
+  width: 459px;
+  height: auto;
+  position: absolute;
+  font-size: 20px;
+  font-style: Black;
+  text-align: center;
+  font-family: Inter;
+  font-weight: 900;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.students-text22 {
+  top: 593px;
+  left: 657px;
+  color: rgba(0, 0, 0, 1);
+  width: 459px;
+  height: auto;
+  position: absolute;
+  font-size: 20px;
+  font-style: Black;
+  text-align: center;
+  font-family: Inter;
+  font-weight: 900;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.students-text24 {
+  top: 749px;
+  left: 657px;
+  color: rgba(0, 0, 0, 1);
+  width: 459px;
+  height: auto;
+  position: absolute;
+  font-size: 20px;
+  font-style: Black;
+  text-align: center;
+  font-family: Inter;
+  font-weight: 900;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.students-text26 {
+  left: 657px;
+  color: rgba(0, 0, 0, 1);
+  width: 459px;
+  bottom: 108px;
+  height: auto;
+  position: absolute;
+  font-size: 20px;
+  font-style: Black;
+  text-align: center;
+  font-family: Inter;
+  font-weight: 900;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.students-cas3 {
+  top: 546px;
+  left: 436px;
+  width: 100px;
+  height: 107px;
+  position: absolute;
+}
+.students-text28 {
+  top: 896px;
+  left: 13px;
+  color: rgba(255, 255, 255, 1);
+  width: 220px;
+  height: auto;
+  position: absolute;
+  font-size: 15px;
+  font-style: Medium;
+  text-align: left;
+  font-family: Roboto;
+  font-weight: 500;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.students-rectangle163 {
+  top: -83px;
+  right: -1px;
+  width: 156px;
+  height: 306px;
+  position: absolute;
+}
