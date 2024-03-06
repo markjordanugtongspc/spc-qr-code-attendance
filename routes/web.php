@@ -37,11 +37,27 @@ Route::get('/download/{filename}', function ($filename) {
     return abort(404);
 })->name('download');
 
+// Route for default branch
+Route::get('/', function () {
+    return view('student_form');
+});
+
 // Route for the admin page
 Route::get('/admin', function () {
     return view('admin');
 })->name('admin');
 
-Route::get('/', function () {
-    return view('student_form');
-});
+// Route for the instructor page
+Route::get('/instructor', function () {
+    return view('instructor_admin');
+})->name('instructor');
+
+// Route for the attendance log page
+Route::get('/attendance_log', function () {
+    return view('attendance_log');
+})->name('attendance_log');
+
+// Route for the student page
+Route::get('/student', function () {
+    return view('students_admin');
+})->name('student');
