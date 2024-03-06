@@ -26,7 +26,7 @@
         <img alt="Rectangle1574619" src="images/rectangle1574619-37nr.svg" class="admin-dashboard-rectangle157" />
         <img alt="Rectangle1584619" src="images/rectangle1584619-g7.svg" class="admin-dashboard-rectangle158" />
         <button class="admin-dashboard-button" onclick="window.location.href = '{{ route('student') }}'">
-          <a href="students_admin.blade.php" class="admin-dashboard-text02">STUDENTS</a>
+          <a href="{{ route('student') }}" class="admin-dashboard-text02">STUDENTS</a>
         </button>
         <button class="admin-dashboard-button" onclick="window.location.href = '{{ route('instructor') }}'">
           <a href="{{ route('instructor') }}" class="admin-dashboard-text04">INSTRUCTOR</a>
