@@ -39,7 +39,7 @@ Route::get('/download/{filename}', function ($filename) {
 
 // Route for default branch
 Route::get('/', function () {
-    return view('student_form');
+    return view('gatepass');
 });
 
 // Route for the admin page
@@ -61,3 +61,8 @@ Route::get('/attendance_log', function () {
 Route::get('/student', function () {
     return view('student_admin');
 })->name('student');
+
+// Route for the gatepass1
+Route::get('/gatepass1', function () {
+    return view('gatepass1');
+})->name('gatepass1');
