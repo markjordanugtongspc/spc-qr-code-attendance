@@ -101,7 +101,7 @@
   line-height: normal;
   font-stretch: normal;
   text-decoration: none;
-  background: linear-gradient(45deg, #ff0000, #ffffff, #ff0000);
+  background: linear-gradient(45deg, #ffffff, #ffffff, #ffffff);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -149,20 +149,21 @@
 }
 .instructor-text02 {
   top: 58px;
-  left: 50px;
+  left: 46px;
   color: rgba(74, 3, 11, 1);
-  width: 150px;
+  width: 116px;
   height: auto;
   position: absolute;
-  font-size: 15px;
+  font-size: 16px;
   font-style: Extra Bold;
   text-align: left;
-  font-family: "Roboto";
+  font-family: Inter;
   font-weight: 700;
   line-height: normal;
   font-stretch: normal;
   text-decoration: none;
 }
+
 .instructor-text04 {
   top: 81px;
   left: 46px;
@@ -179,6 +180,7 @@
   font-stretch: normal;
   text-decoration: none;
 }
+
 .instructor-text06 {
   top: 208px;
   left: 73px;

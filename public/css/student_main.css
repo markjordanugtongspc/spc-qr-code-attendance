@@ -1,3 +1,5 @@
+@import url(https://db.onlinewebfonts.com/c/56d3addcc26c615d76f21e7e540c2647?family=Carol+Gothic);
+
 .students-container {
   width: 100%;
   display: flex;
@@ -100,7 +102,7 @@
   font-size: 25px;
   font-style: Medium;
   text-align: left;
-  font-family: Roboto;
+  font-family: "Carol Gothic";
   font-weight: 500;
   line-height: normal;
   font-stretch: normal;
@@ -168,9 +170,9 @@
 }
 .students-text06 {
   top: 208px;
-  left: 76px;
+  left: 69px;
   color: rgba(74, 3, 11, 1);
-  width: 142px;
+  width: 149px;
   height: auto;
   position: absolute;
   font-size: 15px;
@@ -192,7 +194,7 @@
   font-size: 6.461538791656494px;
   font-style: Bold;
   text-align: left;
-  font-family: Roboto;
+  font-family: Inter;
   font-weight: 700;
   line-height: normal;
   font-stretch: normal;
@@ -208,7 +210,7 @@
   font-size: 6.461538791656494px;
   font-style: Bold;
   text-align: left;
-  font-family: Roboto;
+  font-family: Inter;
   font-weight: 700;
   line-height: normal;
   font-stretch: normal;
@@ -231,7 +233,7 @@
   font-size: 6.461538791656494px;
   font-style: Bold;
   text-align: left;
-  font-family: Roboto;
+  font-family: Inter;
   font-weight: 700;
   line-height: normal;
   font-stretch: normal;
