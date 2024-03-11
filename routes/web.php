@@ -42,3 +42,6 @@ Route::get('/download/{filename}', function ($filename) {
 Route::get('/', function () {
     return view('student_form');
 });
+Route::get('/parents', function () {
+    return view('parents');
+});
