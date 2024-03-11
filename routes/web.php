@@ -61,3 +61,8 @@ Route::get('/attendance_log', function () {
 Route::get('/student', function () {
     return view('student_admin');
 })->name('student');
+
+// Route for the logout page
+Route::get('/logout', function () {
+    return view('logout');
+})->name('logout');

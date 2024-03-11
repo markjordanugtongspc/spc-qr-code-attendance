@@ -138,7 +138,7 @@
 }
 .students-text02 {
   top: 116px;
-  left: 98px;
+  left: 87px;
   color: rgba(74, 3, 11, 1);
   width: 116px;
   height: auto;
@@ -154,7 +154,7 @@
 }
 .students-text04 {
   top: 163px;
-  left: 93px;
+  left: 85px;
   color: rgba(74, 3, 11, 1);
   width: 113px;
   height: auto;
@@ -170,9 +170,9 @@
 }
 .students-text06 {
   top: 208px;
-  left: 69px;
+  left: 60px;
   color: rgba(74, 3, 11, 1);
-  width: 149px;
+  width: auto;
   height: auto;
   position: absolute;
   font-size: 15px;
@@ -183,6 +183,7 @@
   line-height: normal;
   font-stretch: normal;
   text-decoration: none;
+  white-space: nowrap;
 }
 .students-text08 {
   top: 973.72314453125px;
@@ -436,4 +437,15 @@
   width: 156px;
   height: 306px;
   position: absolute;
+}
+html {
+  scroll-behavior: smooth 
+     font-family: Inter;
+     font-size: 16px;
+}
+button,input,optgroup,select,textarea {
+  font-family: inherit;
+  font-size: 100%;
+  line-height: 1.15;
+  margin: 0;
 }
