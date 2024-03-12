@@ -5,11 +5,9 @@ use Illuminate\Http\Request;
 use SimpleSoftwareIO\QrCode\Facades\QrCode;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
+use App\Http\Controllers\AttendanceController;
 
-// Display the student form
-Route::get('/student-form', function () {
-    return view('student_form');
-})->name('student-form');
+Route::post('/verify-student', [AttendanceController::class, 'verifyStudent'])->name('verify-student');
 
 // Process the form and generate the QR code with a download link
 Route::post('/generate-qr', function (Request $request) {
@@ -71,3 +69,8 @@ Route::get('/logout', function () {
 Route::get('/gatepass1', function () {
     return view('gatepass1');
 })->name('gatepass1');
+
+// Route for qr code page
+Route::get('/qrcode', function () {
+    return view('qrcode');
+})->name('qrcode');
