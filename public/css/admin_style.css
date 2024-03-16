@@ -107,3 +107,9 @@ a {
   text-transform: none;
   text-decoration: none;
 }
+.admin-dashboard-button:hover {
+  transform: scale(1.1);
+}
+.admin-dashboard-text14:hover {
+  transform: scale(1.1);
+}

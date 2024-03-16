@@ -10,10 +10,10 @@ module.exports = {
     extend: {},
   },
   plugins: [
-    require('@tailwindcss/forms'), // Adds form styles
-    require('@tailwindcss/typography'), // Adds typography styles
-    require('@tailwindcss/aspect-ratio'), // Adds aspect ratio utilities
-    require('@tailwindcss/line-clamp'), // Adds line clamp utilities
+    require('@tailwindcss/forms'),
+    require('@tailwindcss/typography'),
+    require('@tailwindcss/aspect-ratio'),
+    require('@tailwindcss/line-clamp'),
     // Add more plugins here as needed
   ],
 };
