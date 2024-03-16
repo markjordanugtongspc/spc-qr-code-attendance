@@ -74,3 +74,8 @@ Route::get('/gatepass1', function () {
 Route::get('/qrcode', function () {
     return view('qrcode');
 })->name('qrcode');
+
+// Route for the parents page
+Route::get('/parents', function () {
+    return view('parents_dashboard');
+})->name('parents');
