@@ -1,0 +1,161 @@
+.gate-pass-studentconfirm-container {
+    width: 100%;
+    display: flex;
+    overflow: auto;
+    min-height: 100vh;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+.gate-pass-studentconfirm-gate-pass-studentconfirm {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    overflow: hidden;
+    position: relative;
+    align-items: flex-start;
+    flex-shrink: 0;
+    justify-content: flex-start;
+    background-color: rgba(93, 29, 36, 1);
+}
+.gate-pass-studentconfirm-rectangle75 {
+    top: 108px;
+    left: 192px;
+    width: 395px;
+    height: 342px;
+    position: absolute;
+    box-sizing: content-box;
+    border-radius: 4.545806407928467px;
+}
+.gate-pass-studentconfirm-rectangle11 {
+    top: 108px;
+    left: 694px;
+    width: 727px;
+    height: 673px;
+    position: absolute;
+    border-radius: 4.550000190734863px;
+}
+.gate-pass-studentconfirm-rectangle72 {
+    top: 300px;
+    left: 975px;
+    width: 160px;
+    height: 251px;
+    position: absolute;
+    border-color: rgba(0, 0, 0, 1);
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 19.394813537597656px;
+}
+.gate-pass-studentconfirm-rectangle74 {
+    top: 377px;
+    left: 335px;
+    width: 100px;
+    height: 27px;
+    position: absolute;
+    border-radius: 9px;
+}
+.gate-pass-studentconfirm-text {
+    top: 170px;
+    left: 918px;
+    color: rgba(0, 0, 0, 0.8999999761581421);
+    width: 278px;
+    height: auto;
+    opacity: 0.9;
+    position: absolute;
+    font-size: 29.09221839904785px;
+    font-style: Regular;
+    text-align: center;
+    font-family: Goblin One;
+    font-weight: 400;
+    line-height: normal;
+    font-stretch: normal;
+    text-decoration: none;
+}
+.gate-pass-studentconfirm-text1 {
+    top: 610px;
+    left: 844px;
+    color: rgba(22, 189, 68, 1);
+    width: 423px;
+    height: auto;
+    opacity: 0.9;
+    position: absolute;
+    font-size: 29.09221839904785px;
+    font-style: Regular;
+    text-align: center;
+    font-family: Goblin One;
+    font-weight: 400;
+    line-height: normal;
+    font-stretch: normal;
+    text-decoration: none;
+}
+.gate-pass-studentconfirm-text3 {
+    top: 385px;
+    left: 316px;
+    color: rgba(255, 255, 255, 1);
+    width: 137px;
+    height: auto;
+    opacity: 0.9;
+    position: absolute;
+    font-size: 10px;
+    font-style: Medium;
+    text-align: center;
+    font-family: Inter;
+    font-weight: 500;
+    line-height: normal;
+    font-stretch: normal;
+    text-decoration: none;
+}
+.gate-pass-studentconfirm-line20 {
+    top: 230px;
+    left: 720px;
+    height: 3.7px;
+    margin: auto;
+    position: absolute;
+}
+.gate-pass-studentconfirm-text5 {
+    top: 670px;
+    left: 910px;
+    color: rgba(0, 0, 0, 1);
+    width: 287px;
+    height: auto;
+    position: absolute;
+    font-size: 18px;
+    font-style: Regular;
+    text-align: center;
+    font-family: Goblin One;
+    font-weight: 400;
+    line-height: normal;
+    font-stretch: normal;
+    text-decoration: none;
+}
+.gate-pass-studentconfirm-image1 {
+    top: 140px;
+    left: 224px;
+    width: 320px;
+    height: 220px;
+    position: absolute;
+}
+.gate-pass-studentconfirm-spclogo3 {
+    top: 470px;
+    left: 259px;
+    width: 250px;
+    height: 250px;
+    position: absolute;
+}
+.gate-pass-studentconfirm-text7 {
+    top: 50px;
+    left: 150px;
+    color: rgb(255, 255, 255);
+    width: 495px;
+    height: auto;
+    opacity: 0.9;
+    position: absolute;
+    font-size: 30px;
+    font-style: Regular;
+    text-align: center;
+    font-family: "Goblin One";
+    font-weight: 400;
+    line-height: normal;
+    font-stretch: normal;
+    text-decoration: none;
+}

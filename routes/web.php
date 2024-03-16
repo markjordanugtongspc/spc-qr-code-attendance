@@ -5,11 +5,9 @@ use Illuminate\Http\Request;
 use SimpleSoftwareIO\QrCode\Facades\QrCode;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
+use App\Http\Controllers\AttendanceController;
 
-// Display the student form
-Route::get('/student-form', function () {
-    return view('student_form');
-})->name('student-form');
+Route::post('/verify-student', [AttendanceController::class, 'verifyStudent'])->name('verify-student');
 
 // Process the form and generate the QR code with a download link
 Route::post('/generate-qr', function (Request $request) {
@@ -39,7 +37,7 @@ Route::get('/download/{filename}', function ($filename) {
 
 // Route for default branch
 Route::get('/', function () {
-    return view('student_form');
+    return view('gatepass');
 });
 
 // Route for the admin page
@@ -61,3 +59,23 @@ Route::get('/attendance_log', function () {
 Route::get('/student', function () {
     return view('student_admin');
 })->name('student');
+
+// Route for the logout page
+Route::get('/logout', function () {
+    return view('logout');
+})->name('logout');
+
+// Route for the gatepass1
+Route::get('/gatepass1', function () {
+    return view('gatepass1');
+})->name('gatepass1');
+
+// Route for qr code page
+Route::get('/qrcode', function () {
+    return view('qrcode');
+})->name('qrcode');
+
+// Route for the parents page
+Route::get('/parents', function () {
+    return view('parents_dashboard');
+})->name('parents');

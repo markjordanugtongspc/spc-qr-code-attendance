@@ -92,7 +92,7 @@
                 <a href="{{ route('student') }}" class="instructor-text02">STUDENTS</a>
               </button>
               <button class="instructor-text04 active">
-                <a href="{{ route('instructor') }}" class="instructor-text04">INSTRUCTOR</a>
+                <a class="instructor-text04">INSTRUCTOR</a>
               </button>
               <button class="admin-dashboard-button">
                 <a href="{{ route('attendance_log') }}" class="instructor-text06">ATTENDANCE LOG</a>

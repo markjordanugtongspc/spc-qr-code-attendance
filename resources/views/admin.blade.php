@@ -13,18 +13,18 @@
 <body>
   <div class="admin-dashboard-container">
     <div class="admin-dashboard-admin-dashboard">
-      <img alt="Rectangle1553792" src="images/rectangle1553792-c9zi-1100h.png" class="admin-dashboard-rectangle155" />
+      <img src="images/side-rectangle.png" class="admin-dashboard-rectangle155" />
       <div class="admin-dashboard-group18">
-        <img alt="image54619" src="images/image54619-jbyf-200h.png" class="admin-dashboard-image5" />
-        <img alt="spcnremovebgpreview143792" src="images/spcnremovebgpreview143792-3xcm-200h.png" class="admin-dashboard-spcnremovebgpreview14" />
-        <img alt="spcnremovebgpreview154828" src="images/spcnremovebgpreview154828-1nsl-800h.png" class="admin-dashboard-spcnremovebgpreview15" />
+        <img src="images/email-icon.png" class="admin-dashboard-image5" />
+        <img src="images/spc_logo-3xcm_200h.png" class="admin-dashboard-spcnremovebgpreview14" />
+        <img src="images/spc_logo-1nsl-800h.png" class="admin-dashboard-spcnremovebgpreview15" />
         <span class="admin-dashboard-text">
           <span>Admin Dashboard</span>
         </span>
-        <img alt="image84619" src="images/image84619-6xw-200h.png" class="admin-dashboard-image8" />
-        <img alt="Rectangle1564619" src="images/rectangle1564619-ke4i.svg" class="admin-dashboard-rectangle156" />
-        <img alt="Rectangle1574619" src="images/rectangle1574619-37nr.svg" class="admin-dashboard-rectangle157" />
-        <img alt="Rectangle1584619" src="images/rectangle1584619-g7.svg" class="admin-dashboard-rectangle158" />
+        <img src="images/img-6xw-200h.png" class="admin-dashboard-image8" />
+        <img src="images/rec-ke4i.svg" class="admin-dashboard-rectangle156" />
+        <img src="images/rec-37nr.svg" class="admin-dashboard-rectangle157" />
+        <img src="images/rec-g7.svg" class="admin-dashboard-rectangle158" />
         <button class="admin-dashboard-button" onclick="window.location.href = '{{ route('student') }}'">
           <a href="{{ route('student') }}" class="admin-dashboard-text02">STUDENTS</a>
         </button>
@@ -40,24 +40,22 @@
         <span class="admin-dashboard-text10">
           <span>(+63) 221-6246</span>
         </span>
-        <img alt="image64619" src="images/image64619-yyc-200h.png" class="admin-dashboard-image6" />
+        <img src="images/img-yyc-200h.png" class="admin-dashboard-image6" />
         <span class="admin-dashboard-text12">
           <span>my.spc.edu.ph</span>
         </span>
       </div>
       <div class="admin-dashboard-group17">
-        <img alt="cba11806" src="images/cba11806-5q7m-200h.png" class="admin-dashboard-cba1" />
-        <img alt="coc11806" src="images/coc11806-0gp5-200h.png" class="admin-dashboard-coc1" />
-        <img alt="cas11806" src="images/cas11806-f0bi-200w.png" class="admin-dashboard-cas1" />
-        <img alt="ccs11806" src="images/ccs11806-stk-200h.png" class="admin-dashboard-ccs1" />
-        <img alt="coe11806" src="images/coe11806-f82l-200h.png" class="admin-dashboard-coe1" />
-        <img alt="ced11806" src="images/ced11806-h9hn-200w.png" class="admin-dashboard-ced1" />
+        <img src="images/cba11806-5q7m-200h.png" class="admin-dashboard-cba1" />
+        <img src="images/coc11806-0gp5-200h.png" class="admin-dashboard-coc1" />
+        <img src="images/cas11806-f0bi-200w.png" class="admin-dashboard-cas1" />
+        <img src="images/ccs11806-stk-200h.png" class="admin-dashboard-ccs1" />
+        <img src="images/coe11806-f82l-200h.png" class="admin-dashboard-coe1" />
+        <img src="images/ced11806-h9hn-200w.png" class="admin-dashboard-ced1" />
       </div>
-      <img alt="Rectangle1634828" src="images/rectangle1634828-15jt.svg" class="admin-dashboard-rectangle163" />
-      <img alt="Rectangle1644828" src="images/rectangle1644828-t6g.svg" class="admin-dashboard-rectangle164" />
-      <img alt="Rectangle1654828" src="images/rectangle1654828-c9kq.svg" class="admin-dashboard-rectangle165" />
+      <img src="images/rec-t6g.svg" class="admin-dashboard-rectangle164" />
+      <img src="images/rec-c9kq.svg" class="admin-dashboard-rectangle165" />
       <a href="/logout" class="admin-dashboard-text14">Log out</a>
-      <img alt="Rectangle1604828" src="images/rectangle1604828-y2aa.svg" class="admin-dashboard-rectangle160" />
     </div>
   </div>
 
@@ -78,7 +76,7 @@
       });
     });
 
-    // Dark Mode Toggle Script
+    // Dark Mode
     function toggleDarkLightMode() {
       var body = document.body;
       body.classList.toggle('dark-mode');

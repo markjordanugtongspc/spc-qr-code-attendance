@@ -1,0 +1,169 @@
+.gate-pass-container {
+    width: 100%;
+    display: flex;
+    overflow: auto;
+    min-height: 100vh;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+.gate-pass-gate-pass {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    overflow: hidden;
+    position: relative;
+    align-items: flex-start;
+    flex-shrink: 0;
+    justify-content: flex-start;
+    background-color: rgba(93, 29, 36, 1);
+}
+.gate-pass-rectangle75 {
+    top: 108px;
+    left: 192px;
+    width: 395px;
+    height: 342px;
+    position: absolute;
+    box-sizing: content-box;
+    border-radius: 4.545806407928467px;
+}
+.gate-pass-rectangle73 {
+    top: 170px;
+    left: 295px;
+    width: 188px;
+    height: 163px;
+    position: absolute;
+    box-sizing: content-box;
+    border-radius: 2.160919427871704px;
+}
+.gate-pass-rectangle11 {
+    top: 50px;
+    left: 694px;
+    width: 727px;
+    height: 673px;
+    position: absolute;
+    border-radius: 4.550000190734863px;
+}
+.gate-pass-text {
+    top: 50px;
+    left: 150px;
+    color: rgb(255, 255, 255);
+    width: 495px;
+    height: auto;
+    opacity: 0.9;
+    position: absolute;
+    font-size: 30px;
+    font-style: Regular;
+    text-align: center;
+    font-family: "Goblin One";
+    font-weight: 400;
+    line-height: normal;
+    font-stretch: normal;
+    text-decoration: none;
+}
+.gate-pass-rectangle72 {
+    top: 250px;
+    left: 928px;
+    width: 259px;
+    height: 305px;
+    position: absolute;
+    border-color: rgb(138, 102, 102);
+    border-style: solid;
+    border-radius: 19px;
+}
+.gate-pass-rectangle74 {
+    top: 370px;
+    left: 317px;
+    width: 145px;
+    height: 27px;
+    position: absolute;
+    border-radius: 9px;
+}
+.gate-pass-vector {
+    top: 340px;
+    left: 998px;
+    width: 126px;
+    height: 135px;
+    position: absolute;
+}
+.gate-pass-text1 {
+    top: 125px;
+    left: 918px;
+    color: rgba(0, 0, 0, 0.8999999761581421);
+    width: 278px;
+    height: auto;
+    opacity: 0.9;
+    position: absolute;
+    font-size: 29.09221839904785px;
+    font-style: Regular;
+    text-align: center;
+    font-family: Goblin One;
+    font-weight: 400;
+    line-height: normal;
+    font-stretch: normal;
+    text-decoration: none;
+}
+.gate-pass-text3 {
+    top: 575px;
+    left: 844px;
+    color: rgba(158, 158, 158, 1);
+    width: 423px;
+    height: auto;
+    opacity: 0.9;
+    position: absolute;
+    font-size: 29.09221839904785px;
+    font-style: Regular;
+    text-align: center;
+    font-family: Goblin One;
+    font-weight: 400;
+    line-height: normal;
+    font-stretch: normal;
+    text-decoration: none;
+}
+.gate-pass-text5 {
+    top: 377px;
+    left: 321px;
+    color: rgba(255, 255, 255, 1);
+    width: 137px;
+    height: auto;
+    opacity: 0.9;
+    position: absolute;
+    font-size: 10px;
+    font-style: Medium;
+    text-align: center;
+    font-family: Inter;
+    font-weight: 500;
+    line-height: normal;
+    font-stretch: normal;
+    text-decoration: none;
+}
+.gate-pass-line20 {
+    top: 200px;
+    left: 719px;
+    height: 4.6px;
+    margin: auto;
+    position: absolute;
+}
+.gate-pass-text7 {
+    top: 630px;
+    left: 938px;
+    color: rgba(0, 0, 0, 0.800000011920929);
+    width: 235px;
+    height: auto;
+    position: absolute;
+    font-size: 18px;
+    font-style: Regular;
+    text-align: center;
+    font-family: Goblin One;
+    font-weight: 400;
+    line-height: normal;
+    font-stretch: normal;
+    text-decoration: none;
+}
+.gate-pass-spclogo4 {
+    top: 450px;
+    left: 259px;
+    width: 250px;
+    height: 250px;
+    position: absolute;
+}

@@ -224,9 +224,17 @@
               alt="Rectangle1584828"
               class="students-rectangle158"
             />
-            <span class="students-text02"><span>STUDENTS</span></span>
-            <span class="students-text04"><span>INSTRUCTOR</span></span>
-            <span class="students-text06"><span>ATTENDANCE LOG</span></span>
+            <div class="button-container">
+              <button class="students-text02 active">
+                <a class="student-text02">STUDENTS</a>
+              </button>
+              <button class="students-text04">
+                <a href="{{ route('instructor') }}" class="student-text04">INSTRUCTOR</a>
+              </button>
+              <button class="students-text06">
+                <a href="{{ route('attendance_log') }}" class="instructor-text06">ATTENDANCE LOG</a>
+              </button>
+            </div>
             <span class="students-text08">
               <span>spcregistrar@gmail.com</span>
             </span>
@@ -242,41 +250,31 @@
             src="images/student_admin/cba14828-tnagm-200h.png"
             alt="cba14828"
             class="students-cba1"
+            onclick="window.location.href='/cba';"
           />
           <img
             src="images/student_admin/coc14828-y0na-200h.png"
             alt="coc14828"
             class="students-coc1"
+            onclick="window.location.href='/coc';"
           />
           <img
             src="images/student_admin/coe14828-fx6b-200h.png"
             alt="coe14828"
             class="students-coe1"
+            onclick="window.location.href='/coe';"
           />
           <img
             src="images/student_admin/ced14828-266v-200w.png"
             alt="ced14828"
             class="students-ced1"
-          />
-          <img
-            src="images/student_admin/rectangle1604828-4ick.svg"
-            alt="Rectangle1604828"
-            class="students-rectangle160"
-          />
-          <img
-            src="images/student_admin/rectangle1644828-toz.svg"
-            alt="Rectangle1644828"
-            class="students-rectangle164"
-          />
-          <img
-            src="images/student_admin/rectangle1654828-6iol.svg"
-            alt="Rectangle1654828"
-            class="students-rectangle165"
+            onclick="window.location.href='/ced';"
           />
           <img
             src="images/student_admin/ccs14828-xosp-200h.png"
             alt="ccs14828"
             class="students-ccs1"
+            onclick="window.location.href='/ccs';"
           />
           <span class="students-text14"><span>STUDENTS</span></span>
           <span class="students-text16">
@@ -300,7 +298,12 @@
             alt="cas34828"
             class="students-cas3"
           />
-          <span class="students-text28"><span>Log out</span></span>
+          <form action="{{ route('logout') }}" method="POST">
+            @csrf
+            <button type="submit" class="students-text28 logout-button">
+              <span>Log out</span>
+            </button>
+          </form>
           <img
             src="images/student_admin/rectangle1634828-ylmd.svg"
             alt="Rectangle1634828"
