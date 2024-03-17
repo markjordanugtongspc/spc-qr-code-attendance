@@ -32,136 +32,57 @@
       <link rel="stylesheet" href="css/instructor_admin_main.css" />
       <div class="instructor-container">
         <div class="instructor-instructor">
-          <img
-            src="images/instructor/rectangle1684828-l6pb-200h.png"
-            alt="Rectangle1684828"
-            class="instructor-rectangle168"
-          />
-          <img
-            src="images/instructor/rectangle1694828-ara-200h.png"
-            alt="Rectangle1694828"
-            class="instructor-rectangle169"
-          />
-          <img
-            src="images/instructor/rectangle1704828-9yvi-200h.png"
-            alt="Rectangle1704828"
-            class="instructor-rectangle170"
-          />
-          <img
-            src="images/instructor/rectangle1664828-pbu9-200h.png"
-            alt="Rectangle1664828"
-            class="instructor-rectangle166"
-          />
-          <img
-            src="images/instructor/rectangle1674828-ipft-200h.png"
-            alt="Rectangle1674828"
-            class="instructor-rectangle167"
-          />
-          <img
-            src="images/instructor/rectangle1554828-3hl-1100h.png"
-            alt="Rectangle1554828"
-            class="instructor-rectangle155"
-          />
-          <div class="instructor-group18">
-            <img
-                src="images/instructor/image54828-ba38-200h.png"
-                alt="image54828"
-                class="instructor-image5" /></a
-            ><img
-                src="images/instructor/spcnremovebgpreview144828-4g6t-200h.png"
-                alt="spcnremovebgpreview144828"
-                class="instructor-spcnremovebgpreview14" /></a
-            ><span class="instructor-text"><span>Admin Dashboard</span></span
-            ><img
-                src="images/instructor/image84828-poog-200h.png"
-                alt="image84828"
-                class="instructor-image8" /
-              ><img
-                src="images/instructor/rectangle1564828-xnwj.svg"
-                alt="Rectangle1564828"
-                class="instructor-rectangle156" /><img
-                src="images/instructor/rectangle1574828-3ii.svg"
-                alt="Rectangle1574828"
-                class="instructor-rectangle157" /
-              ><img
-                src="images/instructor/rectangle1584828-mpic.svg"
-                alt="Rectangle1584828"
-                class="instructor-rectangle158" /></a
-            <div class="button-container">
-              <button class="instructor-text02">
-                <a href="{{ route('student') }}" class="instructor-text02">STUDENTS</a>
+            <img src="images/instructor/yellow.png" class="cba"/>
+            <img src="images/instructor/red.png" class="coc"/>
+            <img src="images/instructor/green.png"  class="ccs"/>
+            <img src="images/instructor/orange.png" class="cas"/>
+            <img src="images/instructor/purple.png" class="coe"/>
+            <img src="images/instructor/blue.png"  class="ced"/>
+            <img src="images/instructor/rec.png" class="rec"/>
+        <div class="rec-group">
+        <span class="AdminDashboard"><span>Admin Dashboard</span></span>
+            <img src="images/instructor/logo.png" class="spclogo"/>
+          <a><img src="images/instructor/WebIcon.png" class="web"/></a>
+          <a><img src="images/instructor/PhoneIcon.png" class="phone" /></a>
+          <a><img src="images/instructor/MsgIcon.png" class="msg"/></a>
+
+        <div class="button-container">
+              <button class="students-text02">
+                <a href="{{ route('student') }}"  class="students-text02">STUDENTS</a>
               </button>
-              <button class="instructor-text04 active">
-                <a class="instructor-text04">INSTRUCTOR</a>
+              <button class="instructor-text03">
+                <a href="{{ route('instructor') }}" class="instructor-text03">INSTRUCTOR</a>
               </button>
-              <button class="admin-dashboard-button">
-                <a href="{{ route('attendance_log') }}" class="instructor-text06">ATTENDANCE LOG</a>
+              <button class="attendancelog-text04">
+                <a href="{{ route('attendance_log') }}" class="attendancelog-text04">ATTENDANCE LOG</a>
               </button>
             </div>
-            <span class="instructor-text08">
-            <span>spcregistrar@gmail.com</span></span
-            ><span class="instructor-text10"><span>(+63) 221-6246</span></span
-            ><img
-                src="images/instructor/image64828-g72-200h.png"
-                alt="image64828"
-                class="instructor-image6" /></a
-            ><span class="instructor-text12"><span>my.spc.edu.ph</span></span>
-          </div>
-          <a href="YOUR_LOGO_ROUTE"
-            ><img
-              src="images/instructor/cba14828-rul-200h.png"
-              alt="cba14828"
-              class="instructor-cba1" /></a
-          ><a href="YOUR_LOGO_ROUTE"
-            ><img
-              src="images/instructor/coc14828-bo9-200h.png"
-              alt="coc14828"
-              class="instructor-coc1" /></a
-          ><a href="YOUR_LOGO_ROUTE"
-            ><img
-              src="images/instructor/coe14828-cbm-200h.png"
-              alt="coe14828"
-              class="instructor-coe1" /></a
-          ><a href="YOUR_LOGO_ROUTE"
-            ><img
-              src="images/instructor/ced14828-1hyf-200w.png"
-              alt="ced14828"
-              class="instructor-ced1" /></a
-          ><a href="YOUR_LOGO_ROUTE"
-            ><img
-              src="images/instructor/ccs14828-s9h-200h.png"
-              alt="ccs14828"
-              class="instructor-ccs1" /></a
-          ><span class="instructor-text14"><span>INSTRUCTOR</span></span
-          ><span class="instructor-text16"
-            ><span>College of Business Administration</span></span
-          ><span class="instructor-text18"
-            ><span>College of Criminology</span></span
-          ><span class="instructor-text20"
-            ><span>College of Computer Studies</span></span
-          ><span class="instructor-text22"
-            ><span>College of Arts and Sciences</span></span
-          ><span class="instructor-text24"
-            ><span>College of Engineering</span></span
-          ><span class="instructor-text26"
-            ><span>College of Education</span></span
-          ><a href="YOUR_LOGO_ROUTE"
-            ><img
-              src="images/instructor/cas34828-rse-200w.png"
-              alt="cas34828"
-              class="instructor-cas3" /></a
-          ><a href="YOUR_LOGOUT_ROUTE" class="instructor-text28"
-            ><span>Log out</span></a
-          ><img
-            src="images/instructor/rectangle1634828-rzvl.svg"
-            alt="Rectangle1634828"
-            class="instructor-rectangle163"
-          /><a href="YOUR_LOGO_ROUTE"
-            ><img
-              src="images/instructor/rectangle1714828-dy-200h.png"
-              alt="Rectangle1714828"
-              class="instructor-rectangle171"
-          /></a>
+            <span class="spcedu"><span>my.spc.edu.ph</span></span>
+            <span class="number"><span>(+63) 221-6246</span></span>
+            <span class="gmail"><span>spcregistrar@gmail.com</span></span>     
+        </div>
+          <a href="YOUR_LOGO_ROUTE">
+            <img src="images/instructor/cba.png" class="instructor-cba1" /></a>
+          <a href="YOUR_LOGO_ROUTE">
+            <img src="images/instructor/coc.png" class="instructor-coc1" /></a>
+          <a href="YOUR_LOGO_ROUTE">
+            <img src="images/instructor/ccs.png" class="instructor-ccs1" /></a>
+          <a href="YOUR_LOGO_ROUTE">
+            <img src="images/instructor/cas.png"class="instructor-cas1"/></a>
+          <a href="YOUR_LOGO_ROUTE">
+            <img src="images/instructor/coe.png" class="instructor-coe1" /></a>
+          <a href="YOUR_LOGO_ROUTE">
+            <img src="images/instructor/ced.png" class="instructor-ced1" /></a>
+
+          <span class="instructor-text1"><span>INSTRUCTOR</span></span>
+          <span class="instructor-text2"><span>College of Business Administration</span></span>
+          <span class="instructor-text3"><span>College of Criminology</span></span>
+          <span class="instructor-text4"><span>College of Computer Studies</span></span>
+          <span class="instructor-text5"><span>College of Arts and Sciences</span></span>
+          <span class="instructor-text6"><span>College of Engineering</span></span>
+          <span class="instructor-text7"><span>College of Education</span></span>
+          <a href="YOUR_LOGOUT_ROUTE" class="logout"><span>Log out</span></a>  
+
         </div>
       </div>
     </div>

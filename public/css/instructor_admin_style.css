@@ -92,25 +92,23 @@
   text-transform: none;
   text-decoration: none;
 }
-.instructor-cbasdasdsaa1, .instructor-coc1, .instructor-coe1, .instructor-ced1, .instructor-ccs1, {
+.instructor-cba1, .instructor-coc1, .instructor-coe1, .instructor-ced1, .instructor-ccs1, .instructor-cas1 {
   cursor: pointer;
   transition: transform 0.2s; /* Smooth transition */
 }
-
-.instructor-cba1:hover, .instructor-coc1:hover, .instructor-coe1:hover, .instructor-ced1:hover, .instructor-ccs1:hover {
+.instructor-cba1:hover, .instructor-coc1:hover, .instructor-coe1:hover, .instructor-ced1:hover, .instructor-ccs1:hover, .instructor-cas1:hover{
   transform: scale(1.05); /* Slightly enlarge the images on hover */
 }
-.instructor-text02,
-.admin-dashboard-button {
+.instructor-text02, .instructor-text03:hover, .instructor-text04:hover {
   cursor: pointer;
   transition: transform 0.2s; /* Smooth transition */
 }
 
-.instructor-text02:hover,
-.instructor-text04:hover,
-.admin-dashboard-button:hover {
-  transform: scale(1.05); /* Slightly enlarge the buttons on hover */
+.students-text02:hover, 
+.instructor-text03:hover, 
+.attendancelog-text04:hover {
+  transform: scale(1.01); /* Slightly enlarge the buttons on hover */
 }
-.instructor-text28:hover {
-  transform: scale(1.05);
+.logout:hover {
+  transform: scale(1.01);
 }
