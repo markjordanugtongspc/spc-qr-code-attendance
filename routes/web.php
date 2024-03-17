@@ -61,3 +61,13 @@ Route::get('/attendance_log', function () {
 Route::get('/student', function () {
     return view('student_admin');
 })->name('student');
+Route::get('/studentdashboard', function () {
+    return view('studentdashboard');
+})->name('studentdashboard');
+Route::get('/instructordashboard', function () {
+    return view('instructordashboard');
+})->name('instructordashboard');
+Route::get('/logout',function(){
+    auth()->logout();
+    return redirect('student-form');
+})->name('logout');

@@ -349,7 +349,7 @@ img {
      display: block;
 }
 html {
-     scroll-behavior: smooth 
+     scroll-behavior: smooth;
         font-family: Inter;
         font-size: 16px;
 }
