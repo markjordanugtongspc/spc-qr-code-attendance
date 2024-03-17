@@ -19,9 +19,9 @@
         <h1 class="text-5xl font-semibold" style="font-family: 'Carol Gothic', sans-serif;">Admin Dashboard</h1>
       </div>
       <div class="flex flex-col items-center justify-start h-screen">
-        <a href="#" class="btn btn-primary bg-red-500 hover:bg-red-700 mb-2">Students</a>
-        <a href="#" class="btn btn-primary bg-red-500 hover:bg-red-700 mb-2">Instructor</a>
-        <a href="#" class="btn btn-primary bg-red-500 hover:bg-red-700 mb-2">Attendance Log</a>
+        <a href="{{ route('student') }}" class="btn btn-primary bg-red-500 hover:bg-red-700 mb-2">Students</a>
+        <a href="{{ route('instructor') }}" class="btn btn-primary bg-red-500 hover:bg-red-700 mb-2">Instructor</a>
+        <a href="{{ route('attendance_log') }}" class="btn btn-primary bg-red-500 hover:bg-red-700 mb-2">Attendance Log</a>
       </div>
     </div>
 <div class="w-3/4">
