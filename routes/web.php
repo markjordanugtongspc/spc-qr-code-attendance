@@ -41,6 +41,11 @@ Route::get('/', function () {
     return view('gatepass');
 });
 
+// Route for the gatepass1
+Route::get('/gatepass1', function () {
+    return view('gatepass1');
+})->name('gatepass1');
+
 // Route for the admin page
 Route::get('/admin', function () {
     return view('admin');
@@ -51,33 +56,27 @@ Route::get('/instructor', function () {
     return view('instructor_admin');
 })->name('instructor');
 
-// Route for the attendance log page
-Route::get('/attendance_log', function () {
-    return view('attendance_log');
-})->name('attendance_log');
-
 // Route for the student page
 Route::get('/student', function () {
     return view('student_admin');
 })->name('student');
 
-// Route for the gatepass1
-Route::get('/gatepass1', function () {
-    return view('gatepass1');
-})->name('gatepass1');
-
-// Route for the gatepass1
-Route::get('/attendancelog', function () { // For url
-    return view('attendance_log'); // For View file
+// Route for the attendance log page
+Route::get('/attendance_log', function () {
+    return view('attendance_log');
 })->name('attendance_log');
-
-// Route for the signup
-Route::get('/signup', function () {
-    return view('signup');
-})->name('signup');
 
 // Route for the Login
 Route::get('/login', function () {
     return view('login');
 })->name('login');
 
+// Route for the signup
+Route::get('/signup', function () {
+    return view('signup');
+})->name('signup');
+
+// Route for the parent dashboard
+Route::get('/parents', function () {
+    return view('parents_dashboard');
+})->name('parents_dashboard');
