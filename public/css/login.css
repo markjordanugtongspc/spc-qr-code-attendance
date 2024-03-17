@@ -1,0 +1,134 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+nav{
+    background-color: maroon;
+    height: 50px;
+    list-style-type: none;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.navdiv{
+    display: flex;
+    justify-content: space-between;
+    
+}
+.mainlogo{
+    width: 50px;
+    height: 50px;
+}
+#title{
+    padding-left: 20px;
+    font-size: xx-large;
+    color: white;
+}
+.row01{
+    display: flex;
+    align-items: center;
+}
+
+
+
+/* menu bar*/
+.form-login{
+    display: flex;
+    justify-content: center;
+    
+}
+form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+    padding: 20px;
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 
+			0 10px 10px rgba(0,0,0,0.22);
+    border-radius: 10px;
+    width: 300px;
+    background-color: #d4a2a2;
+}
+.login{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+    padding: 20px;
+}
+h1{
+    font-weight: bold;
+	margin: 0;
+    font-family: 'Open Sans', sans-serif;
+}
+input{
+    background-color: #eee;
+	border: none;
+	padding: 12px 15px;
+	margin: 8px 0;
+	width: 100%;
+}
+button{
+    border-radius: 20px;
+	border: 1px solid maroon;
+	background-color: transparent;
+	color: #000000;
+	font-size: 12px;
+	font-weight: bold;
+	padding: 12px 45px;
+	letter-spacing: 1px;
+	transition: transform 80ms ease-in;
+    cursor: pointer;
+}
+button:hover {
+    color: #fff;
+    background-color:maroon;
+    box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+    transform: translateY(-3px);
+  }
+  
+button:active {
+    transform: translateY(0);
+}
+a{
+    color: #333;
+	font-size: 14px;
+	text-decoration: none;
+	margin: 15px 0;
+    text-align: center;
+}
+
+.stud-inst-signup{
+    display: flex;
+    align-items: center;
+    margin-top: 5px;
+    padding: 20px;
+    justify-content: space-between;
+}
+.button-28 {
+    background-color: rgb(153, 38, 38);
+    border-radius: 20px;
+    border: 2px solid #c2bebe;
+    color: #FFFFFF;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 10px 10px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: transform 80ms ease-in;
+    margin-left: 5px;
+    transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
+    touch-action: manipulation;
+
+
+}
+.button-28:hover {
+  color: black;
+  background-color: transparent;
+  box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+  transform: translateY(-3px);
+  border: 2px solid #ffffff;
+}
+
+.button-28:active {
+  transform: translateY(0);
+}
