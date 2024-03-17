@@ -23,9 +23,8 @@
 </head>
 
 <body>
-  <link rel="stylesheet" href="css/gatepass1_style.css" />
   <div>
-    <link rel="stylesheet" href="css/gatepass1_main.css" />
+    <link rel="stylesheet" href="css/gatepass1.css" />
 
     <div class="gate-pass-studentconfirm-container">
       <div class="gate-pass-studentconfirm-gate-pass-studentconfirm">
@@ -45,7 +44,7 @@
           <span>Verified SPC Student</span>
         </span>
         <img src="images/gatepass1/sample.png" class="gate-pass-studentconfirm-image1" />
-        <img src="images/gatepass/SPClogo.png" class="gate-pass-studentconfirm-spclogo3" />
+        <a href="{{ route('admin') }}"><img src="images/gatepass/SPClogo.png" class="gate-pass-studentconfirm-spclogo3" /></a>
         <span class="gate-pass-studentconfirm-text7">Generate Gate Pass</span>
       </div>
     </div>

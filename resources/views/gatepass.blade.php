@@ -26,9 +26,8 @@
   <link rel="stylesheet" href="https://unpkg.com/@teleporthq/teleport-custom-scripts/dist/style.css" />
 </head>
 <body>
-  <link rel="stylesheet" href="css/gatepass_style.css" />
   <div>
-    <link rel="stylesheet" href="css/gatepass_main.css" />
+    <link rel="stylesheet" href="css/gatepass.css" />
     <div class="gate-pass-container">
       <div class="gate-pass-gate-pass">
         <img src="images/gatepass/box.png" class="gate-pass-rectangle75" />

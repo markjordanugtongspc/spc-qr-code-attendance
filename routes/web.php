@@ -65,3 +65,8 @@ Route::get('/student', function () {
 Route::get('/gatepass1', function () {
     return view('gatepass1');
 })->name('gatepass1');
+
+// Route for the gatepass1
+Route::get('/attendancelog', function () { // For url
+    return view('attendance_log'); // For View file
+})->name('attendance_log');
