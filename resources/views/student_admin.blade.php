@@ -298,7 +298,7 @@
             alt="cas34828"
             class="students-cas3"
           />
-          <form action="{{ route('logout') }}" method="POST">
+          <form action="" method="POST">
             @csrf
             <button type="submit" class="students-text28 logout-button">
               <span>Log out</span>

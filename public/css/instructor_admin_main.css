@@ -11,7 +11,7 @@
 }
 .instructor-instructor {
   width: 100%;
-  height: 1024px;
+  height: 100vh;
   display: flex;
   overflow: hidden;
   position: relative;
@@ -20,80 +20,26 @@
   justify-content: flex-end;
   background-color: rgba(255, 255, 255, 1);
 }
-.instructor-rectangle168 {
-  top: 405px;
-  left: 377px;
-  width: 958px;
-  height: 125px;
-  position: absolute;
-}
-.instructor-rectangle169 {
-  top: 714px;
-  left: 377px;
-  width: 958px;
-  height: 125px;
-  position: absolute;
-}
-.instructor-rectangle170 {
-  top: 857px;
-  left: 377px;
-  width: 958px;
-  height: 125px;
-  position: absolute;
-}
-.instructor-rectangle166 {
-  top: 122px;
-  left: 377px;
-  width: 958px;
-  height: 125px;
-  position: absolute;
-}
-.instructor-rectangle167 {
-  top: 262px;
-  left: 377px;
-  width: 958px;
-  height: 125px;
-  position: absolute;
-}
-.instructor-rectangle155 {
+.rec {
   top: 0px;
-  left: -1px;
-  width: 282px;
-  height: 1024px;
+  left: 0px;
+  width: 350px;
+  height: 955px;
   position: absolute;
 }
-.instructor-group18 {
-  top: 20px;
-  left: -1px;
-  width: 284px;
-  height: 983.4418334960938px;
-  display: flex;
-  position: absolute;
-  align-items: flex-start;
-  flex-shrink: 1;
+.spclogo {
+  margin-top: 15px;
+  margin-left: 30px;
+  width: 60px;
+  height: 60px;
 }
-.instructor-image5 {
-  top: 971px;
-  left: 14px;
-  width: 15px;
-  height: 12px;
-  position: absolute;
-}
-.instructor-spcnremovebgpreview14 {
-  top: 0px;
-  left: 11px;
-  width: 46px;
-  height: 45px;
-  position: absolute;
-}
-.instructor-text {
-  top: 10px;
-  left: 64px;
+.AdminDashboard {
+  margin-top: 25px;
+  margin-left: 100px;
   color: transparent;
   width: 220px;
-  height: auto;
   position: absolute;
-  font-size: 25px;
+  font-size: 35px;
   font-style: Medium;
   text-align: left;
   font-family: "Carol Gothic";
@@ -107,231 +53,172 @@
   -webkit-text-fill-color: transparent;
   animation: wavingText 2s ease-in-out infinite;
 }
-/* 
-@keyframes wavingText {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-} */
-.instructor-image8 {
-  top: 930px;
-  left: 14px;
-  width: 15px;
-  height: 14px;
+.rec-group {
+  top: 1px;
+  left: 1px;
+  width: 350px;
+  height: 955px;
   position: absolute;
+  align-items: flex-start;
+  flex-shrink: 1;
 }
-.instructor-rectangle156 {
-  top: 110px;
-  left: 0px;
-  width: 282px;
-  height: 30px;
-  position: absolute;
-}
-.instructor-rectangle157 {
-  top: 157px;
-  left: 0px;
-  width: 282px;
-  height: 28px;
-  position: absolute;
-}
-.instructor-rectangle158 {
-  top: 202px;
-  left: 0px;
-  width: 282px;
-  height: 29px;
-  position: absolute;
-}
-.instructor-text02 {
-  top: 58px;
-  left: 46px;
+.students-text02 {
   color: rgba(74, 3, 11, 1);
-  width: 116px;
-  height: auto;
-  position: absolute;
-  font-size: 16px;
+  width: 349px;
+  font-size: 20px;
   font-style: Extra Bold;
-  text-align: left;
-  font-family: Inter;
-  font-weight: 700;
-  line-height: normal;
-  font-stretch: normal;
-  text-decoration: none;
-}
-
-.instructor-text04 {
-  top: 81px;
-  left: 46px;
-  color: rgba(74, 3, 11, 1);
-  width: 113px;
-  height: auto;
-  position: absolute;
-  font-size: 15px;
-  font-style: Extra Bold;
-  text-align: left;
-  font-family: "Roboto";
-  font-weight: 700;
-  line-height: normal;
-  font-stretch: normal;
-  text-decoration: none;
-}
-
-.instructor-text06 {
-  top: 208px;
-  left: 73px;
-  color: rgba(74, 3, 11, 1);
-  width: 145px;
-  height: auto;
-  position: absolute;
-  font-size: 15px;
-  font-style: Extra Bold;
-  text-align: left;
-  font-family: "Roboto";
-  font-weight: 700;
-  line-height: normal;
-  font-stretch: normal;
-  text-decoration: none;
-}
-.instructor-text08 {
-  top: 973.72314453125px;
-  left: 34px;
-  color: rgba(255, 255, 255, 1);
-  width: 84px;
-  height: auto;
-  position: absolute;
-  font-size: 6.461538791656494px;
-  font-style: Bold;
-  text-align: left;
+  text-align: center;
   font-family: Roboto;
   font-weight: 700;
   line-height: normal;
   font-stretch: normal;
-  text-decoration: underline;
+  background-color: rgb(217, 217, 217);
+  padding: 5px;
+  margin-top: 10%;
 }
-.instructor-text10 {
-  top: 954.861572265625px;
-  left: 34.292236328125px;
-  color: rgba(255, 255, 255, 1);
-  width: 68px;
-  height: auto;
-  position: absolute;
-  font-size: 6.461538791656494px;
-  font-style: Bold;
-  text-align: left;
+.instructor-text03 {
+  color: rgba(74, 3, 11, 1);
+  width: 349px;
+  font-size: 20px;
+  font-style: Extra Bold;
+  text-align: center;
   font-family: Roboto;
   font-weight: 700;
   line-height: normal;
   font-stretch: normal;
-  text-decoration: underline;
+  background-color: rgb(217, 217, 217);
+  padding: 5px;
+  margin-top: 3%;
 }
-.instructor-image6 {
-  top: 952px;
-  left: 14px;
-  width: 15px;
-  height: 11px;
-  position: absolute;
-}
-.instructor-text12 {
-  top: 935px;
-  left: 34px;
-  color: rgba(255, 255, 255, 1);
-  width: 50px;
-  height: auto;
-  position: absolute;
-  font-size: 6.461538791656494px;
-  font-style: Bold;
-  text-align: left;
-  font-family: Inter;
+.attendancelog-text04 {
+  color: rgba(74, 3, 11, 1);
+  width: 349px;
+  font-size: 20px;
+  font-style: Extra Bold;
+  text-align: center;
+  font-family: Roboto;
   font-weight: 700;
   line-height: normal;
   font-stretch: normal;
-  text-decoration: none;
+  background-color: rgb(217, 217, 217);
+  padding: 5px;
+  margin-top: 3%;
 }
+
+/* dept rec-colors ----------------------*/
+.cba {
+  top: 105px;
+  left: 460px;
+  width: 1310px;
+  height: 120px;
+  position: absolute;
+  box-shadow: rgb(0, 0, 0);
+}
+.coc {
+  top: 240px;
+  left: 460px;
+  width: 1310px;
+  height: 120px;
+  position: absolute;
+}
+.ccs {
+  top: 383px;
+  left: 460px;
+  width: 1310px;
+  height: 120px;
+  position: absolute;
+}
+.cas {
+  top: 525px;
+  left: 460px;
+  width: 1310px;
+  height: 120px;
+  position: absolute;
+}
+.coe {
+  top: 665px;
+  left: 460px;
+  width: 1310px;
+  height: 120px;
+  position: absolute;
+}
+.ced {
+  top: 805px;
+  left: 460px;
+  width: 1310px;
+  height: 120px;
+  position: absolute;
+}
+
+/* dept logo ---------------------*/ 
 .instructor-cba1 {
-  top: 133px;
-  left: 406px;
-  width: 100px;
-  height: 100px;
+  top: 120px;
+  left: 520px;
+  width:  85px;
+  height: 85px;
   position: absolute;
 }
 .instructor-coc1 {
-  top: 275px;
-  left: 406px;
-  width: 100px;
-  height: 100px;
-  position: absolute;
-}
-.instructor-coe1 {
-  top: 726px;
-  left: 406px;
-  width: 100px;
-  height: 100px;
-  position: absolute;
-}
-.instructor-ced1 {
-  top: 868px;
-  left: 406px;
-  width: 100px;
-  height: 102px;
-  position: absolute;
-}
-.instructor-rectangle160 {
-  top: -88px;
-  left: 275px;
-  width: 156px;
-  height: 306px;
-  position: absolute;
-}
-.instructor-rectangle164 {
-  top: 1024.4193115234375px;
-  left: 1217px;
-  width: 156px;
-  height: 306px;
-  position: absolute;
-}
-.instructor-rectangle165 {
-  top: 1025.4193115234375px;
-  left: 506.0211486816406px;
-  width: 156px;
-  height: 306px;
+  top: 260px;
+  left: 520px;
+  width:  85px;
+  height: 85px;
   position: absolute;
 }
 .instructor-ccs1 {
-  top: 417px;
-  left: 406px;
-  width: 100px;
-  height: 100px;
+  top: 400px;
+  left: 520px;
+  width:  85px;
+  height: 85px;
   position: absolute;
 }
-.instructor-text14 {
-  top: 29px;
-  left: 513px;
+.instructor-cas1 {
+  top: 540px;
+  left: 520px;
+  width:  85px;
+  height: 85px;
+  position: absolute;
+}
+.instructor-coe1 {
+  top: 680px;
+  left: 520px;
+  width:  85px;
+  height: 85px;
+  position: absolute;
+}
+.instructor-ced1 {
+  top: 820px;
+  left: 520px;
+  width:  85px;
+  height: 85px;
+  position: absolute;
+}
+
+/* Instructor (department) ---------------------*/
+.instructor-text1 {
+  top: 15px;
+  left: 775px;
   color: rgba(0, 0, 0, 1);
   width: 687px;
   height: auto;
   position: absolute;
-  font-size: 50px;
+  font-size: 60px;
   font-style: Black;
   text-align: center;
-  font-family: "Roboto";
-  font-weight: 900;
+  font-family: "Goblin One";
+  font-weight: 550;
   line-height: normal;
   font-stretch: normal;
   text-decoration: none;
 }
-.instructor-text16 {
-  top: 170px;
-  left: 627px;
+.instructor-text2 {
+  top: 145px;
+  left: 880px;
   color: rgba(0, 0, 0, 1);
   width: 459px;
   height: auto;
   position: absolute;
-  font-size: 20px;
+  font-size: 25px;
   font-style: Black;
   text-align: center;
   font-family: "Roboto";
@@ -340,14 +227,14 @@
   font-stretch: normal;
   text-decoration: none;
 }
-.instructor-text18 {
-  top: 311px;
-  left: 627px;
+.instructor-text3 {
+  top: 285px;
+  left: 880px;
   color: rgba(0, 0, 0, 1);
   width: 459px;
   height: auto;
   position: absolute;
-  font-size: 20px;
+  font-size: 25px;
   font-style: Black;
   text-align: center;
   font-family: "Roboto";
@@ -356,14 +243,14 @@
   font-stretch: normal;
   text-decoration: none;
 }
-.instructor-text20 {
-  top: 453px;
-  left: 627px;
+.instructor-text4 {
+  top: 425px;
+  left: 880px;
   color: rgba(0, 0, 0, 1);
   width: 459px;
   height: auto;
   position: absolute;
-  font-size: 20px;
+  font-size: 25px;
   font-style: Black;
   text-align: center;
   font-family: "Roboto";
@@ -372,14 +259,14 @@
   font-stretch: normal;
   text-decoration: none;
 }
-.instructor-text22 {
-  top: 606px;
-  left: 627px;
+.instructor-text5 {
+  top: 565px;
+  left: 880px;
   color: rgba(0, 0, 0, 1);
   width: 459px;
   height: auto;
   position: absolute;
-  font-size: 20px;
+  font-size: 25px;
   font-style: Black;
   text-align: center;
   font-family: "Roboto";
@@ -388,14 +275,14 @@
   font-stretch: normal;
   text-decoration: none;
 }
-.instructor-text24 {
-  top: 762px;
-  left: 627px;
+.instructor-text6 {
+  top: 705px;
+  left: 880px;
   color: rgba(0, 0, 0, 1);
   width: 459px;
   height: auto;
   position: absolute;
-  font-size: 20px;
+  font-size: 25px;
   font-style: Black;
   text-align: center;
   font-family: "Roboto";
@@ -404,14 +291,14 @@
   font-stretch: normal;
   text-decoration: none;
 }
-.instructor-text26 {
-  top: 905px;
-  left: 627px;
+.instructor-text7 {
+  top: 845px;
+  left: 880px;
   color: rgba(0, 0, 0, 1);
   width: 459px;
   height: auto;
   position: absolute;
-  font-size: 20px;
+  font-size: 25px;
   font-style: Black;
   text-align: center;
   font-family: "Roboto";
@@ -420,21 +307,16 @@
   font-stretch: normal;
   text-decoration: none;
 }
-.instructor-cas3 {
-  top: 559px;
-  left: 406px;
-  width: 100px;
-  height: 107px;
-  position: absolute;
-}
-.instructor-text28 {
-  top: 896px;
-  left: 13px;
+
+/* ------------------ */
+.logout {
+  top: 770px;
+  left: 17px;
   color: rgba(255, 255, 255, 1);
   width: 220px;
   height: auto;
   position: absolute;
-  font-size: 15px;
+  font-size: 30px;
   font-style: Medium;
   text-align: left;
   font-family: Roboto;
@@ -443,17 +325,72 @@
   font-stretch: normal;
   text-decoration: none;
 }
-.instructor-rectangle163 {
-  top: -89px;
-  right: -10px;
-  width: 156px;
-  height: 306px;
+.web {
+  top: 830px;
+  left: 14px;
+  width: 20px;
+  height: 20px;
   position: absolute;
 }
-.instructor-rectangle171 {
-  top: 558px;
-  left: 377px;
-  width: 958px;
-  height: 125px;
+.spcedu {
+  top: 830px;
+  left: 40px;
+  color: rgba(255, 255, 255, 1);
+  width: 50px;
+  height: auto;
   position: absolute;
+  font-size: 15px;
+  font-style: Bold;
+  text-align: left;
+  font-family: Roboto;
+  font-weight: 700;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.phone {
+  top: 865px;
+  left: 12px;
+  width: 24px;
+  height: 18px;
+  position: absolute;
+}
+.number {
+  top: 865px;
+  left: 40px;
+  color: rgba(255, 255, 255, 1);
+  width: 150px;
+  height: auto;
+  position: absolute;
+  font-size: 15px;
+  font-style: Bold;
+  text-align: left;
+  font-family: Roboto;
+  font-weight: 700;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: underline;
+}
+.msg {
+  top: 895px;
+  left: 14px;
+  width: 20px;
+  height: 20px;
+  position: absolute;
+}
+.gmail {
+  top: 895px;
+  left: 40px;
+  color: rgba(255, 255, 255, 1);
+  width: 84px;
+  height: auto;
+  position: absolute;
+  font-size: 15px;
+  font-style: Bold;
+  text-align: left;
+  font-family: Roboto;
+  font-weight: 700;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: underline;
 }

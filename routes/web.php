@@ -38,6 +38,7 @@ Route::get('/download/{filename}', function ($filename) {
 // Route for default branch
 Route::get('/', function () {
     return view('gatepass');
+    return view('gatepass');
 });
 
 // Route for the admin page
@@ -60,22 +61,12 @@ Route::get('/student', function () {
     return view('student_admin');
 })->name('student');
 
-// Route for the logout page
-Route::get('/logout', function () {
-    return view('logout');
-})->name('logout');
-
 // Route for the gatepass1
 Route::get('/gatepass1', function () {
     return view('gatepass1');
 })->name('gatepass1');
 
-// Route for qr code page
-Route::get('/qrcode', function () {
-    return view('qrcode');
-})->name('qrcode');
-
-// Route for the parents page
-Route::get('/parents', function () {
-    return view('parents_dashboard');
-})->name('parents');
+// Route for the gatepass1
+Route::get('/attendancelog', function () { // For url
+    return view('attendance_log'); // For View file
+})->name('attendance_log');
