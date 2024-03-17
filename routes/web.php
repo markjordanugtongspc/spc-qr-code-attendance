@@ -70,3 +70,14 @@ Route::get('/gatepass1', function () {
 Route::get('/attendancelog', function () { // For url
     return view('attendance_log'); // For View file
 })->name('attendance_log');
+
+// Route for the signup
+Route::get('/signup', function () {
+    return view('signup');
+})->name('signup');
+
+// Route for the Login
+Route::get('/login', function () {
+    return view('login');
+})->name('login');
+
