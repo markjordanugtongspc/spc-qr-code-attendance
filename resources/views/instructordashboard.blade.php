@@ -41,7 +41,7 @@
         <div class="container1-1">
             <div class="container11">
                 <ul class="row1">
-                    <li><img src="images/ccs11806-stk-200h.png" class="studentpp"></li>
+                    <li><img src="images/ccs.png" class="studentpp"></li>
                     <li>name</li>
                     <li>Instructor</li>
                     <li><button>edit profile</button></li>
