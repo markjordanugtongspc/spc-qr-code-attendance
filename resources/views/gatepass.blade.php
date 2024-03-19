@@ -36,9 +36,11 @@
         <img src="images/gatepass/box1.png" class="gate-pass-rectangle11" />
         <span class="gate-pass-text">Gatepass Scanner</span>
         <img src="images/gatepass/box3.png" class="gate-pass-rectangle72" />
-        <button class="bg-green-500 hover:bg-green-600 active:bg-green-700 text-white font-bold py-2 px-1 rounded h-8" style="top: 370px; left: 321px; width: 137px; height: auto; opacity: 0.9; position: absolute; font-size: 10px; font-style: Medium; text-align: center; font-family: Inter; font-weight: 500; line-height: normal; font-stretch: normal; text-decoration: none;">
-          Request Camera Access
-        </button>
+       <button>
+        <a href="{{ route('gatepass1') }}" class="bg-green-500 hover:bg-green-600 active:bg-green-700 text-white font-bold py-2 px-1 rounded h-8" style="top: 370px; left: 321px; width: 137px; height: auto; opacity: 0.9; position: absolute; font-size: 10px; font-style: Medium; text-align: center; font-family: Inter; font-weight: 500; line-height: normal; font-stretch: normal; text-decoration: none;">
+          Request Camera Access 
+        </a>
+       </button> 
         <img src="images/gatepass/vector2221-2hxt.svg" class="gate-pass-vector" />
         <span class="gate-pass-text1"><span>Student Info</span></span>
         <span class="gate-pass-text3"><span>Scan First</span></span>

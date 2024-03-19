@@ -18,17 +18,7 @@
         border-width: 0;
         border-style: solid;
       }
-      p,
-      li,
-      ul,
-      pre,
-      div,
-      h1,
-      h2,
-      h3,
-      h4,
-      h5,
-      h6,
+      p,li,ul, pre,div, h1, h2, h3, h4,h5,h6,
       figure,
       blockquote,
       figcaption {
@@ -226,7 +216,7 @@
             />
             <div class="button-container">
               <button class="students-text02 active">
-                <a class="student-text02">STUDENTS</a>
+                <a href="{{ route('student') }}" class="student-text02">STUDENTS</a>
               </button>
               <button class="students-text04">
                 <a href="{{ route('instructor') }}" class="student-text04">INSTRUCTOR</a>

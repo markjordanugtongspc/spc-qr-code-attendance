@@ -110,3 +110,8 @@ Route::get('/cas', function () {
 Route::get('/ced', function () {
     return view('ced_stud_list');
 })->name('ced');
+
+// Route for the parents
+Route::get('/parents', function () {
+    return view('parents_dashboard');
+})->name('parents');
