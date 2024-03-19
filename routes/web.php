@@ -81,3 +81,32 @@ Route::get('/login', function () {
     return view('login');
 })->name('login');
 
+// Route for the studentlist
+Route::get('/coe', function () {
+    return view('coe_stud_list');
+})->name('coe');
+
+// Route for the studentlist
+Route::get('/cba', function () {
+    return view('cba_stud_list');
+})->name('cba');
+
+// Route for the studentlist
+Route::get('/coc', function () {
+    return view('coc_stud_list');
+})->name('coc');
+
+// Route for the studentlist
+Route::get('/ccs', function () {
+    return view('ccs_stud_list');
+})->name('ccs');
+
+// Route for the studentlist
+Route::get('/cas', function () {
+    return view('cas_stud_list');
+})->name('cas');
+
+// Route for the studentlist
+Route::get('/ced', function () {
+    return view('ced_stud_list');
+})->name('ced');
