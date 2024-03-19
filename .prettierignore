@@ -1,0 +1,8 @@
+# Ignore CSS files
+**/*.css
+
+# Ignore JavaScript files
+**/*.js
+
+# Ignore Vue files
+**/*.vue
