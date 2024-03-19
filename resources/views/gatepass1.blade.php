@@ -36,9 +36,9 @@
         <span class="gate-pass-studentconfirm-text1">
           <span>User Confirmed</span>
         </span>
-        <span class="gate-pass-studentconfirm-text3">
-          <span>Stop Scanning</span>
-        </span>
+          <button >
+            <a class="gate-pass-studentconfirm-text3"> Stop Scanning </a>
+          </button>
         <img src="images/gatepass1/line204132-enb.svg" class="gate-pass-studentconfirm-line20" />
         <span class="gate-pass-studentconfirm-text5">
           <span>Verified SPC Student</span>

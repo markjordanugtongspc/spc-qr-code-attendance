@@ -109,4 +109,3 @@ Route::get('/cas', function () {
 // Route for the studentlist
 Route::get('/ced', function () {
     return view('ced_stud_list');
-})->name('ced');
