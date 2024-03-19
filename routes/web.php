@@ -38,7 +38,6 @@ Route::get('/download/{filename}', function ($filename) {
 // Route for default branch
 Route::get('/', function () {
     return view('gatepass');
-    return view('gatepass');
 });
 
 // Route for the gatepass1
@@ -109,3 +108,4 @@ Route::get('/cas', function () {
 // Route for the studentlist
 Route::get('/ced', function () {
     return view('ced_stud_list');
+})->name('ced');

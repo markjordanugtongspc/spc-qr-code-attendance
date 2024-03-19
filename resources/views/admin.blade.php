@@ -19,8 +19,8 @@
   </style>
 </head>
 
-<body>
-  <div class="admin-dashboard-container">
+<body class="h-screen box-border">
+  <div class="admin-dashboard-container w-full h-screen flex flex-col">
     <div class="admin-dashboard-admin-dashboard">
       <img src="images/side-rectangle.png" class="admin-dashboard-rectangle155" />
       <div class="admin-dashboard-group18">
@@ -67,7 +67,6 @@
     </div>
   </div>
 
-  <script></script>
 </body>
 
 </html>

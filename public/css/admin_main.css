@@ -295,10 +295,12 @@
 }
 html {
   line-height: 1.15;
+  height: 100%;
 }
 
 body {
   margin: 0;
+  height: 100%;
   font-weight: 400;
   font-style: normal;
   text-decoration: none;
