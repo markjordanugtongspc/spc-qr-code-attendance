@@ -46,12 +46,12 @@
         </span>
       </div>
       <div class="admin-dashboard-group17">
-        <img alt="cba11806" src="images/cba11806-5q7m-200h.png" class="admin-dashboard-cba1" />
-        <img alt="coc11806" src="images/coc11806-0gp5-200h.png" class="admin-dashboard-coc1" />
-        <img alt="cas11806" src="images/cas11806-f0bi-200w.png" class="admin-dashboard-cas1" />
-        <img alt="ccs11806" src="images/ccs11806-stk-200h.png" class="admin-dashboard-ccs1" />
-        <img alt="coe11806" src="images/coe11806-f82l-200h.png" class="admin-dashboard-coe1" />
-        <img alt="ced11806" src="images/ced11806-h9hn-200w.png" class="admin-dashboard-ced1" />
+        <img alt="cba11806" src="images/cba.png" class="admin-dashboard-cba1" />
+        <img alt="coc11806" src="images/coc.png" class="admin-dashboard-coc1" />
+        <img alt="cas11806" src="images/cas.png" class="admin-dashboard-cas1" />
+        <img alt="ccs11806" src="images/ccs.png" class="admin-dashboard-ccs1" />
+        <img alt="coe11806" src="images/coe.png" class="admin-dashboard-coe1" />
+        <img alt="ced11806" src="images/ced.png" class="admin-dashboard-ced1" />
       </div>
       <img alt="Rectangle1634828" src="images/rectangle1634828-15jt.svg" class="admin-dashboard-rectangle163" />
       <img alt="Rectangle1644828" src="images/rectangle1644828-t6g.svg" class="admin-dashboard-rectangle164" />

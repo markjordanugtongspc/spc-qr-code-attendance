@@ -109,27 +109,27 @@
           </div>
           <a href="YOUR_LOGO_ROUTE"
             ><img
-              src="images/instructor/cba14828-rul-200h.png"
+              src="images/instructor/cba.png"
               alt="cba14828"
               class="instructor-cba1" /></a
           ><a href="YOUR_LOGO_ROUTE"
             ><img
-              src="images/instructor/coc14828-bo9-200h.png"
+              src="images/instructor/coc.png"
               alt="coc14828"
               class="instructor-coc1" /></a
           ><a href="YOUR_LOGO_ROUTE"
             ><img
-              src="images/instructor/coe14828-cbm-200h.png"
+              src="images/instructor/coe.png"
               alt="coe14828"
               class="instructor-coe1" /></a
           ><a href="YOUR_LOGO_ROUTE"
             ><img
-              src="images/instructor/ced14828-1hyf-200w.png"
+              src="images/instructor/ced.png"
               alt="ced14828"
               class="instructor-ced1" /></a
           ><a href="YOUR_LOGO_ROUTE"
             ><img
-              src="images/instructor/ccs14828-s9h-200h.png"
+              src="images/instructor/ccs.png"
               alt="ccs14828"
               class="instructor-ccs1" /></a
           ><span class="instructor-text14"><span>INSTRUCTOR</span></span
@@ -147,7 +147,7 @@
             ><span>College of Education</span></span
           ><a href="YOUR_LOGO_ROUTE"
             ><img
-              src="images/instructor/cas34828-rse-200w.png"
+              src="images/instructor/cas.png"
               alt="cas34828"
               class="instructor-cas3" /></a
           ><a href="YOUR_LOGOUT_ROUTE" class="instructor-text28"

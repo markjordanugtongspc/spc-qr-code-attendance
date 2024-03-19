@@ -239,22 +239,22 @@
             <span class="students-text12"><span>my.spc.edu.ph</span></span>
           </div>
           <img
-            src="images/student_admin/cba14828-tnagm-200h.png"
+            src="images/student_admin/cba.png"
             alt="cba14828"
             class="students-cba1"
           />
           <img
-            src="images/student_admin/coc14828-y0na-200h.png"
+            src="images/student_admin/coc.png"
             alt="coc14828"
             class="students-coc1"
           />
           <img
-            src="images/student_admin/coe14828-fx6b-200h.png"
+            src="images/student_admin/coe.png"
             alt="coe14828"
             class="students-coe1"
           />
           <img
-            src="images/student_admin/ced14828-266v-200w.png"
+            src="images/student_admin/ced.png"
             alt="ced14828"
             class="students-ced1"
           />
@@ -274,7 +274,7 @@
             class="students-rectangle165"
           />
           <img
-            src="images/student_admin/ccs14828-xosp-200h.png"
+            src="images/student_admin/ccs.png"
             alt="ccs14828"
             class="students-ccs1"
           />
@@ -296,7 +296,7 @@
           </span>
           <span class="students-text26"><span>College of Education</span></span>
           <img
-            src="images/student_admin/cas34828-6hdo-200w.png"
+            src="images/student_admin/cas.png"
             alt="cas34828"
             class="students-cas3"
           />

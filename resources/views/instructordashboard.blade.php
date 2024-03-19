@@ -18,7 +18,7 @@
                     <a class="dropdown-trigger" href="#">Menu</a>
                     <ul class="dropdown-menu">
                         <li class="dropdown-menu-item">
-                            <p>Christian Maglangit</p>
+                            <p>Ryan Balisi</p>
                         </li>
                         <li class="dropdown-menu-item">
                             <a href="#">Profile</a>
