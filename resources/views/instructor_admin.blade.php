@@ -21,65 +21,65 @@
       <div class="flex flex-col items-center justify-start h-screen">
         <a href="{{ route('student') }}" class="btn btn-primary bg-red-500 hover:bg-red-700 mb-2">Students</a>
         <a href="{{ route('instructor') }}" class="btn btn-primary bg-red-500 hover:bg-red-700 mb-2">Instructor</a>
-        <a href="{{ route('attendance_log') }}" class="btn btn-primary bg-red-500 hover:bg-red-700 mb-2">Attendance Log</a>
+        <a href="{{ route('attendancelog') }}" class="btn btn-primary bg-red-500 hover:bg-red-700 mb-2">Attendance Log</a>
       </div>
     </div>
-<div class="w-3/4">
-  <div class="flex items-center justify-center py-8">
-    <h1 class="text-4xl font-semibold">Instructor</h1>
+    <div class="w-3/4">
+      <div class="flex items-center justify-center py-8">
+        <h1 class="text-4xl font-semibold">Instructor</h1>
+      </div>
+      <div class="grid grid-cols-6 gap-4 mx-8">
+        <div class="flex flex-col">
+          <a href="YOUR_LOGO_ROUTE" class="flex flex-row items-center">
+            <div class="bg-white rounded-lg p-2">
+              <img src="images/instructor/cba.png" class="instructor-cba1" />
+              <p class="text-center">College of Business Administration</p>
+            </div>
+          </a>
+        </div>
+        <div class="flex flex-col items-center">
+          <a href="YOUR_LOGO_ROUTE" class="flex flex-row items-center">
+            <div class="bg-white rounded-lg p-2">
+              <img src="images/instructor/coc.png" class="instructor-coc1" />
+              <p class="text-center">College of Computing</p>
+            </div>
+          </a>
+        </div>
+        <div class="flex flex-col items-center">
+          <a href="YOUR_LOGO_ROUTE" class="flex flex-row items-center">
+            <div class="bg-white rounded-lg p-2">
+              <img src="images/instructor/ccs.png" class="instructor-ccs1" />
+              <p class="text-center">College of Computer Studies</p>
+            </div>
+          </a>
+        </div>
+        <div class="flex flex-col items-center">
+          <a href="YOUR_LOGO_ROUTE" class="flex flex-row items-center">
+            <div class="bg-white rounded-lg p-2">
+              <img src="images/instructor/cas.png" class="instructor-cas1" />
+              <p class="text-center">College of Arts and Sciences</p>
+            </div>
+          </a>
+        </div>
+        <div class="flex flex-col items-center">
+          <a href="YOUR_LOGO_ROUTE" class="flex flex-row items-center">
+            <div class="bg-white rounded-lg p-2">
+              <img src="images/instructor/coe.png" class="instructor-coe1" />
+              <p class="text-center">College of Engineering</p>
+            </div>
+          </a>
+        </div>
+        <div class="flex flex-col items-center">
+          <a href="YOUR_LOGO_ROUTE" class="flex flex-row items-center">
+            <div class="bg-white rounded-lg p-2">
+              <img src="images/instructor/ced.png" class="instructor-ced1" />
+              <p class="text-center">College of Education</p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
   </div>
-  <div class="grid grid-cols-6 gap-4 mx-8">
-    <div class="flex flex-col">
-      <a href="YOUR_LOGO_ROUTE" class="flex flex-row items-center">
-        <div class="bg-white rounded-lg p-2">
-          <img src="images/instructor/cba.png" class="instructor-cba1" />
-          <p class="text-center">College of Business Administration</p>
-        </div>
-      </a>
-    </div>
-    <div class="flex flex-col items-center">
-      <a href="YOUR_LOGO_ROUTE" class="flex flex-row items-center">
-        <div class="bg-white rounded-lg p-2">
-          <img src="images/instructor/coc.png" class="instructor-coc1" />
-          <p class="text-center">College of Computing</p>
-        </div>
-      </a>
-    </div>
-    <div class="flex flex-col items-center">
-      <a href="YOUR_LOGO_ROUTE" class="flex flex-row items-center">
-        <div class="bg-white rounded-lg p-2">
-          <img src="images/instructor/ccs.png" class="instructor-ccs1" />
-          <p class="text-center">College of Computer Studies</p>
-        </div>
-      </a>
-    </div>
-    <div class="flex flex-col items-center">
-      <a href="YOUR_LOGO_ROUTE" class="flex flex-row items-center">
-        <div class="bg-white rounded-lg p-2">
-          <img src="images/instructor/cas.png" class="instructor-cas1" />
-          <p class="text-center">College of Arts and Sciences</p>
-        </div>
-      </a>
-    </div>
-    <div class="flex flex-col items-center">
-      <a href="YOUR_LOGO_ROUTE" class="flex flex-row items-center">
-        <div class="bg-white rounded-lg p-2">
-          <img src="images/instructor/coe.png" class="instructor-coe1" />
-          <p class="text-center">College of Engineering</p>
-        </div>
-      </a>
-    </div>
-    <div class="flex flex-col items-center">
-      <a href="YOUR_LOGO_ROUTE" class="flex flex-row items-center">
-        <div class="bg-white rounded-lg p-2">
-          <img src="images/instructor/ced.png" class="instructor-ced1" />
-          <p class="text-center">College of Education</p>
-        </div>
-      </a>
-    </div>
-  </div>
-</div>
-</div>
 </body>
 
 </html>

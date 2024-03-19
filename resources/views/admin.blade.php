@@ -34,14 +34,14 @@
         <img src="images/rec-ke4i.svg" class="admin-dashboard-rectangle156" />
         <img src="images/rec-37nr.svg" class="admin-dashboard-rectangle157" />
         <img src="images/rec-g7.svg" class="admin-dashboard-rectangle158" />
-        <button onclick="window.location.href = '{{ route('student') }}'">
+        <button class="admin-dashboard-button" onclick="window.location.href = '{{ route('student') }}'">
           <a href="{{ route('student') }}" class="admin-dashboard-text02">STUDENTS</a>
         </button>
-        <button onclick="window.location.href = '{{ route('instructor') }}'">
+        <button class="admin-dashboard-button" onclick="window.location.href = '{{ route('instructor') }}'">
           <a href="{{ route('instructor') }}" class="admin-dashboard-text04">INSTRUCTOR</a>
         </button>
-        <button onclick="window.location.href = '{{ route('attendance_log') }}'">
-          <a href="attendance_log.blade.php" class="admin-dashboard-text06">ATTENDANCE LOG</a>
+        <button class="admin-dashboard-button" onclick="window.location.href = '{{ route('attendancelog') }}'">
+          <a class="admin-dashboard-text06">ATTENDANCE LOG</a>
         </button>
         <span class="admin-dashboard-text08">
           <span>spcregistrar@gmail.com</span>
