@@ -1,12 +1,14 @@
 <!-- Using tailwind Css for styling and added php foreach loop to display the data from the database. -->
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <title>Attendance Log</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
+
 <body class="bg-gray-200" style="background-color: rgb(217, 217, 217);">
     <div class="bg-red-700 h-10" style="background-color: rgb(74, 3, 11);"></div>
     <div class="flex items-center justify-between mx-10 mt-5"> <!-- Reduced margin-top to mt-4 -->
@@ -60,8 +62,9 @@
         <span class="ml-4 py-1">Showing 0 to 0 of 0 entries</span>
     </div>
     <div class="absolute bottom-0 right-0 mb-3 mr-4">
-        <button class="px-4 py-2 ml-1 font-medium text-white bg-red-700 rounded-md hover:bg-red-500">Previous</button> 
+        <button class="px-4 py-2 ml-1 font-medium text-white bg-red-700 rounded-md hover:bg-red-500">Previous</button>
         <button class="px-4 py-2 ml-1 font-medium text-white bg-red-700 rounded-md hover:bg-red-500">Next</button>
     </div>
 </body>
+
 </html>

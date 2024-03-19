@@ -62,9 +62,9 @@ Route::get('/student', function () {
 })->name('student');
 
 // Route for the attendance log page
-Route::get('/attendance_log', function () {
+Route::get('/attendancelog', function () {
     return view('attendance_log');
-})->name('attendance_log');
+})->name('attendancelog');
 
 // Route for the Login
 Route::get('/login', function () {
