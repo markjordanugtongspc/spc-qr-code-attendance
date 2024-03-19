@@ -141,6 +141,14 @@
   font-stretch: normal;
   text-decoration: none;
 }
+
+.admin-dashboard-text06:hover {
+  cursor: pointer;
+}
+
+.admin-dashboard-text06:active {
+  transform: scale(0.95);
+}
 .admin-dashboard-text08 {
   top: 973.72314453125px;
   left: 34px;

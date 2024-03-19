@@ -1,6 +1,7 @@
 <!-- Using tailwind Css for styling and added php foreach loop to display the data from the database. -->
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <title>Attendance Log</title>
     <meta charset="UTF-8">
@@ -62,8 +63,9 @@
         <span class="ml-4 py-1">Showing 0 to 0 of 0 entries</span>
     </div>
     <div class="absolute bottom-0 right-0 mb-3 mr-4">
-        <button class="px-4 py-2 ml-1 font-medium text-white bg-red-700 rounded-md hover:bg-red-500">Previous</button> 
+        <button class="px-4 py-2 ml-1 font-medium text-white bg-red-700 rounded-md hover:bg-red-500">Previous</button>
         <button class="px-4 py-2 ml-1 font-medium text-white bg-red-700 rounded-md hover:bg-red-500">Next</button>
     </div>
 </body>
+
 </html>
