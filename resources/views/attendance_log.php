@@ -12,7 +12,7 @@
 <body class="bg-gray-200" style="background-color: rgb(217, 217, 217);">
     <div class="bg-red-700 h-10" style="background-color: rgb(74, 3, 11);"></div>
     <div class="flex items-center justify-between mx-10 mt-5"> <!-- Reduced margin-top to mt-4 -->
-        <h1 class="text-3xl font-bold">ATTENDANCE LOG</h1>
+        <h1 class="text-3xl font-bold ml-48">ATTENDANCE LOG</h1>
         <div class="flex ml-20 space-x-4">
             <div>
                 <span class="font-medium">Date Today:</span>
@@ -26,9 +26,10 @@
                 <span class="font-medium">Time in contains:</span>
                 <input class="px-2 py-1 ml-2 rounded-md" type="search" placeholder="7:00 am...">
             </div>
-            <button class="px-4 py-2 ml-4 font-medium text-white bg-red-700 rounded-md hover:bg-red-500">Search</button>
+            <button class="px-4 py-1 ml-4 font-medium text-white bg-red-700 rounded-md hover:bg-red-500">Search</button>
         </div>
     </div>
+    
     <table class="w-full mx-auto mt-4 center">
         <tr>
             <th class="px-6 py-3 border" style="background-color: rgb(198, 170, 170);">ID NUMBER</th>

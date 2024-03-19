@@ -56,6 +56,11 @@ Route::get('/instructor', function () {
     return view('instructor_admin');
 })->name('instructor');
 
+// Route for the parent dashboard
+Route::get('/parents', function () {
+    return view('parents_dashboard');
+})->name('parents_dashboard');
+
 // Route for the student page
 Route::get('/student', function () {
     return view('student_admin');
@@ -76,7 +81,32 @@ Route::get('/signup', function () {
     return view('signup');
 })->name('signup');
 
-// Route for the parent dashboard
-Route::get('/parents', function () {
-    return view('parents_dashboard');
-})->name('parents_dashboard');
+// Route for the studentlist
+Route::get('/coe', function () {
+    return view('coe_stud_list');
+})->name('coe');
+
+// Route for the studentlist
+Route::get('/cba', function () {
+    return view('cba_stud_list');
+})->name('cba');
+
+// Route for the studentlist
+Route::get('/coc', function () {
+    return view('coc_stud_list');
+})->name('coc');
+
+// Route for the studentlist
+Route::get('/ccs', function () {
+    return view('ccs_stud_list');
+})->name('ccs');
+
+// Route for the studentlist
+Route::get('/cas', function () {
+    return view('cas_stud_list');
+})->name('cas');
+
+// Route for the studentlist
+Route::get('/ced', function () {
+    return view('ced_stud_list');
+})->name('ced');
