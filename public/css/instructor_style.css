@@ -1,0 +1,220 @@
+* {
+  margin-top: 0px;
+  margin-left: 0px;
+}
+.header {
+  display: flex;
+  background-color: rgb(74, 3, 11);
+  padding: 5px;
+}
+.header img {
+  height: 30px;
+  width: 30px;
+  margin-left: 5px;
+}
+.header #qr {
+  font-size: large;
+  margin-top: 4px;
+  margin-left: 5px;
+  font-weight: bold;
+  color: rgb(15, 163, 56);
+}
+.header #code {
+  font-size: medium;
+  margin-top: 5px;
+  margin-left: 5px;
+  font-weight: bold;
+  color: white;
+  white-space: nowrap;
+}
+.header select {
+  margin-top: 5px;
+  height: 20px;
+  margin-left: 1170px;
+}
+/*user profile*/
+.user-profile {
+  margin-top: 35px;
+  margin-left: 35px;
+  border: 1px solid maroon;
+  width: 250px;
+  border-radius: 5px;
+  background-color: rgb(217, 217, 217);
+}
+.user-profile #circle {
+  margin-top: 10px;
+  text-align: center;
+  font-size: 150px;
+}
+.user-profile #name {
+  font-weight: bold;
+  font-family: arial;
+  margin-left: 70px;
+}
+.user-profile #instructor {
+  font-size: small;
+  font-family: arial;
+  margin-left: 95px;
+}
+.user-profile #check {
+  text-align: center;
+}
+.user-profile button {
+  margin-top: 5px;
+  margin-left: 87px;
+  background-color: rgb(179, 177, 177);
+  border-radius: 7px;
+  padding: 2px;
+  margin-bottom: 10px;
+}
+.user-profile .information {
+  font-size: 12px;
+  font-family: arial;
+  margin-left: 10px;
+}
+.user-profile #list {
+  background-color: rgb(179, 177, 177);
+  border-radius: 7px;
+  padding: 2px;
+  margin-top: 20px;
+  margin-left: 10px;
+}
+/*scan qr code*/
+.qr {
+  width: 1130px;
+  padding: 5px;
+  height: 90px;
+  font-family: arial;
+  font-size: small;
+  border-radius: 3px;
+  margin-top: -445px;
+  margin-left: 360px;
+  border: 1px solid maroon;
+  background-color: rgb(217, 217, 217);
+}
+.qr button {
+  background-color: rgb(197, 188, 188);
+  width: 1125px;
+  text-align: left;
+  padding: 5px;
+  margin-top: 10px;
+  border-radius: 3px;
+}
+/**/
+.container {
+  margin-top: 50px;
+  margin-left: 360px;
+  width: 1140px;
+  border: 1px solid maroon;
+  height: 500px;
+  background-color: rgb(217, 217, 217);
+}
+.container .cc106 {
+  text-align: center;
+  font-weight: bold;
+  margin-top: 40px;
+  margin-left: 100px;
+  width: 150px;
+  border: 1px solid white;
+  padding: 20px;
+  box-shadow: 2px 2px gray;
+  border-radius: 5px;
+  background-color: white;
+}
+.container .cc107 {
+  text-align: center;
+  font-weight: bold;
+  margin-top: -60px;
+  margin-left: 450px;
+  width: 150px;
+  border: 1px solid white;
+  padding: 20px;
+  box-shadow: 2px 2px gray;
+  border-radius: 5px;
+  background-color: white;
+}
+.container .cc108 {
+  text-align: center;
+  font-weight: bold;
+  margin-top: -60px;
+  margin-left: 850px;
+  width: 150px;
+  border: 1px solid white;
+  padding: 20px;
+  box-shadow: 2px 2px gray;
+  border-radius: 5px;
+  background-color: white;
+}
+.entries {
+  font-family: arial;
+  font-size: small;
+  padding: 5px;
+  border: 1px solid black;
+  margin-top: 60px;
+  margin-left: 10px;
+  width: 1108px;
+  height: 320px;
+  background-color: rgb(158, 158, 158);
+}
+.entries #search {
+  margin-left: 670px;
+}
+.entries input {
+  background-color: rgb(241, 227, 227);
+  width: 250px;
+  border-radius: 5px;
+}
+/**/
+.entries1 {
+  margin-top: 50px;
+}
+.entries1 select {
+  padding: 5px;
+  text-align: center;
+  width: 150px;
+  background-color: rgb(211, 205, 205);
+}
+.entries1 .timein {
+  margin-top: -28px;
+  margin-left: 770px;
+}
+.entries1 .timeout {
+  margin-top: -29px;
+  margin-left: 930px;
+}
+.info {
+  margin-top: 10px;
+}
+.info #one {
+  margin-left: 40px;
+}
+.info #two {
+  margin-left: 70px;
+}
+.info #three {
+  margin-left: 70px;
+}
+.info #four {
+  margin-left: 125px;
+}
+.info #five {
+  margin-left: 120px;
+}
+.info #six {
+  margin-left: 100px;
+}
+.info #seven {
+  margin-left: 110px;
+}
+.show {
+  margin-top: 170px;
+}
+.show button {
+  background-color: rgb(211, 173, 173);
+  width: 100px;
+  padding: 1px;
+  text-align: center;
+}
+.show #pre {
+  margin-left: 760px;
+}
