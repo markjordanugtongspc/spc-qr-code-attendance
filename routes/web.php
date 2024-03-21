@@ -126,3 +126,8 @@ Route::get('/instructordashboard', function () {
 Route::get('/instructor_sub_views', function () {
     return view('USER/instructor_sub_views');
 })->name('instructor_sub_views');
+
+// Route for the Srudent dashboard
+Route::get('/studentdashboard', function () {
+    return view('studentdashboard');
+})->name('studentdashboard');
