@@ -52,7 +52,7 @@
     </div>
     <div class="container">
         <div class="cc106">
-            <span><a href="{{ route('instructor_sub_views') }}">CC106-50000 </a></span>
+            <span>CC106-50000</span>
         </div>
         <div class="cc107">
             <span>CC107-50000</span>
@@ -97,7 +97,7 @@
             </div>
             <div class="info">
                 <span id="one">2022-00752</span>
-                <span id="two">Mark Jordan Bayot</span>
+                <span id="two">Mark Jodan Bayot</span>
                 <span id="three">BSIT</span>
                 <span id="four">Male</span>
                 <span id="five">2nd Year</span>
