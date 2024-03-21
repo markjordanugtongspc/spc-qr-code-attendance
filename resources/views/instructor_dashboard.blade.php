@@ -13,7 +13,7 @@
     <div class="header">
         <a href="{{ route('login') }}"><img src="images/spc-logo.png" alt="spc_logo"></a>
         <span id="qr">QR</span>
-        <span id="code">Code SPC Attendance System</span>
+        <span id="code">Code Attendance Monitoring System</span>
         <select name="menu" id="menu">
             <option value="menu">Menu</option>
         </select>
