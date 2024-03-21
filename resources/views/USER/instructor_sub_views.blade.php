@@ -1,3 +1,4 @@
+<!-- Uses basic css then use font-awesome for icons -->
 <!DOCTYPE html>
 <html lang="en">
 

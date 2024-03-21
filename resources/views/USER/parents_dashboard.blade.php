@@ -1,3 +1,4 @@
+<!-- Uses customize css (bootstrap) then use font-awesome for icons -->
 <!DOCTYPE html>
 <html data-bs-theme="light" lang="en">
 
@@ -22,7 +23,9 @@
     <div class="container" style="margin: 0px;padding-left: 0px;margin-bottom: 0px;margin-left: 0px;margin-right: 0px;height: 600px;padding-bottom: 0px;padding-right: 0px;max-width: 1535px;">
         <div class="row" style="margin-right: 0px;margin-left: 0px;background: var(--bs-danger-text-emphasis);height: 45px;">
             <div class="col-lg-1" style="width: 40px;height: 30px;padding: 5px;">
-                <img width="100" height="80" src="assets/img/spc-logo.png" style="width: 35px;height: 30px;">
+                <a href="{{ route('login') }}">
+                    <img width="100" height="80" src="assets/img/spc-logo.png" style="width: 35px;height: 30px;">
+                </a>
             </div>
             <div class="col-lg-8" style="padding: 3px;">
                 <h1 style="font-size: 17px;color: var(--bs-body-bg);margin-bottom: 0px;padding-left: 15px;padding-top: 9px;font-family: 'Goblin One', serif;">Parents Dashboard</h1>

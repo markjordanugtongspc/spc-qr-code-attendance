@@ -1,3 +1,4 @@
+<!-- Uses basic css then use font-awesome for icons -->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -52,7 +53,7 @@
     </div>
     <div class="container">
         <div class="cc106">
-            <span><a href="{{ route('instructor_sub_views') }}">CC106-50000 </a></span>
+            <span><a href="{{ route('instructor_sub_views') }}" style="text-decoration: none;">CC106-50000 </a></span>
         </div>
         <div class="cc107">
             <span>CC107-50000</span>
