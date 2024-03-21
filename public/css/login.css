@@ -163,13 +163,14 @@ button.ghost {
 	height: 100%;
 	transition: all 0.6s ease-in-out;
 }
-
+.form-container a{
+	color: rgb(212, 193, 193);
+}
 .sign-in-container {
 	left: 0;
 	width: 50%;
 	z-index: 2;
 }
-
 
 .container.right-panel-active .sign-in-container {
 	transform: translateX(100%);

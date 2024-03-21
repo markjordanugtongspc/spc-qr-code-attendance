@@ -100,7 +100,7 @@
   margin-top: 10px;
   border-radius: 3px;
 }
-/**/
+/*for instructor dashboard*/
 .container {
   margin-top: 50px;
   margin-left: 360px;
@@ -120,6 +120,14 @@
   box-shadow: 2px 2px gray;
   border-radius: 5px;
   background-color: white;
+}
+.container .cc106 a{
+  color: black;
+}
+.cc106 :hover {
+  background-color: rgb(234, 224, 224);
+  transform: scale(2);
+
 }
 .container .cc107 {
   text-align: center;
@@ -145,6 +153,34 @@
   border-radius: 5px;
   background-color: white;
 }
+
+/*for instructor subject views*/
+.container {
+  margin-top: 50px;
+  margin-left: 360px;
+  width: 1140px;
+  border: 1px solid maroon;
+  height: 500px;
+  background-color: rgb(217, 217, 217);
+}
+.icon {
+  font-size: 40px;
+  margin-top: 48px;
+  margin-left: 40px;
+}
+.container .cc106_2 {
+  text-align: center;
+  font-weight: bold;
+  margin-top: -58px;
+  margin-left: 450px;
+  width: 150px;
+  border: 1px solid white;
+  padding: 20px;
+  box-shadow: 2px 2px gray;
+  border-radius: 5px;
+  background-color: white;
+}
+
 .entries {
   font-family: arial;
   font-size: small;
@@ -189,7 +225,7 @@
   margin-left: 40px;
 }
 .info #two {
-  margin-left: 70px;
+  margin-left: 60px;
 }
 .info #three {
   margin-left: 70px;
