@@ -110,11 +110,6 @@ Route::get('/ced', function () {
     return view('ced_stud_list');
 })->name('ced');
 
-// Route for the student dashboard
-Route::get('/studentdashboard', function () {
-    return view('student_dashboard');
-})->name('studentdashboard');
-
 // Route for the instructor dashboard
 Route::get('/instructordashboard', function () {
     return view('instructor_dashboard');
