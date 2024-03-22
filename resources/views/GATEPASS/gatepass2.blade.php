@@ -1,15 +1,14 @@
-<!--  -->
 <!DOCTYPE html>
 <html lang="english">
 
 <head>
-    <title>Gatepass</title>
+    <title>QR CODE</title>
     <link rel="icon" type="image/x-icon" href="/images/spc-logo.ico">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta charset="utf-8" />
     <meta property="twitter:card" content="summary_large_image" />
-
     <style data-tag="reset-style-sheet">
+        /* prettier-ignore */
         html {
             line-height: 1.15
         }
@@ -117,30 +116,10 @@
             background-color: var(--dl-color-gray-white)
         }
     </style>
+
     <link rel="stylesheet" href="https://unpkg.com/animate.css@4.1.1/animate.css" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&amp;display=swap" data-tag="font" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Goblin+One:wght@400&amp;display=swap" data-tag="font" />
-
-    <style>
-        .qr-reader-container {
-            display: flex;
-            justify-content: flex-start;
-            /* Aligns children to the left */
-            align-items: center;
-            /* Centers children vertically, adjust as needed */
-        }
-
-        .qr-reader-results {
-            flex: 1;
-            /* Take remaining space */
-            margin-left: 16px;
-            /* Add some space between the camera and result */
-            font-size: 18px;
-            /* Adjust font size as needed */
-            line-height: 1.5;
-            /* Add some separation between lines */
-        }
-    </style>
     <link rel="stylesheet" href="https://unpkg.com/@teleporthq/teleport-custom-scripts/dist/style.css" />
 </head>
 
@@ -150,18 +129,23 @@
 
         <div class="gate-pass-studentconfirm-container">
             <div class="gate-pass-studentconfirm-gate-pass-studentconfirm">
-                <img src="images/gatepass1/box.png" class="gate-pass-studentconfirm-rectangle75" />
+                <div class="gate-pass-studentconfirm-rectangle75">
+                    <div id="qr-reader" style="width:350px; height:350px; display:none;">
+                    </div>
+                </div>
+
+                <button id="manage-camera-access">
+                    <span class="gate-pass-studentconfirm-text3">Click to Manage Access</span>
+                    <input type="file" id="upload-qr-code" style="display: none;">
+                    <label for="upload-qr-code">
+                        <i class="fas fa-upload"></i> <!-- Replace with the appropriate icon class -->
+                    </label>
+                </button>
+
                 <img src="images/gatepass1/box1.png" class="gate-pass-studentconfirm-rectangle11" />
                 <img src="images/gatepass1/pic.png" class="gate-pass-studentconfirm-rectangle72" />
-                <img src="images/gatepass1/rectangle744132-f6p-200h.png" class="gate-pass-studentconfirm-rectangle74" />
                 <span class="gate-pass-studentconfirm-text">Gate Pass ID</span>
-                <!-- Removed the span with User Confirmed -->
-                <!-- Added the QR code reader container -->
-                <div id="qr-reader" style="width:500px; height:500px; display:none;"></div>
-                <!-- Changed the button text and added an id -->
-                <button id="manage-camera-access" onclick="manageCameraAccess()">
-                    <span class="gate-pass-studentconfirm-text3">Click to Manage Access</span>
-                </button>
+
                 <img src="images/gatepass1/line204132-enb.svg" class="gate-pass-studentconfirm-line20" />
                 <span class="gate-pass-studentconfirm-text5">
                     <span>Verified SPC Student</span>
@@ -172,64 +156,45 @@
             </div>
         </div>
     </div>
+    <script src="https://unpkg.com/html5-qrcode"></script>
     <script>
-        // Function to handle camera access
-        function manageCameraAccess() {
-            var qrReader = document.getElementById('qr-reader');
-            var button = document.getElementById('manage-camera-access');
+        document.addEventListener('DOMContentLoaded', () => {
+            const qrReader = document.getElementById('qr-reader');
+            const manageCameraAccessBtn = document.getElementById('manage-camera-access');
+            let html5QrCode;
 
-            // Toggle camera access and display QR reader
-            if (qrReader.style.display === 'none') {
-                qrReader.style.display = 'block';
-                button.innerText = 'Click to Hide Camera';
-                // TODO: Add code to start camera and read QR codes
-
-                // Get the video element
-                var video = document.createElement('video');
-                video.setAttribute('id', 'camera-stream');
-
-                // Check if the browser supports media devices
-                if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
-                    // Access the camera
-                    navigator.mediaDevices.getUserMedia({
-                            video: true
-                        })
-                        .then(function(stream) {
-                            // Attach the camera stream to the video element
-                            video.srcObject = stream;
-                            video.play();
-
-                            // TODO: Add code to read QR codes from the camera stream
-                        })
-                        .catch(function(error) {
-                            console.error('Error accessing camera:', error);
-                        });
-                } else {
-                    console.error('Media devices not supported');
-                }
+            function qrCodeSuccessCallback(decodedText, decodedResult) {
+                console.log(`QR Code detected: ${decodedText}`);
+                // Add any action you want to take after a successful scan
             }
-        } else {
-            qrReader.style.display = 'none';
-            button.innerText = 'Click to Manage Access';
-            // TODO: Add code to stop camera and hide QR reader
 
-            // Stop the camera stream
-            var video = document.getElementById('camera-stream');
-            if (video && video.srcObject) {
-                var stream = video.srcObject;
-                var tracks = stream.getTracks();
-                tracks.forEach(function(track) {
-                    track.stop();
-                });
-                video.srcObject = null;
+            function onScanError(errorMessage) {
+                console.error(`QR Code scanning error: ${errorMessage}`);
             }
-        }
-        }
 
-        // Attach event listener to the button
-        var button = document.getElementById('manage-camera-access');
-        button.addEventListener('click', manageCameraAccess);
+            manageCameraAccessBtn.addEventListener('click', () => {
+                qrReader.style.display = 'block'; // Make sure this is correct
+                html5QrCode = new Html5Qrcode("qr-reader");
+
+                Html5Qrcode.getCameras().then(cameras => {
+                    if (cameras.length === 0) {
+                        console.log("No cameras found.");
+                        return;
+                    }
+                    const cameraId = cameras[0].id; // Consider providing an option for the user to select the camera
+                    html5QrCode.start(cameraId, {
+                            fps: 10, // Frames per second
+                            qrbox: {
+                                width: 250,
+                                height: 250
+                            } // Define QR box size
+                        }, qrCodeSuccessCallback, onScanError)
+                        .catch(err => console.error(`Error starting QR Code scanner: ${err}`));
+                }).catch(err => console.error(`Error getting cameras: ${err}`));
+            });
+        });
     </script>
+
 </body>
 
 </html>
