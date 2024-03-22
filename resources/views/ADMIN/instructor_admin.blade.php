@@ -2,7 +2,7 @@
 <html lang="english">
 
 <head>
-  <title>Instructor Admin</title>
+  <title>ins_stud_adm Admin</title>
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta charset="utf-8">
   <meta property="twitter:card" content="summary_large_image">
@@ -115,7 +115,6 @@
       background-color: var(--dl-color-gray-white)
     }
   </style>
-
   <link rel="stylesheet" href="https://unpkg.com/animate.css@4.1.1/animate.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&amp;display=swap" data-tag="font">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&amp;display=swap" data-tag="font">
@@ -127,17 +126,78 @@
   <link rel="stylesheet" href="css/student_main.css">
   <div>
     <div class="students-container">
-      <div class="students-students"><img src="images/student_admin/rectangle1684828-kxhw-200h.png" alt="Rectangle1684828" class="students-rectangle168"> <img src="images/student_admin/rectangle1694828-wcq-200h.png" alt="Rectangle1694828" class="students-rectangle169"> <img src="images/student_admin/rectangle1714828-f3o-200h.png" alt="Rectangle1714828" class="students-rectangle171"> <img src="images/student_admin/rectangle1704828-hrfi-200h.png" alt="Rectangle1704828" class="students-rectangle170"> <img src="images/student_admin/rectangle1664828-o3m-200h.png" alt="Rectangle1664828" class="students-rectangle166"> <img src="images/student_admin/rectangle1674828-rzvb-200h.png" alt="Rectangle1674828" class="students-rectangle167"> <img src="images/student_admin/rectangle1554828-sar-1100h.png" alt="Rectangle1554828" class="students-rectangle155">
-        <div class="students-group18"><img src="images/student_admin/image54828-cre9-200h.png" alt="image54828" class="students-image5"> <img src="images/student_admin/spcnremovebgpreview144828-vl4-200h.png" alt="spcnremovebgpreview144828" class="students-spcnremovebgpreview14"> <span class="students-text"><span>Admin Dashboard</span></span> <img src="images/student_admin/image84828-q088-200h.png" alt="image84828" class="students-image8"> <img src="images/student_admin/rectangle1564828-0c5a.svg" alt="Rectangle1564828" class="students-rectangle156"> <img src="images/student_admin/rectangle1574828-jyzx.svg" alt="Rectangle1574828" class="students-rectangle157"> <img src="images/student_admin/rectangle1584828-vmok.svg" alt="Rectangle1584828" class="students-rectangle158">
+      <div class="students-students">
+        <img src="images/ins_stud_adm/rec-kxhw.png" class="students-rectangle168">
+        <img src="images/ins_stud_adm/rec-wcq.png" class="students-rectangle169">
+        <img src="images/ins_stud_adm/rec-f3o.png" class="students-rectangle171">
+        <img src="images/ins_stud_adm/rec-hrfi.png" class="students-rectangle170">
+        <img src="images/ins_stud_adm/rec-o3m.png" class="students-rectangle166">
+        <img src="images/ins_stud_adm/rec-rzvb.png" class="students-rectangle167">
+        <img src="images/ins_stud_adm/rec-sar.png" class="students-rectangle155">
+        <div class="students-group18">
+          <img src="images/ins_stud_adm/img-cre9.png" alt="image54828" class="students-image5">
+          <img src="images/ins_stud_adm/spclogo-vl4.png" alt="spcnremovebgpreview144828" class="students-spcnremovebgpreview14">
+          <span class="students-text">
+            <span>Admin Dashboard</span>
+          </span>
+          <img src="images/ins_stud_adm/image84828-q088-200h.png" alt="image84828" class="students-image8">
+          <img src="images/ins_stud_adm/rec-0c5a.svg" class="students-rectangle156">
+          <img src="images/ins_stud_adm/rec-jyzx.svg" class="students-rectangle157">
+          <img src="images/ins_stud_adm/rec-vmok.svg" class="students-rectangle158">
           <div class="button-container">
-            <button class="students-text02"><a href="{{ route('student') }}" class="student-text02">STUDENTS</a></button>
-            <button class="students-text04 bg-blue-500"><a href="{{ route('instructor') }}" class="student-text04">INSTRUCTOR</a></button>
-            <button class="students-text06"><a href="{{ route('attendancelog') }}" class="instructor-text06">ATTENDANCE LOG</a></button>
-          </div><span class="students-text08"><span>spcregistrar@gmail.com</span></span> <span class="students-text10"><span>(+63) 221-6246</span></span> <img src="images/student_admin/image64828-052m-200h.png" alt="image64828" class="students-image6"> <span class="students-text12"><span>my.spc.edu.ph</span></span>
-        </div><img src="images/student_admin/cba14828-tnagm-200h.png" alt="cba14828" class="students-cba1" onclick="window.location.href=&quot;/cba&quot;"> <img src="images/student_admin/coc14828-y0na-200h.png" alt="coc14828" class="students-coc1" onclick="window.location.href=&quot;/coc&quot;"> <img src="images/student_admin/coe14828-fx6b-200h.png" alt="coe14828" class="students-coe1" onclick="window.location.href=&quot;/coe&quot;"> <img src="images/student_admin/ced14828-266v-200w.png" alt="ced14828" class="students-ced1" onclick="window.location.href=&quot;/ced&quot;"> <img src="images/student_admin/ccs14828-xosp-200h.png" alt="ccs14828" class="students-ccs1" onclick="window.location.href=&quot;/ccs&quot;"> <span class="students-text14"><span>INSTRUCTOR</span></span> <span class="students-text16"><span>College of Business Administration</span></span> <span class="students-text18"><span>College of Criminology</span></span> <span class="students-text20"><span>College of Computer Studies</span></span> <span class="students-text22"><span>College of Arts and Sciences</span></span> <span class="students-text24"><span>College of Engineering</span></span> <span class="students-text26"><span>College of Education</span></span> <img src="images/student_admin/cas34828-6hdo-200w.png" alt="cas34828" class="students-cas3">
-        <form action="" method="POST">@csrf
-          <button type="submit" class="students-text28 logout-button"><span>Log out</span></button>
-        </form><img src="images/student_admin/rectangle1634828-ylmd.svg" alt="Rectangle1634828" class="students-rectangle163">
+            <button class="students-text02">
+              <a href="{{ route('student') }}" class="student-text02">STUDENTS</a>
+            </button>
+            <button class="students-text04 bg-blue-500">
+              <a href="{{ route('instructordashboard') }}" class="student-text04">INSTRUCTOR</a>
+            </button>
+            <button class="students-text06">
+              <a href="{{ route('attendancelog') }}" class="ins_stud_adm-text06">ATTENDANCE LOG</a>
+            </button>
+          </div>
+          <span class="students-text08">
+            <span>spcregistrar@gmail.com</span>
+          </span>
+          <span class="students-text10">
+            <span>(+63) 221-6246</span>
+          </span>
+          <img src="images/ins_stud_adm/img-052m.png" alt="image64828" class="students-image6">
+          <span class="students-text12">
+            <span>my.spc.edu.ph</span>
+          </span>
+        </div>
+        <img src="images/ins_stud_adm/cba.png" class="students-cba1" onclick="window.location.href=&quot;/cba&quot;">
+        <img src="images/ins_stud_adm/coc.png" class="students-coc1" onclick="window.location.href=&quot;/coc&quot;">
+        <img src="images/ins_stud_adm/coe.png" class="students-coe1" onclick="window.location.href=&quot;/coe&quot;">
+        <img src="images/ins_stud_adm/ced.png" class="students-ced1" onclick="window.location.href=&quot;/ced&quot;">
+        <img src="images/ins_stud_adm/ccs.png" class="students-ccs1" onclick="window.location.href=&quot;/ccs&quot;">
+        <span class="students-text14">
+          <span>INSTRUCTOR</span>
+        </span>
+        <span class="students-text16">
+          <span>College of Business Administration</span>
+        </span>
+        <span class="students-text18">
+          <span>College of Criminology</span>
+        </span>
+        <span class="students-text20">
+          <span>College of Computer Studies</span>
+        </span>
+        <span class="students-text22">
+          <span>College of Arts and Sciences</span>
+        </span>
+        <span class="students-text24">
+          <span>College of Engineering</span>
+        </span>
+        <span class="students-text26">
+          <span>College of Education</span>
+        </span>
+        <img src="images/ins_stud_adm/cas.png" alt="cas34828" class="students-cas3">
+        <form action="" method="POST">@csrf <button type="submit" class="students-text28 logout-button">
+            <span>Log out</span>
+          </button>
+        </form>
+        <img src="images/ins_stud_adm/rec-ylmd.svg" class="students-rectangle163">
       </div>
     </div>
   </div>

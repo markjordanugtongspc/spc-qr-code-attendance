@@ -12,7 +12,7 @@
     <nav>
         <div class="navdiv">
             <div class="row01">
-                <li><a href="{{route('login')}}"><img src="images/spc-logo.png" class="mainlogo"></a></li>
+                <li><a><img src="images/spc-logo.png" class="mainlogo"></a></li>
                 <span id="qr">QR</span>
                 <span id="code">Code SPC Attendance System</span>
             </div>
@@ -33,7 +33,7 @@
                             <a href="#">Support</a>
                         </li>
                         <li class="dropdown-menu-item">
-                            <a href="logout">Logout</a>
+                            <a href="{{route('login')}}">Logout</a>
                         </li>
                     </ul>
                 </li>
