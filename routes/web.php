@@ -146,3 +146,8 @@ Route::get('/forgotpassword', function () {
 Route::get('/resetpassword', function () {
     return view('USER/resetpassword');
 })->name('resetpassword');
+
+// Route for Student Notes
+Route::get('/studentnotes', function () {
+    return view('USER/studentnotes');
+})->name('studentnotes');
