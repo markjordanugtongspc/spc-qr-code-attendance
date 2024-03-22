@@ -23,6 +23,7 @@
 							<input type="text" placeholder="Course" />
 							<input type="email" placeholder="Email" />
 							<input type="password" placeholder="Password" />
+							<input type="password" placeholder="Re-Password" />
 							<input type="text" placeholder="Phone NUmber" />
 							<input type="date" placeholder="Birthday" />
 							<input type="text" placeholder="Address" />
@@ -55,13 +56,13 @@
 			<div class="overlay">
 				<div class="overlay-panel overlay-left">
 					<h1>Welcome Back</h1>
-					<a href="{{ route('studentdashboard') }}"><img src="images/spc-logo1.png" alt="" srcset=""></a>
+					<a href="{{ route('studentdashboard') }}"><img src="images/spc-logo.png" alt="" srcset=""></a>
 					<p>To keep connected with us please login with your personal info</p>
 					<button class="ghost" id="signIn">Sign In</button>
 				</div>
 				<div class="overlay-panel overlay-right">
 					<h1>Start Journey with us</h1>
-					<a href="{{ route('parents_dashboard') }}"><img src="images/spc-logo1.png" alt="" srcset=""></a>
+					<a href="{{ route('parents_dashboard') }}"><img src="images/spc-logo.png" alt="" srcset=""></a>
 					<p>Enter your personal details</p>
 					<button class="ghost" id="signUp">Sign Up</button>
 				</div>

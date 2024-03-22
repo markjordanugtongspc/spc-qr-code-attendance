@@ -103,7 +103,7 @@ button.ghost {
 	flex-direction: column;
 	width: 50%;
 	align-items: center;
-	height: 500px;
+	height: 600px;
 }
 .ginfo{
 	background: white;
@@ -130,11 +130,12 @@ button.ghost {
 .btn{
 	display: flex;
 	justify-content: center;
+	padding-top: 30px;
 }
 .con0 h1{
 	display: flex;
 	justify-content: center;
-	padding-top: 30px;
+	padding-top: 10px;
 }
 /*END form sa sign up*/
 

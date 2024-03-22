@@ -131,3 +131,13 @@ Route::get('/instructor_sub_views', function () {
 Route::get('/studentdashboard', function () {
     return view('studentdashboard');
 })->name('studentdashboard');
+
+// Route for forgot password
+Route::get('/forgotpassword', function () {
+    return view('USER/forgotpassword');
+})->name('forgotpassword');
+
+// Route for Reset password
+Route::get('/resetpassword', function () {
+    return view('USER/resetpassword');
+})->name('resetpassword');
