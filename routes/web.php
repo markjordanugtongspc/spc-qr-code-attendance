@@ -46,6 +46,11 @@ Route::get('/gatepass1', function () {
     return view('GATEPASS/gatepass1');
 })->name('gatepass1');
 
+// Route for the gatepass2 (temporary)
+Route::get('/gatepass2', function () {
+    return view('GATEPASS/gatepass2');
+})->name('gatepass2');
+
 
 
 // ..................................ADMIN
