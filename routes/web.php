@@ -114,3 +114,8 @@ Route::get('/ced', function () {
 Route::get('/instructordashboard', function () {
     return view('instructor_dashboard');
 })->name('instructordashboard');
+
+// Route for the Srudent dashboard
+Route::get('/studentdashboard', function () {
+    return view('studentdashboard');
+})->name('studentdashboard');
