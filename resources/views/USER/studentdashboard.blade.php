@@ -13,7 +13,8 @@
         <div class="navdiv">
             <div class="row01">
                 <li><a href="{{route('login')}}"><img src="images/spc-logo.png" class="mainlogo"></a></li>
-                <li id="title">STUDENT ATTENDANCE MONITORING</li>
+                <span id="qr">QR</span>
+                <span id="code">Code SPC Attendance System</span>
             </div>
             <div class="row001">
                 <li class="nav-item nav-item-dropdown">
