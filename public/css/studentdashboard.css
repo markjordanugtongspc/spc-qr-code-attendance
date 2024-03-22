@@ -24,20 +24,30 @@ nav{
     font-size: xx-large;
     color: white;
 }
-.row01{
+.row01 {
     display: flex;
     align-items: center;
+    margin-top: -1px;
+    margin-left: -5px;
+    font-weight: bold;
 }
+
+#qr {
+    color: rgb(15, 163, 56);
+    padding-left: 5px; /* Add spacing on the left side */
+}
+
+#code {
+    color: white;
+    padding-left: 3px; /* Add spacing on the left side */
+}
+
 /* menu bar*/
 
 .nav-item{
     margin-top: 15px;
     font-size: larger;
 }
-
-
-
-
 
 /* END menu bar*/
 

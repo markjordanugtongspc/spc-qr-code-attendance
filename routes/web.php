@@ -129,7 +129,7 @@ Route::get('/instructor_sub_views', function () {
 
 // Route for the Srudent dashboard
 Route::get('/studentdashboard', function () {
-    return view('studentdashboard');
+    return view('USER/studentdashboard');
 })->name('studentdashboard');
 
 // Route for forgot password

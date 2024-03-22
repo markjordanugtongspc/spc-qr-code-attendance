@@ -49,7 +49,7 @@
 				<input type="email" placeholder="Email" />
 				<input type="password" placeholder="Password" />
 				<button> <a href="{{ route('instructordashboard') }}"> Sign In </a> </button>
-				<a href="#">Forgot your password?</a>
+				<a href="{{ route('forgotpassword') }}">Forgot your password?</a>
 			</form>
 		</div>
 		<div class="overlay-container">
