@@ -17,18 +17,45 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <style>.dropdown-menu{background-color: #D3CDCD;border: none;box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);border-radius: 4px;padding: 0}.dropdown-item{display: flex;align-items: center;padding: 10px 15px;color: #333;text-decoration: none;transition: background-color 0.2s ease-in-out}.dropdown-item:hover{background-color: #bcbcbc}.dropdown-item i{width: 20px;text-align: center;margin-right: 10px}</style>
+
 </head>
 
 <body>
-    <div class="container" style="margin: 0px;padding-left: 0px;margin-bottom: 0px;margin-left: 0px;margin-right: 0px;height: 600px;padding-bottom: 0px;padding-right: 0px;max-width: 1535px;">
-        <div class="row" style="margin-right: 0px;margin-left: 0px;background: var(--bs-danger-text-emphasis);height: 45px;">
-            <div class="col-lg-1" style="width: 40px;height: 30px;padding: 5px;">
-                <a href="{{ route('login') }}">
-                    <img width="100" height="80" src="assets/img/spc-logo.png" style="width: 35px;height: 30px;">
-                </a>
+    <div class="container" style="margin: 0px; padding-left: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; height: 600px; padding-bottom: 0px; padding-right: 0px; max-width: 1535px;">
+        <div class="row" style="margin-right: 0px; margin-left: 0px; background: var(--bs-danger-text-emphasis); height: 45px; display: flex; align-items: center; justify-content: space-between;">
+            <div class="col" style="display: flex; align-items: center;">
+                <img src="assets/img/spc-logo.png" style="width: 35px; height: 30px; margin-right: 10px;">
+                <h1 style="font-size: 17px; color: var(--bs-body-bg); margin-bottom: 0px; font-family: 'Goblin One', serif;">Parents Dashboard</h1>
             </div>
-            <div class="col-lg-8" style="padding: 3px;">
-                <h1 style="font-size: 17px;color: var(--bs-body-bg);margin-bottom: 0px;padding-left: 15px;padding-top: 9px;font-family: 'Goblin One', serif;">Parents Dashboard</h1>
+            <div class="col" style="display: flex; justify-content: flex-end;">
+                <div class="dropdown">
+                    <button class="btn btn-link dropdown-toggle" type="button" id="menuButton" data-bs-toggle="dropdown" aria-expanded="false" style="background-color: #f8f9fa; color: #333; border: 1px solid #ddd; padding: 5px 10px; border-radius: 5px; box-shadow: 0 2px 5px rgba(0,0,0,0.2); cursor: pointer; text-decoration: none;">
+                        Menu
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="menuButton">
+                        <!-- User info section -->
+                        <li style="padding: 10px 15px; border-bottom: 1px solid #e1e1e1;">
+                            <img src="https://add.pics/images/2024/03/20/profile-icon.png" alt="Profile Image" class="profile-image" style="width: 20px; margin-right: 10px;">
+                            <span>Jerald Corbo<br>jerald_corbo0000@spc.com</span>
+                        </li>
+                        <!-- Menu items -->
+                        <li><a class="dropdown-item" href="#"><i class="fas fa-user"></i> View profile</a></li>
+                        <li><a class="dropdown-item" href="#"><i class="fas fa-cog"></i> Settings</a></li>
+                        <li><a class="dropdown-item" href="#"><i class="fas fa-keyboard"></i> Keyboard shortcuts</a></li>
+                        <hr>
+                        <li><a class="dropdown-item" href="#"><i class="fas fa-building"></i> Company profile</a></li>
+                        <li><a class="dropdown-item" href="#"><i class="fas fa-users"></i> Team</a></li>
+                        <li><a class="dropdown-item" href="#"><i class="fas fa-envelope-open-text"></i> Invite colleagues</a></li>
+                        <hr>
+                        <li><a class="dropdown-item" href="#"><i class="fas fa-stream"></i> Changelog</a></li>
+                        <li><a class="dropdown-item" href="#"><i class="fas fa-globe"></i> Slack Community</a></li>
+                        <li><a class="dropdown-item" href="#"><i class="fas fa-life-ring"></i> Support</a></li>
+                        <li><a class="dropdown-item" href="#"><i class="fas fa-code"></i> API</a></li>
+                        <hr>
+                        <li><a class="dropdown-item" href="{{ route('login') }}"><i class="fas fa-sign-out-alt"></i> Log out</a></li>
+                    </ul>
+                </div>
             </div>
         </div>
 
@@ -36,37 +63,6 @@
             <div class="col">
                 <h1 style="font-size: 20px;color: var(--bs-emphasis-color);margin-bottom: 0px;padding-left: 15px;padding-top: 9px;font-family: Roboto, sans-serif;font-weight: bold;">
                     Jerald Corbo
-                    <span class="dropdown">
-                        <button class="btn btn-link dropdown-toggle" type="button" id="menuButton" data-bs-toggle="dropdown" aria-expanded="false" style="background-color: transparent; border: none;">
-                            <i class="bi bi-caret-down-fill"></i>
-                        </button>
-                        <div class="dropdown">
-                            <ul class="dropdown-menu" aria-labelledby="menuButton" style="background-color: #D3CDCD;">
-                                <div style="display: flex; align-items: center;">
-                                    <img src="https://add.pics/images/2024/03/20/profile-icon.png" alt="Profile Image" class="profile-image" style="width: 20px; margin-right: 10px;">
-                                    <div style="text-align: left;">
-                                        Jerald Corbo<br>
-                                        jerald_corbo0000@spc.com
-                                    </div>
-                                </div>
-                                <hr>
-                                </hr>
-                                <li><a class="dropdown-item" href="#"><i class="fas fa-user"></i> View profile</a></li>
-                                <li><a class="dropdown-item" href="#"><i class="fas fa-cog"></i> Settings</a></li>
-                                <li><a class="dropdown-item" href="#"><i class="fas fa-keyboard"></i> Keyboard shortcuts</a></li>
-                                <hr>
-                                <li><a class="dropdown-item" href="#"><i class="fas fa-building"></i> Company profile</a></li>
-                                <li><a class="dropdown-item" href="#"><i class="fas fa-users"></i> Team</a></li>
-                                <li><a class="dropdown-item" href="#"><i class="fas fa-envelope-open-text"></i> Invite colleagues</a></li>
-                                <hr>
-                                <li><a class="dropdown-item" href="#"><i class="fas fa-stream"></i> Changelog</a></li>
-                                <li><a class="dropdown-item" href="#"><i class="fas fa-slack"></i> Slack Community</a></li>
-                                <li><a class="dropdown-item" href="#"><i class="fas fa-life-ring"></i> Support</a></li>
-                                <li><a class="dropdown-item" href="#"><i class="fas fa-code"></i> API</a></li>
-                                <hr>
-                                <li><a class="dropdown-item" href="#"><i class="fas fa-sign-out-alt"></i> Log out</a></li>
-                            </ul>
-                        </div>
                 </h1>
             </div>
         </div>
