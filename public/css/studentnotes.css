@@ -24,30 +24,20 @@ nav{
     font-size: xx-large;
     color: white;
 }
-.row01 {
+.row01{
     display: flex;
     align-items: center;
-    margin-top: -1px;
-    margin-left: -5px;
-    font-weight: bold;
 }
-
-#qr {
-    color: rgb(15, 163, 56);
-    padding-left: 5px; /* Add spacing on the left side */
-}
-
-#code {
-    color: white;
-    padding-left: 3px; /* Add spacing on the left side */
-}
-
 /* menu bar*/
 
 .nav-item{
     margin-top: 15px;
     font-size: larger;
 }
+
+
+
+
 
 /* END menu bar*/
 
@@ -72,8 +62,8 @@ nav{
 .container1-1{
     background-color: white;
     width: 270px;
-    height: 100vh;
     padding: 30px;
+    
 }
 .container11{
     background-color: lightgrey;
@@ -81,32 +71,48 @@ nav{
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
     border-bottom: 1px solid black;
+    border-right: 1px solid red;
+    border-left: 1px solid red;
+    border-top: 1px solid red;
 }
 .container12{
     background-color: lightgray;
     height: 200px;
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;;
+    border-right: 1px solid red;
+    border-left: 1px solid red;
+    border-bottom: 1px solid red;
     
 }
 .container1-2{
-    background-color: white;
+    background-color:white;
     width: 850px;
-    height: 100vh;
+    height: 100%;
     padding-top: 30px;
     padding-bottom: 30px;
+    
 }
 .container21{
     background-color: lightgray;
     height: 100px;
     border-radius: 10px;
-    padding-left: 10px;
+    border: 1px solid red;
+    padding-left: 5px;
+    padding-top: 3px;
+    width: 100%;
 }
 .container22{
     margin-top: 50px;
-    background-color: white;
-    height: 530px;
+    background-color:lightgrey;
+    height: 460px;
     border-radius: 10px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding-left: 40px;
+    padding-top: 30px;    
+    border: 1px solid red;
 }
 
 /*student details*/
@@ -145,18 +151,13 @@ ul{
 
 /*END Time and Date*/
 
-/* SUB TIME IN and OUT*/
+
 .container22-1{
     background-color: lightgray;
-    height: 30px;
-    border-top-right-radius: 10px;
-    border-top-left-radius: 10px;
+    
 }
 .container22-2{
-    background-color: lightgray;
-    height: 500px;
-    border-bottom-right-radius: 10px;
-    border-bottom-left-radius: 10px;
+    background-color:lightgray;
 }
 .row5, .row6{
     display: flex;
@@ -212,9 +213,7 @@ ul, li {
   
   .dropdown-trigger {
     position: relative;
-    font-size: large;
-    padding: 2px;
-    cursor: pointer;
+    
     
     &:focus + .dropdown-menu {
       display: block;
@@ -248,16 +247,39 @@ ul, li {
     padding: 10px;
     text-align: center;
   }
-  #notes{
-    background-color: gray;
+  .notes{
+    background-color: white;
+    width: 600px;
+    height: 100px;
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid black;
+  }
+  h5{
+    padding-left: 500px;
+  }
+  .prev-nex{
+    display: flex;
+    justify-content: space-evenly;
+    padding-top: 30px;
+    padding-left: 600px;
+  }
+  .prev-nex button{
+    background-color: rgb(172, 113, 113);
+    color: white;
+    padding: 5px;
+    border: none;
+    margin: 5px;
+  }
+  #back{
     display: flex;
     justify-content: center;
-    padding: 5px;
-    font-size: large
   }
-  .container1-1 .notes{
+  .container1-1 .backd{
     display: flex;
-    padding-top: 10px;
-    padding-left: 5px;
+    padding-top: 200px;
   }
-
+  #back img{
+    width: 30px;
+    height: 30px;
+  }

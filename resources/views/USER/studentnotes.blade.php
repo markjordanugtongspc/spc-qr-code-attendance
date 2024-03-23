@@ -1,24 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="css/studentdashboard.css">
+    <link rel="stylesheet" href="css/studentnotes.css">
 </head>
-
 <body>
     <nav>
         <div class="navdiv">
             <div class="row01">
-                <li><a href="{{route('login')}}"><img src="images/spc-logo.png" class="mainlogo"></a></li>
-                <span id="qr">QR</span>
-                <span id="code">Code SPC Attendance System</span>
-            </div>
+                <li><a href="{{route('studentdashboard')}}"><img src="images/spc-logo.png" class="mainlogo"></a></li>
+                <li id="title">STUDENT ATTENDANCE MONITORING</li>
+            </div>    
             <div class="row001">
                 <li class="nav-item nav-item-dropdown">
-                    <button class="dropdown-trigger">Menu</button>
+                    <a class="dropdown-trigger" href="#">Menu</a>
                     <ul class="dropdown-menu">
                         <li class="dropdown-menu-item">
                             <p>Christian Maglangit</p>
@@ -61,44 +58,45 @@
                     <li>Year Level :</li>
                 </ul>
             </div>
-            <div class="notes">
-                <button id="notes"><a  type="button" href="{{route('studentnotes')}}">Notes</a></button>
+            <div class="backd">
+                <a id="back" href="{{route('studentdashboard')}}"><img src="images/back-button.png" alt=""></a>
             </div>
         </div>
         <div class="container1-2">
             <div class="container21">
                 <ul>
                     <li><img src="images/spc-qrcode.png" id="spcqr"> SCAN QR CODE</li>
-                    <li>
-                        <p id="showdate"></p>
-                    </li>
+                    <li><p id="showdate"></p></li>
                     <li>scan qr code</li>
                 </ul>
             </div>
             <div class="container22">
                 <div class="container22-1">
-                    <ul class="row5">
-                        <li>Subject</li>
-                        <li>Time In</li>
-                        <li>Time Out</li>
-                    </ul>
+                    <h1>Admin Notes</h1>
+                    <div class="notes">
+                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cum sint reiciendis deserunt vero officia, assumenda odit culpa accusamus illum natus!</p>
+                    </div>
+                    <h5>Showing 0 to 0 entries</h5>
                 </div>
                 <div class="container22-2">
-                    <ul class="row6">
-                        <li>CC106</li>
-                        <li>10:00am</li>
-                        <li>11:00am</li>
-                    </ul>
+                    <h1>Instructor Notes</h1>
+                    <div class="notes">
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus ut quas alias optio temporibus facere fuga, ullam voluptates deleniti minus.</p>
+                    </div>
+                    <h5>Showing 0 to 0 entries</h5>
+                </div>
+                <div class="prev-nex">
+                    <button>Previous</button>
+                    <button>Next</button>
                 </div>
             </div>
         </div>
     </div>
     <script>
         setInterval(() => {
-            document.getElementById("showdate").innerHTML = Date();
+            document.getElementById("showdate").innerHTML=Date();
         }, 1000);
     </script>
     <source src="js/menu.js">
 </body>
-
 </html>
