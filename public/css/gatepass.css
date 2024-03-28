@@ -34,6 +34,11 @@
     --dl-space-space-fourunits: 64px;
     --dl-space-space-threeunits: 48px;
     --dl-space-space-oneandhalfunits: 24px;
+    /* Define default values for custom properties */
+    --camera-box-width: 100%;
+    --camera-box-max-width: 400px;
+    --camera-box-max-height: 340px;
+    --camera-box-border: 2px solid #fff;
   }
   
   .input {
@@ -125,12 +130,11 @@
     border-radius: 2.160919427871704px;
 }
 .gate-pass-rectangle11 {
-  top: 30px;
-  left: 680px;
-  width: 750px;
-  height: 700px;
-  position: absolute;
-  border-radius: 4.550000190734863px;
+  position: relative;
+  width: 300px;
+  height: 300px;
+  background-color: #f0f0f0;
+  float: right;
 }
 .gate-pass-text {
     top: 50px;
@@ -254,4 +258,76 @@
   width: 250px;
   height: 250px;
   position: absolute;
+}
+@media screen and (max-width: 768px) {
+  .gate-pass-rectangle74 {
+    top: 200px;
+    left: 50px;
+    width: 100px;
+    height: 20px;
+  }
+  .gate-pass-vector {
+    top: 150px;
+    left: 300px;
+    width: 80px;
+    height: 90px;
+  }
+  .gate-pass-text1 {
+    top: 50px;
+    left: 200px;
+    font-size: 20px;
+  }
+  .gate-pass-text3 {
+    top: 400px;
+    left: 200px;
+    font-size: 20px;
+  }
+  .gate-pass-text5 {
+    top: 220px;
+    left: 50px;
+    font-size: 8px;
+  }
+  .gate-pass-line20 {
+    top: 100px;
+    left: 400px;
+    height: 3px;
+  }
+  .gate-pass-text7 {
+    top: 450px;
+    left: 250px;
+    font-size: 16px;
+  }
+  .gate-pass-spclogo4 {
+    top: 300px;
+    left: 200px;
+    width: 150px;
+    height: 150px;
+  }
+}
+
+.gate-pass-camera-box {
+  border: var(--camera-box-border);
+  aspect-ratio: 1 / 1; /* Keeps the box square */
+  width: var(--camera-box-width);
+  max-width: var(--camera-box-max-width);
+  max-height: var(--camera-box-max-height);
+  z-index: 1;
+
+  /* Center the box horizontally and vertically */
+  position: absolute;
+  top: 38%;
+  left: 26%;
+  transform: translate(-50%, -50%);
+}
+#camera-preview {
+  width: 100%; /* Set the width to 100% */
+  height: 100%; /* Set the height to 100% */
+  object-fit: cover; /* Maintain aspect ratio and cover the entire box */
+  z-index: 1;
+
+  /* Center the box horizontally and vertically */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
