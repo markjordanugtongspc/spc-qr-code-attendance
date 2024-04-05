@@ -17,8 +17,8 @@
 </head>
 
 <body>
-  <link rel="stylesheet" href="css/student_style.css" />
-  <link rel="stylesheet" href="css/student_main.css" />
+  <link rel="stylesheet" href="css/users/admin/student_admin/style/student_style.css" />
+  <link rel="stylesheet" href="css/users/admin/student_admin/main/student_main.css" />
   <div>
     <div class="students-container">
       <div class="students-students">

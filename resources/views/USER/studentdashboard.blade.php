@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="css/studentdashboard.css">
+    <link rel="stylesheet" href="css/users/student/dashboard/studentdashboard.css">
 </head>
 
 <body>
@@ -62,7 +62,7 @@
                 </ul>
             </div>
             <div class="notes">
-                <button id="notes"><a  type="button" href="{{route('studentnotes')}}">Notes</a></button>
+                <button id="notes"><a type="button" href="{{route('studentnotes')}}">Notes</a></button>
             </div>
         </div>
         <div class="container1-2">

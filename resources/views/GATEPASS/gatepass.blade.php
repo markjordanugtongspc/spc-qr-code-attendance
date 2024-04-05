@@ -1,91 +1,99 @@
-<!-- Uses customize css (tailwind) then uses images/link for icons -->
 <!DOCTYPE html>
 <html lang="english">
 
 <head>
   <title>Gatepass</title>
   <link rel="icon" type="image/x-icon" href="/images/spc-logo.ico">
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
   <script src="https://unpkg.com/html5-qrcode"></script>
 
+  <!-- Metas -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta charset="utf-8" />
+  <meta charset="utf8" />
   <meta property="twitter:card" content="summary_large_image" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <!-- Styles -->
   <link rel="stylesheet" href="https://unpkg.com/animate.css@4.1.1/animate.css" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&amp;display=swap" data-tag="font" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Goblin+One:wght@400&amp;display=swap" data-tag="font" />
   <link rel="stylesheet" href="https://unpkg.com/@teleporthq/teleport-custom-scripts/dist/style.css" />
+  <link rel="stylesheet" href="css/gatepass/gatepass.css" />
 </head>
 
 <body>
   <div>
-    <link rel="stylesheet" href="css/gatepass.css" />
-    <div class="gate-pass-container">
-      <div class="gate-pass-gate-pass">
-        <div class="gate-pass-camera-box">
-          <video id="camera-preview"></video>
-        </div>
-        <!-- <img src="images/gatepass/pic.png" class="gate-pass-rectangle73" /> -->
-        <div class="gate-pass-rectangle11">
-          <img src="images/gatepass/box3.png" class="gate-pass-rectangle72" />
-          <img src="images/gatepass/vector2221-2hxt.svg" class="gate-pass-vector" />
-          <span class="gate-pass-text1"><span>Student Info</span></span>
-          <span class="gate-pass-text3"><span>Scan First</span></span>
-          <img src="images/gatepass/line204101-l1k.svg" class="gate-pass-line20" />
-          <span class="gate-pass-text7"><span>Scan First</span></span>
-        </div>
-        <span class="gate-pass-text">Gatepass Scanner</span>
-
-        <a href="{{ route('admin') }}">
-          <img src="images/gatepass/SPClogo.png" class="gate-pass-spclogo4 cursor-pointer mt-0.25rem" />
-        </a>
+    <a>
+      <img src="/images/spc-logo.png" alt="SPC Logo" class="spc-logo" />
+    </a>
+    <h1>Gatepass Scanner</h1>
+    <div class="student-info-container container">
+      <h2 class="student-info-heading">Gate Pass ID</h2>
+      <hr class="student-info-line" />
+      <div class="student-info-svg-container">
+        <img src="/images/gatepass/vector2221-2hxt.svg" alt="Student Info" class="student-info-svg" />
       </div>
+      <p class="scan-here-text">Scanner Here</p>
+      <p class="scan-first-text">Scan First</p>
     </div>
-  </div>
+    <video id="camera-preview"></video>
 
-  <script>
-    const video = document.getElementById('camera-preview');
+    <input type="file" id="qr-code-input" accept="image/png, image/jpeg" />
 
-    // Check if the browser supports getUserMedia
-    if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
-      // Request permission to use the camera
-      navigator.mediaDevices.getUserMedia({
-          video: true
-        })
-        .then(function(stream) {
-          // Set the video source to the camera stream
-          video.srcObject = stream;
-          video.play();
+    <div id="output"></div>
 
-          // Create a new instance of the QR code scanner
-          const qrCodeScanner = new Html5Qrcode('camera-preview');
+    <script src="js/gatepass/gatepass.js"></script>
+    <script>
+      const modal = document.createElement('div');
+      modal.classList.add('modal');
 
-          // Define the callback function to handle the scanned QR code
-          const onScanSuccess = (qrCodeMessage) => {
-            // Handle the scanned QR code message
-            console.log('Scanned QR code:', qrCodeMessage);
-            // You can perform further processing with the scanned QR code here
-          };
+      const modalContent = document.createElement('div');
+      modalContent.classList.add('modal-content');
 
-          // Start scanning for QR codes
-          qrCodeScanner.start({
-              facingMode: 'environment'
-            }, {
-              fps: 10
-            }, onScanSuccess)
-            .catch(function(error) {
-              console.error('Error scanning QR code:', error);
-            });
-        })
-        .catch(function(error) {
-          console.error('Error accessing the camera:', error);
+      const modalHeader = document.createElement('div');
+      modalHeader.classList.add('modal-header');
+
+      const modalTitle = document.createElement('h2');
+      modalTitle.classList.add('modal-title');
+      modalTitle.textContent = 'Where do you want to go?';
+
+      const modalBody = document.createElement('div');
+      modalBody.classList.add('modal-body');
+
+      const adminButton = document.createElement('button');
+      adminButton.classList.add('btn', 'btn-primary');
+      adminButton.textContent = 'Admin';
+
+      const loginButton = document.createElement('button');
+      loginButton.classList.add('btn', 'btn-secondary');
+      loginButton.textContent = 'Login';
+
+      modalBody.appendChild(adminButton);
+      modalBody.appendChild(loginButton);
+
+      modalContent.appendChild(modalHeader);
+      modalContent.appendChild(modalTitle);
+      modalContent.appendChild(modalBody);
+
+      modal.appendChild(modalContent);
+
+      document.body.appendChild(modal);
+
+      const spcLogo = document.querySelector('.spc-logo');
+      spcLogo.addEventListener('click', () => {
+        modal.style.display = 'block';
+
+        adminButton.addEventListener('click', () => {
+          window.location.href = "{{ route('admin') }}";
         });
-    } else {
-      console.error('getUserMedia is not supported by this browser.');
-    }
-  </script>
+
+        loginButton.addEventListener('click', () => {
+          window.location.href = "{{ route('login') }}";
+        });
+      });
+    </script>
+
 </body>
 
 </html>

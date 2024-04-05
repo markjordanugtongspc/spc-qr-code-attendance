@@ -7,51 +7,39 @@ use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 use App\Http\Controllers\AttendanceController;
 
-Route::post('/verify-student', [AttendanceController::class, 'verifyStudent'])->name('verify-student');
+// Route::post('/verify-student', [AttendanceController::class, 'verifyStudent'])->name('verify-student');
 
-// Process the form and generate the QR code with a download link
-Route::post('/generate-qr', function (Request $request) {
-    // Generate a unique identifier for the session/data
-    $uniqueId = Str::random(40);
-    $filename = "student_info_{$uniqueId}.txt";
-    $data = "ID: " . $request->student_id . "\nName: " . $request->student_name . "\nSubject: " . $request->student_subject . "\nTimestamp: " . now();
+// // Process the form and generate the QR code with a download link
+// Route::post('/generate-qr', function (Request $request) {
+//     // Generate a unique identifier for the session/data
+//     $uniqueId = Str::random(40);
+//     $filename = "student_info_{$uniqueId}.txt";
+//     $data = "ID: " . $request->student_id . "\nName: " . $request->student_name . "\nSubject: " . $request->student_subject . "\nTimestamp: " . now();
 
-    // Store the data in a text file within local storage
-    Storage::disk('local')->put($filename, $data);
+//     // Store the data in a text file within local storage
+//     Storage::disk('local')->put($filename, $data);
 
-    // Generate QR code with a URL to download the file
-    $downloadLink = route('download', ['filename' => $filename]);
-    $qrCode = QrCode::size(200)->generate($downloadLink);
+//     // Generate QR code with a URL to download the file
+//     $downloadLink = route('download', ['filename' => $filename]);
+//     $qrCode = QrCode::size(200)->generate($downloadLink);
 
-    return view('your-view', ['qrCode' => $qrCode]);
-})->name('generate-qr');
+//     return view('your-view', ['qrCode' => $qrCode]);
+// })->name('generate-qr');
 
-// Route to download the file
-Route::get('/download/{filename}', function ($filename) {
-    if (Storage::disk('local')->exists($filename)) {
-        return Storage::download($filename);
-    }
+// // Route to download the file
+// Route::get('/download/{filename}', function ($filename) {
+//     if (Storage::disk('local')->exists($filename)) {
+//         return Storage::download($filename);
+//     }
 
-    return abort(404);
-})->name('download');
+//     return abort(404);
+// })->name('download');
 
 // ..................................GATE PASS
 // Route for default branch//
 Route::get('/', function () {
     return view('GATEPASS/gatepass');
 });
-
-// Route for the gatepass1
-Route::get('/gatepass1', function () {
-    return view('GATEPASS/gatepass1');
-})->name('gatepass1');
-
-// Route for the gatepass2 (temporary)
-Route::get('/gatepass2', function () {
-    return view('GATEPASS/gatepass2');
-})->name('gatepass2');
-
-
 
 // ..................................ADMIN
 // Route for the admin page
