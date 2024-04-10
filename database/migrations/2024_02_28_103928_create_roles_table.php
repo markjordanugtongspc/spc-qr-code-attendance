@@ -23,7 +23,6 @@ return new class extends Migration
             $table->string('parents');
             $table->string('admin');
             $table->timestamps();
-            
         });
     }
 

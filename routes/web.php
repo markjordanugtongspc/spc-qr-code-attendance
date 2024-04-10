@@ -6,6 +6,7 @@ use SimpleSoftwareIO\QrCode\Facades\QrCode;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 use App\Http\Controllers\AttendanceController;
+use App\Http\Controllers\AuthController;
 
 // Route::post('/verify-student', [AttendanceController::class, 'verifyStudent'])->name('verify-student');
 
@@ -139,3 +140,12 @@ Route::get('/resetpassword', function () {
 Route::get('/studentnotes', function () {
     return view('USER/studentnotes');
 })->name('studentnotes');
+
+// Authentication Routes
+Route::get('/signup', [AuthController::class, 'showRegistrationForm'])->name('signup');
+Route::post('/signup', [AuthController::class, 'register'])->name('register');
+Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');
+Route::post('/login', [AuthController::class, 'login'])->name('login');
+
+// Optional logout route
+Route::post('/logout', [AuthController::class, 'logout'])->name('logout');

@@ -21,7 +21,7 @@ return new class extends Migration
             $table->time('time_in')->nullable();
             $table->time('time_out')->nullable();
             $table->timestamps();
-        });        
+        });
     }
 
     /**

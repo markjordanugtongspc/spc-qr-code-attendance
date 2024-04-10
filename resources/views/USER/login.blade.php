@@ -1,4 +1,3 @@
-<!-- Uses basic css then use font-awesome for icons -->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -10,39 +9,41 @@
 </head>
 
 <body>
+
 	<div class="container" id="container">
 		<div class="form-container sign-up-container">
-			<form class="formsignup" action="#">
+			<form class="formsignup" action="{{ route('register') }}" method="POST" onsubmit="return reloadAfterSubmit(this)"> @csrf
 				<div class="con0">
 					<h1>Create Account</h1>
 					<div class="form-con1">
 						<div class="personalinfo">
-							<h4>Personal Informaton</h4>
-							<input type="text" placeholder="Name" />
-							<input type="text" placeholder="Student ID" />
-							<input type="text" placeholder="Course" />
-							<input type="email" placeholder="Email" />
-							<input type="password" placeholder="Password" />
-							<input type="password" placeholder="Re-Password" />
-							<input type="text" placeholder="Phone NUmber" />
-							<input type="date" placeholder="Birthday" />
-							<input type="text" placeholder="Address" />
-							<input type="text" placeholder="Gender" />
-							<input type="file" placeholder="Image" />
+							<h4>Personal Information</h4>
+							<input type="text" name="name" placeholder="Name" required />
+							<input type="text" name="student_id" placeholder="Student ID" required />
+							<input type="text" name="course" placeholder="Course" required />
+							<input type="email" name="email" placeholder="Email" required />
+							<input type="password" name="password" placeholder="Password" required />
+							<input type="password" name="password_confirmation" placeholder="Re-Password" required />
+							<input type="text" name="phone_number" placeholder="Phone Number" required />
+							<input type="date" name="birthday" placeholder="Birthday" required />
+							<input type="text" name="address" placeholder="Address" required />
+							<input type="text" name="gender" placeholder="Gender" required />
+							<input type="file" name="profile_picture" placeholder="Image" />
 						</div>
+
 						<div class="ginfo">
-							<h4>Guardian Informaton</h4>
-							<input type="text" placeholder="Guardian Name" />
-							<input type="text" placeholder="Guardian Relationship"" />
-						<input type=" text" placeholder="Guardian Phone Number" />
-							<input type="text" placeholder="Guardian Email" />
+							<h4>Guardian Information</h4>
+							<input type="text" name="guardian_name" placeholder="Guardian Name" required />
+							<input type="text" name="guardian_relationship" placeholder="Guardian Relationship" required />
+							<input type="text" name="guardian_phone_number" placeholder="Guardian Phone Number" required />
+							<input type="text" name="guardian_email" placeholder="Guardian Email" required />
 						</div>
 					</div>
-					<div class="btn"><button>sign up</button></div>
+					<div class="btn"><button type="submit">Sign Up</button></div>
 				</div>
 			</form>
-			x`
 		</div>
+
 		<div class="form-container sign-in-container">
 			<form class="formsignin" action="#">
 				<h1>Sign in</h1>
@@ -52,6 +53,7 @@
 				<a href="{{ route('forgotpassword') }}">Forgot your password?</a>
 			</form>
 		</div>
+
 		<div class="overlay-container">
 			<div class="overlay">
 				<div class="overlay-panel overlay-left">
