@@ -12,12 +12,12 @@ class AuthController extends Controller
 {
     public function showRegistrationForm()
     {
-        return view('login');  // Replace with your signup view's filename
+        return view('login');
     }
 
     public function register(Request $request)
     {
-        // Validation Rules (Tailor these!)
+        // Validation Rules
         $rules = [
             'name' => 'required',
             'email' => 'required|email|unique:users',
@@ -30,7 +30,7 @@ class AuthController extends Controller
             return redirect('login')->withErrors($validator)->withInput();
         }
 
-        
+
         $user = User::create([
             'name' => $request->name,
             'student_id' => $request->student_id,
@@ -41,7 +41,7 @@ class AuthController extends Controller
             'birthday' => $request->birthday,
             'address' => $request->address,
             'gender' => $request->gender,
-            'profile_picture' => $request->profile_picture, 
+            'profile_picture' => $request->profile_picture,
             'guardian_name' => $request->guardian_name,
             'guardian_relationship' => $request->guardian_relationship,
             'guardian_phone_number' => $request->guardian_phone_number,
@@ -52,12 +52,12 @@ class AuthController extends Controller
         // Auth::login($user); 
 
         // Redirect to success page
-        return redirect('/')->with('success', 'Registration successful!');
+        return redirect('/login')->with('success', 'Registration successful!');
     }
 
     public function showLoginForm()
     {
-        return view('USER/login'); // Make sure this points to your login view
+        return view('USER/login');
     }
 
     public function login(Request $request)
@@ -71,22 +71,27 @@ class AuthController extends Controller
         $validator = Validator::make($request->all(), $rules);
 
         if ($validator->fails()) {
-            return redirect('login')->withErrors($validator)->withInput();
+            return redirect('login')
+                ->withErrors($validator)
+                ->withInput();
         }
 
-        // Authentication attempt
-        if (Auth::attempt($request->only(['email', 'password']))) {
-            // Successful login, redirect to intended route
-            return redirect()->intended('/');
-        } else {
-            // Invalid credentials, go back
-            return redirect('login')->with('error', 'Invalid login credentials.');
+        // Attempt to authenticate the user
+        $credentials = $request->only('email', 'password');
+        if (Auth::attempt($credentials)) {
+            // Authentication passed
+            return redirect()->intended('/instructordashboard');
         }
+
+        // Authentication failed
+        return redirect('login')
+            ->withErrors(['email' => 'Invalid email or password.'])
+            ->withInput();
     }
 
     public function logout(Request $request)
     {
         Auth::logout();
-        return redirect('/');
+        return redirect('/login');
     }
 }

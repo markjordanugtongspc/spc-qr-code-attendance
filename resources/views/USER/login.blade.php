@@ -45,11 +45,19 @@
 		</div>
 
 		<div class="form-container sign-in-container">
-			<form class="formsignin" action="#">
+			<form class="formsignin" action="{{ route('login') }}" method="POST">
 				<h1>Sign in</h1>
-				<input type="email" placeholder="Email" />
-				<input type="password" placeholder="Password" />
-				<button> <a href="{{ route('instructordashboard') }}"> Sign In </a> </button>
+				@csrf
+				@if ($errors->any())
+				<div class="alert alert-danger error-message">
+					@foreach ($errors->all() as $error)
+					<p>{{ $error }}</p>
+					@endforeach
+				</div>
+				@endif
+				<input type="email" name="email" placeholder="Email" value="{{ old('email') }}" />
+				<input type="password" name="password" placeholder="Password" />
+				<button type="submit">Sign In</button>
 				<a href="{{ route('forgotpassword') }}">Forgot your password?</a>
 			</form>
 		</div>
