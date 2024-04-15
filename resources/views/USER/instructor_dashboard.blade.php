@@ -42,7 +42,9 @@
                 Birthday: May 8 1990
             </p>
         </div>
-        <button id="list">List of Students</button>
+        <a href="{{ route('studentlist') }}">
+            <button id="list">List of Students</button>
+        </a>
     </div>
     <!--scan qr code-->
     <div class="qr">

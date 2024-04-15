@@ -24,7 +24,7 @@
             <label for="email">Email</label>
             <input type="email" id="email" name="email" required>
             <button class="btn""> Forgot Password</button>
-            <button id=" havepass" onclick="window.location.href='{{route('login')}}'">Already remembered your Password?</button>
+            <a id=" havepass" onclick="window.location.href='{{route('login')}}'">Already remembered your Password?</a>
         </form>
     </div>
 </body>

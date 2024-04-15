@@ -132,6 +132,16 @@ Route::get('/instructor_sub_views', function () {
     return view('USER/instructor_sub_views');
 })->name('instructor_sub_views');
 
+// Routes for the studentlist
+Route::get('/studentlist', function () {
+    return view('USER/studentlist');
+})->name('studentlist');
+
+// Route for Student Notes
+Route::get('/studentnotes', function () {
+    return view('USER/studentnotes');
+})->name('studentnotes');
+
 // Route for the Srudent dashboard
 Route::get('/studentdashboard', function () {
     return view('USER/studentdashboard');
@@ -146,8 +156,3 @@ Route::get('/forgotpassword', function () {
 Route::get('/resetpassword', function () {
     return view('USER/resetpassword');
 })->name('resetpassword');
-
-// Route for Student Notes
-Route::get('/studentnotes', function () {
-    return view('USER/studentnotes');
-})->name('studentnotes');

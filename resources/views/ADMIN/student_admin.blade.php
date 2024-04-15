@@ -8,8 +8,117 @@
   <meta property="twitter:card" content="summary_large_image" />
   <meta charset="UTF-8" />
 
-  <style data-tag="reset-style-sheet">/* prettier-ignore */html{line-height: 1.15}body{margin: 0}*{box-sizing: border-box;border-width: 0;border-style: solid}p,li,ul,pre,div,h1,h2,h3,h4,h5,h6,figure,blockquote,figcaption{margin: 0;padding: 0}button{background-color: transparent}button,input,optgroup,select,textarea{font-family: inherit;font-size: 100%;line-height: 1.15;margin: 0}button,select{text-transform: none}button,[type="button"],[type="reset"],[type="submit"]{-webkit-appearance: button}button::-moz-focus-inner,[type="button"]::-moz-focus-inner,[type="reset"]::-moz-focus-inner,[type="submit"]::-moz-focus-inner{border-style: none;padding: 0}button:-moz-focus,[type="button"]:-moz-focus,[type="reset"]:-moz-focus,[type="submit"]:-moz-focus{outline: 1px dotted ButtonText}a{color: inherit;text-decoration: inherit}input{padding: 2px 4px}img{display: block}html{scroll-behavior: smooth}</style>
-  <style data-tag="default-style-sheet">/* prettier-ignore */html{font-family: Inter;font-size: 16px}body{font-weight: 400;font-style: normal;text-decoration: none;text-transform: none;letter-spacing: normal;line-height: 1.15;color: var(--dl-color-gray-black);background-color: var(--dl-color-gray-white)}</style>
+  <style data-tag="reset-style-sheet">
+    /* prettier-ignore */
+    html {
+      line-height: 1.15
+    }
+
+    body {
+      margin: 0
+    }
+
+    * {
+      box-sizing: border-box;
+      border-width: 0;
+      border-style: solid
+    }
+
+    p,
+    li,
+    ul,
+    pre,
+    div,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    figure,
+    blockquote,
+    figcaption {
+      margin: 0;
+      padding: 0
+    }
+
+    button {
+      background-color: transparent
+    }
+
+    button,
+    input,
+    optgroup,
+    select,
+    textarea {
+      font-family: inherit;
+      font-size: 100%;
+      line-height: 1.15;
+      margin: 0
+    }
+
+    button,
+    select {
+      text-transform: none
+    }
+
+    button,
+    [type="button"],
+    [type="reset"],
+    [type="submit"] {
+      -webkit-appearance: button
+    }
+
+    button::-moz-focus-inner,
+    [type="button"]::-moz-focus-inner,
+    [type="reset"]::-moz-focus-inner,
+    [type="submit"]::-moz-focus-inner {
+      border-style: none;
+      padding: 0
+    }
+
+    button:-moz-focus,
+    [type="button"]:-moz-focus,
+    [type="reset"]:-moz-focus,
+    [type="submit"]:-moz-focus {
+      outline: 1px dotted ButtonText
+    }
+
+    a {
+      color: inherit;
+      text-decoration: inherit
+    }
+
+    input {
+      padding: 2px 4px
+    }
+
+    img {
+      display: block
+    }
+
+    html {
+      scroll-behavior: smooth
+    }
+  </style>
+  <style data-tag="default-style-sheet">
+    /* prettier-ignore */
+    html {
+      font-family: Inter;
+      font-size: 16px
+    }
+
+    body {
+      font-weight: 400;
+      font-style: normal;
+      text-decoration: none;
+      text-transform: none;
+      letter-spacing: normal;
+      line-height: 1.15;
+      color: var(--dl-color-gray-black);
+      background-color: var(--dl-color-gray-white)
+    }
+  </style>
   <linkrel="stylesheet"href="https: //unpkg.com/animate.css@4.1.1/animate.css" />
   <linkrel="stylesheet"href="https: //fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"data-tag="font" />
   <linkrel="stylesheet"href="https: //fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"data-tag="font" />
@@ -81,8 +190,9 @@
         <form action="" method="POST">
           @csrf
           <button type="submit" class="students-text28 logout-button">
-            <span>Log out</span>
+            <span> <a href="{{ route('gatepass1') }}"> Log out</span>
           </button>
+          </a>
         </form>
         <img src="images/ins_stud_adm/rec-ylmd.svg" class="students-rectangle163" />
       </div>

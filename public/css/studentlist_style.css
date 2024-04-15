@@ -1,0 +1,133 @@
+* {
+  margin-top: 0px;
+  margin-left: 0px;
+}
+.header {
+  display: flex;
+  background-color: rgb(74, 3, 11);
+  padding: 5px;
+}
+.header img {
+  height: 30px;
+  width: 30px;
+  margin-left: 5px;
+}
+.header #qr {
+  font-size: large;
+  margin-top: 4px;
+  margin-left: 5px;
+  font-weight: bold;
+  color: rgb(15, 163, 56);
+}
+.header #code {
+  font-size: medium;
+  margin-top: 5px;
+  margin-left: 5px;
+  font-weight: bold;
+  color: white;
+  white-space: nowrap;
+}
+.header select {
+  margin-top: 5px;
+  height: 20px;
+  margin-left: 1170px;
+}
+
+/*.........................................LIST*/
+.list {
+  width: 1180px;
+  padding: 5px;
+  height: 50px;
+  margin-top: 40px;
+  margin-left: 50px;
+  border-radius: 3px;
+}
+.icon {
+  font-size: 40px;
+  margin-top: 1px;
+  margin-left: 1px;
+}
+.text {
+  font-family: arial;
+  font-size: 20px;
+  margin-top: -55px;
+  margin-left: 540px;
+}
+
+/*.............................container*/
+.container {
+  margin-top: 35px;
+  margin-left: 0px;
+  width: 1420px;
+  border: 1px solid maroon;
+  height: 550px;
+  background-color: rgb(217, 217, 217);
+}
+
+.entries {
+  font-family: arial;
+  font-size: small;
+  padding: 5px;
+  border: 1px solid black;
+  margin-top: 30px;
+  margin-left: 30px;
+  width: 1345px;
+  height: 480px;
+  background-color: rgb(241, 227, 227);
+}
+.entries #search {
+  margin-left: 940px;
+}
+.entries input {
+  background-color: rgb(211, 205, 205);
+  width: 200px;
+  border-radius: 5px;
+}
+/**/
+.entries1 {
+  margin-top: 50px;
+}
+.entries1 select {
+  padding: 5px;
+  text-align: center;
+  width: 180px;
+  margin-left: 7px;
+  background-color: rgb(211, 205, 205);
+}
+.info {
+  margin-top: -370px;
+}
+.info #one {
+  margin-left: 85px;
+}
+.info #two {
+  margin-left: 95px;
+}
+.info #three {
+  margin-left: 100px;
+}
+.info #four {
+  margin-left: 155px;
+}
+.info #five {
+  margin-left: 145px;
+}
+.info #six {
+  margin-left: 140px;
+}
+.info #seven {
+  margin-left: 170px;
+}
+.show {
+  margin-top: 320px;
+  margin-left: 40px;
+}
+.show button {
+  background-color: rgb(211, 205, 205);
+  width: 100px;
+  padding: 1px;
+  text-align: center;
+}
+.show #pre {
+  margin-left: 960px;
+}

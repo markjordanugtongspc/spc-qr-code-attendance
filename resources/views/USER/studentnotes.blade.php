@@ -1,24 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="css/studentnotes.css">
 </head>
+
 <body>
     <nav>
         <div class="navdiv">
             <div class="row01">
                 <li><a href="{{route('studentdashboard')}}"><img src="images/spc-logo.png" class="mainlogo"></a></li>
                 <li id="title">STUDENT ATTENDANCE MONITORING</li>
-            </div>    
+            </div>
             <div class="row001">
                 <li class="nav-item nav-item-dropdown">
                     <a class="dropdown-trigger" href="#">Menu</a>
                     <ul class="dropdown-menu">
                         <li class="dropdown-menu-item">
-                            <p>Christian Maglangit</p>
+                            <p>Mark Jordan Bayot</p>
                         </li>
                         <li class="dropdown-menu-item">
                             <a href="#">Profile</a>
@@ -42,7 +44,7 @@
             <div class="container11">
                 <ul class="row1">
                     <li><img src="images/ccs.png" class="studentpp"></li>
-                    <li>Christian Maglangit</li>
+                    <li>Mark Jordan Bayot</li>
                     <li>Student</li>
                     <li><button>Edit Profile</button></li>
                 </ul>
@@ -59,14 +61,16 @@
                 </ul>
             </div>
             <div class="backd">
-                <a id="back" href="{{route('studentdashboard')}}"><img src="images/back-button.png" alt=""></a>
+                <a id="back" href="{{route('studentlist')}}"><img src="images/back-button.png" alt=""></a>
             </div>
         </div>
         <div class="container1-2">
             <div class="container21">
                 <ul>
                     <li><img src="images/spc-qrcode.png" id="spcqr"> SCAN QR CODE</li>
-                    <li><p id="showdate"></p></li>
+                    <li>
+                        <p id="showdate"></p>
+                    </li>
                     <li>scan qr code</li>
                 </ul>
             </div>
@@ -94,9 +98,10 @@
     </div>
     <script>
         setInterval(() => {
-            document.getElementById("showdate").innerHTML=Date();
+            document.getElementById("showdate").innerHTML = Date();
         }, 1000);
     </script>
     <source src="js/menu.js">
 </body>
+
 </html>

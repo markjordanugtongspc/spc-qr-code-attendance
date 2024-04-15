@@ -194,7 +194,9 @@
         </span>
         <img src="images/ins_stud_adm/cas.png" alt="cas34828" class="students-cas3">
         <form action="" method="POST">@csrf <button type="submit" class="students-text28 logout-button">
-            <span>Log out</span>
+
+            <span> <a href="{{ route('gatepass1') }}"> Log out</span>
+            </a>
           </button>
         </form>
         <img src="images/ins_stud_adm/rec-ylmd.svg" class="students-rectangle163">

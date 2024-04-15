@@ -113,7 +113,7 @@
     align-items: flex-start;
     flex-shrink: 0;
     justify-content: flex-start;
-    background-color: rgba(93, 29, 36, 1);
+    background-color: maroon;
 }
 .gate-pass-studentconfirm-rectangle75 {
     top: 108px;
@@ -252,7 +252,7 @@
     font-style: Regular;
     text-align: center;
     font-family: "Goblin One";
-    font-weight: 400;
+    font-weight: 800;
     line-height: normal;
     font-stretch: normal;
     text-decoration: none;

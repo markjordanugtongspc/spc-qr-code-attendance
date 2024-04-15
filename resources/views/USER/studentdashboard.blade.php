@@ -13,8 +13,7 @@
         <div class="navdiv">
             <div class="row01">
                 <li><a><img src="images/spc-logo.png" class="mainlogo"></a></li>
-                <span id="qr">QR</span>
-                <span id="code">Code SPC Attendance System</span>
+                <span id="code">STUDENT ATTENDANCE MONITORING</span>
             </div>
             <div class="row001">
                 <li class="nav-item nav-item-dropdown">
@@ -61,9 +60,7 @@
                     <li>Year Level :</li>
                 </ul>
             </div>
-            <div class="notes">
-                <button id="notes"><a  type="button" href="{{route('studentnotes')}}">Notes</a></button>
-            </div>
+
         </div>
         <div class="container1-2">
             <div class="container21">
