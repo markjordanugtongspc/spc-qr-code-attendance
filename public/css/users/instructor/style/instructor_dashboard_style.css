@@ -1,256 +1,51 @@
-* {
-  margin-top: 0px;
-  margin-left: 0px;
-}
-.header {
-  display: flex;
-  background-color: rgb(74, 3, 11);
-  padding: 5px;
-}
-.header img {
-  height: 30px;
-  width: 30px;
-  margin-left: 5px;
-}
-.header #qr {
-  font-size: large;
-  margin-top: 4px;
-  margin-left: 5px;
-  font-weight: bold;
-  color: rgb(15, 163, 56);
-}
-.header #code {
-  font-size: medium;
-  margin-top: 5px;
-  margin-left: 5px;
-  font-weight: bold;
-  color: white;
-  white-space: nowrap;
-}
-.header select {
-  margin-top: 5px;
-  height: 20px;
-  margin-left: 1170px;
-}
-/*user profile*/
-.user-profile {
-  margin-top: 35px;
-  margin-left: 35px;
-  border: 1px solid maroon;
-  width: 250px;
-  border-radius: 5px;
-  background-color: rgb(217, 217, 217);
-}
-.user-profile #circle {
-  margin-top: 10px;
-  text-align: center;
-  font-size: 150px;
-}
-.user-profile #name {
-  font-weight: bold;
-  font-family: arial;
-  margin-left: 70px;
-}
-.user-profile #instructor {
-  font-size: small;
-  font-family: arial;
-  margin-left: 95px;
-}
-.user-profile #check {
-  text-align: center;
-}
-.user-profile button {
-  margin-top: 5px;
-  margin-left: 87px;
-  background-color: rgb(179, 177, 177);
-  border-radius: 7px;
-  padding: 2px;
-  margin-bottom: 10px;
-}
-.user-profile .information {
-  font-size: 12px;
-  font-family: arial;
-  margin-left: 10px;
-}
-.user-profile #list {
-  background-color: rgb(179, 177, 177);
-  border-radius: 7px;
-  padding: 2px;
-  margin-top: 20px;
-  margin-left: 10px;
-}
-/*scan qr code*/
-.qr {
-  width: 1130px;
-  padding: 5px;
-  height: 90px;
-  font-family: arial;
-  font-size: small;
-  border-radius: 3px;
-  margin-top: -445px;
-  margin-left: 360px;
-  border: 1px solid maroon;
-  background-color: rgb(217, 217, 217);
-}
-.qr button {
-  background-color: rgb(197, 188, 188);
-  width: 1125px;
-  text-align: left;
-  padding: 5px;
-  margin-top: 10px;
-  border-radius: 3px;
-}
-/*for instructor dashboard*/
-.container {
-  margin-top: 50px;
-  margin-left: 360px;
-  width: 1140px;
-  border: 1px solid maroon;
-  height: 500px;
-  background-color: rgb(217, 217, 217);
-}
-.container .cc106 {
-  text-align: center;
-  font-weight: bold;
-  margin-top: 40px;
-  margin-left: 100px;
-  width: 150px;
-  border: 1px solid white;
-  padding: 20px;
-  box-shadow: 2px 2px gray;
-  border-radius: 5px;
-  background-color: white;
-}
-.container .cc106 a{
-  color: black;
-}
-.cc106 :hover {
-  background-color: rgb(234, 224, 224);
-  transform: scale(2);
+/* Main CSS Code: https://goonlinetools.com/snapshot/code/#rrrnhwip3745p373k9y4t */
+/* Preview Link: https://add.pics/YTOQ5Zhttps://add.pics/Y8XsAj */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap'); 
 
-}
-.container .cc107 {
-  text-align: center;
-  font-weight: bold;
-  margin-top: -60px;
-  margin-left: 450px;
-  width: 150px;
-  border: 1px solid white;
-  padding: 20px;
-  box-shadow: 2px 2px gray;
-  border-radius: 5px;
-  background-color: white;
-}
-.container .cc108 {
-  text-align: center;
-  font-weight: bold;
-  margin-top: -60px;
-  margin-left: 850px;
-  width: 150px;
-  border: 1px solid white;
-  padding: 20px;
-  box-shadow: 2px 2px gray;
-  border-radius: 5px;
-  background-color: white;
+.top-banner {
+    background-color: #800000; 
+    height: 200px; /* Increased height */
+    width: 100%; 
+    display: flex; /* Removed flexbox from .top-banner */
+    align-items: flex-start; /* Align items at the top */
 }
 
-/*for instructor subject views*/
-.container {
-  margin-top: 50px;
-  margin-left: 360px;
-  width: 1140px;
-  border: 1px solid maroon;
-  height: 500px;
-  background-color: rgb(217, 217, 217);
-}
-.icon {
-  font-size: 40px;
-  margin-top: 48px;
-  margin-left: 40px;
-}
-.container .cc106_2 {
-  text-align: center;
-  font-weight: bold;
-  margin-top: -58px;
-  margin-left: 450px;
-  width: 150px;
-  border: 1px solid white;
-  padding: 20px;
-  box-shadow: 2px 2px gray;
-  border-radius: 5px;
-  background-color: white;
+.logo {
+    max-width: 35px; 
+    margin-right: 10px; 
+    margin-left: 10px; 
 }
 
-.entries {
-  font-family: arial;
-  font-size: small;
-  padding: 5px;
-  border: 1px solid black;
-  margin-top: 60px;
-  margin-left: 10px;
-  width: 1108px;
-  height: 320px;
-  background-color: rgb(158, 158, 158);
+p {
+    color: white;
+    font-family: 'Roboto', sans-serif;  
+    font-size: 18px; 
+    padding-top: 7px;  
+    margin-left: 10px; /* Add margin to move text to left */
 }
-.entries #search {
-  margin-left: 670px;
+
+.text-container {
+    position: static;
 }
-.entries input {
-  background-color: rgb(241, 227, 227);
-  width: 250px;
-  border-radius: 5px;
+
+/* Style the horizontal line */
+hr {
+    border: none;
+    background-color: white;
+    height: 3px; 
+    margin-top: 20px; /* Add margin to position below text and button */
 }
-/**/
-.entries1 {
-  margin-top: 50px;
+
+/* Position the menu button */
+#navbar-custom {
+    position: absolute;
+    top: 10px; 
+    right: 10px; 
+    height: 30px;
+    width: 90px;
 }
-.entries1 select {
-  padding: 5px;
-  text-align: center;
-  width: 150px;
-  background-color: rgb(211, 205, 205);
-}
-.entries1 .timein {
-  margin-top: -28px;
-  margin-left: 770px;
-}
-.entries1 .timeout {
-  margin-top: -29px;
-  margin-left: 930px;
-}
-.info {
-  margin-top: 10px;
-}
-.info #one {
-  margin-left: 40px;
-}
-.info #two {
-  margin-left: 60px;
-}
-.info #three {
-  margin-left: 70px;
-}
-.info #four {
-  margin-left: 125px;
-}
-.info #five {
-  margin-left: 120px;
-}
-.info #six {
-  margin-left: 100px;
-}
-.info #seven {
-  margin-left: 110px;
-}
-.show {
-  margin-top: 170px;
-}
-.show button {
-  background-color: rgb(211, 173, 173);
-  width: 100px;
-  padding: 1px;
-  text-align: center;
-}
-.show #pre {
-  margin-left: 760px;
-}
+
+.navbar-custom .navbar-nav .nav-link {
+    font-size: 14px; 
+    padding: 5px 10px; 
+} 
