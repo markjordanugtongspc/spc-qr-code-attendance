@@ -19,6 +19,7 @@ body{
 }
 .nav-item{
   list-style: none;
+  margin-right: -5px;
 }
 .tablehead tr th{
   background-color: #2773F2;
@@ -79,4 +80,13 @@ body{
   box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.10);
   border-radius: 10px;
   text-decoration: none;
+}
+.shift-text-left {
+  margin-left: -80px; /* Or use padding-left */
+}
+.padd-1 {
+  padding-top: 10px; /* Or use padding-left */
+}
+.custom-dropdown-width {
+  width: 150px; /* Adjust the pixel value as needed */
 }

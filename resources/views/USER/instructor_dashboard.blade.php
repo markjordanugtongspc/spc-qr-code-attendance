@@ -7,23 +7,26 @@
     <title>Document</title>
     <link rel="stylesheet" href="css/users/instructor/instructordashboard.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    
+
 </head>
 
 <body>
-    <nav class="navbar">
+    <nav class="navbar navbar-expand-lg">
         <div class="container">
-            <a class="navbar-brand" href="#">
-                <span class="text-light">SPC Student Attendance Monitoring System</span>
+            <a class="navbar-brand">
+                <span class="text-light shift-text-left">SPC Student Attendance Monitoring System</span>
             </a>
+
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">Menu</a>
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                  <li><a class="dropdown-item" href="#">Ryan E. Balisi</a></li>
-                  <li><hr class="dropdown-divider"></li>
-                  <li><a class="dropdown-item" href="#">View Profile</a></li>
-                  <li><a class="dropdown-item" href="#">Settings</a></li>
-                  <li><a class="dropdown-item" href="#">Logout</a></li>
+                    <li><a class="dropdown-item" href="#">Ryan E. Balisi</a></li>
+                    <li>
+                        <hr class="dropdown-divider">
+                    </li>
+                    <li><a class="dropdown-item" href="#">View Profile</a></li>
+                    <li><a class="dropdown-item" href="#">Settings</a></li>
+                    <li><a class="dropdown-item" href="#">Logout</a></li>
                 </ul>
             </li>
         </div>
@@ -31,7 +34,7 @@
     <div class="body container d-flex">
         <div class="student-details flex-column m-5">
             <div class="student-image d-flex align-items-end bg-light">
-                <p class="student-name bg-light m-3 p-1">Ryan E. Balisi <img class="p-1"src="/images/edit.png" alt=""></p>
+                <p class="student-name bg-light m-3 p-1">Ryan E. Balisi <img class="p-1" src="/images/edit.png" alt=""></p>
             </div>
             <div class="student-info bg-light  p-2">
                 <div class="role d-flex justify-content-center">
@@ -56,7 +59,7 @@
         </div>
         <div class="student-time flex-column pt-3 w-75 ">
             <div class="d-flex gap-4 ">
-                <div class="qr-time text-light gap-1 align-content-center">       
+                <div class="qr-time text-light gap-1 align-content-center">
                     <h6><img src="/images/qr-code.png" id="spcqr"><span> SCAN QR CODE</span></h6>
                     <h6 id="showdate"></h6>
                     <button class="scan w-100 d-flex justify-content-start" onclick="#">Scan QR Code</button>
@@ -71,17 +74,18 @@
                 <a class="sub p-4 align-content-center bg-white text-black" href="">CC107 - 60000</a>
                 <a class="sub p-4 align-content-center bg-white text-black" href="">CC108 - 70000</a>
             </div>
-            <div class="show-search d-flex d-flex justify-content-between mt-3">
-                <h6 class="d-flex align-items-end">SHOW
-                    <select class="form-select form-select-sm d-flex align-items-end" aria-label=".form-select-sm example">
+            <div class="show-search d-flex d-flex justify-content-between padd-1">
+                <h6 class="d-flex align-items-end">SHOW&nbsp;
+                    <select class="form-select form-select-sm d-flex align-items-end custom-dropdown-width" aria-label=".form-select-sm example">
                         <option selected>1</option>
                         <option value="2">2</option>
                         <option value="3">3</option>
                         <option value="4">4</option>
                     </select>
-                    Entries
+                    &nbsp;Entries
                 </h6>
-                
+
+
                 <form class="form-inline d-flex">
                     <input class="form-control " type="search" placeholder="Search" aria-label="Search">
                     <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
@@ -101,15 +105,6 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td class="text-center">2022-2024</td>
-                        <td class="text-center">Jerald C. Corbo</td>
-                        <td class="text-center">BSIT</td>
-                        <td class="text-center">Male</td>
-                        <td class="text-center">Second Year</td>
-                        <td class="text-center">10:00am</td>
-                        <td class="text-center">11:00am</td>
-                    </tr>
-                    <tr>
                         <td class="text-center">18-0553</td>
                         <td class="text-center">Christian Bolohan Maglangit</td>
                         <td class="text-center">BSIT</td>
@@ -119,22 +114,31 @@
                         <td class="text-center">11:00am</td>
                     </tr>
                     <tr>
-                        <td class="text-center">16123</td>
+                        <td class="text-center">2000-2021</td>
                         <td class="text-center">Jerald C. Corbo</td>
                         <td class="text-center">BSIT</td>
                         <td class="text-center">Male</td>
                         <td class="text-center">Second Year</td>
-                        <td class="text-center">10:00am</td>
                         <td class="text-center">11:00am</td>
+                        <td class="text-center">12:00pm</td>
                     </tr>
                     <tr>
-                        <td class="text-center">16123</td>
-                        <td class="text-center">Jerald C. Corbo</td>
+                        <td class="text-center">2000-2022</td>
+                        <td class="text-center">Mark Jordan Ugtong</td>
                         <td class="text-center">BSIT</td>
                         <td class="text-center">Male</td>
                         <td class="text-center">Second Year</td>
-                        <td class="text-center">10:00am</td>
-                        <td class="text-center">11:00am</td>
+                        <td class="text-center">12:00pm</td>
+                        <td class="text-center">01:00pm</td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">2000-2023</td>
+                        <td class="text-center">Sherie Darlene Barila</td>
+                        <td class="text-center">BSIT</td>
+                        <td class="text-center">Male</td>
+                        <td class="text-center">Second Year</td>
+                        <td class="text-center">02:00pm</td>
+                        <td class="text-center">03:00pm</td>
                     </tr>
                 </tbody>
             </table>

@@ -12,23 +12,41 @@
 
 	<div class="container" id="container">
 		<div class="form-container sign-up-container">
-			<form class="formsignup" action="{{ route('register') }}" method="POST" onsubmit="return reloadAfterSubmit(this)"> @csrf
+			<form class="formsignup" action="{{ route('register') }}" method="POST" enctype="multipart/form-data" onsubmit="return reloadAfterSubmit(this)">
+				@csrf
 				<div class="con0">
 					<h1>Create Account</h1>
 					<div class="form-con1">
 						<div class="personalinfo">
 							<h4>Personal Information</h4>
-							<input type="text" name="name" placeholder="Name" required />
+							<input type="text" name="name" placeholder="Full Name" required />
 							<input type="text" name="student_id" placeholder="Student ID" required />
-							<input type="text" name="course" placeholder="Course" required />
+
+							<!-- Input with suggestions for Course -->
+							<input list="courses" name="course" placeholder="Course" required />
+							<datalist id="courses">
+								<option value="BSIT">
+								<option value="BSCS">
+								<option value="BSBA">
+								<option value="BSCE">
+							</datalist>
+
 							<input type="email" name="email" placeholder="Email" required />
 							<input type="password" name="password" placeholder="Password" required />
 							<input type="password" name="password_confirmation" placeholder="Re-Password" required />
 							<input type="text" name="phone_number" placeholder="Phone Number" required />
 							<input type="date" name="birthday" placeholder="Birthday" required />
 							<input type="text" name="address" placeholder="Address" required />
-							<input type="text" name="gender" placeholder="Gender" required />
-							<input type="file" name="profile_picture" placeholder="Image" />
+
+							<!-- Input with suggestions for Gender -->
+							<input list="genders" name="gender" placeholder="Gender" required />
+							<datalist id="genders">
+								<option value="Male">
+								<option value="Female">
+								<option value="Non-binary">
+							</datalist>
+
+							<input type="file" name="profile_picture" required />
 						</div>
 
 						<div class="ginfo">
