@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 use App\Http\Controllers\AttendanceController;
 use App\Http\Controllers\AuthController;
+use Illuminate\Support\Facades\Auth;
 
 // Route::post('/verify-student', [AttendanceController::class, 'verifyStudent'])->name('verify-student');
 
@@ -46,7 +47,7 @@ Route::get('/', function () {
 // Route for the admin page
 Route::get('/admin', function () {
     return view('ADMIN/admin');
-})->name('admin');
+})->name('admin')->middleware(['auth', 'admin']);
 
 // Route for the instructor page
 Route::get('/instructor', function () {
@@ -146,6 +147,4 @@ Route::get('/signup', [AuthController::class, 'showRegistrationForm'])->name('si
 Route::post('/signup', [AuthController::class, 'register'])->name('register');
 Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');
 Route::post('/login', [AuthController::class, 'login'])->name('login');
-
-// Optional logout route
-Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
+Route::post('/logout', [AuthController::class, 'logout'])->name('logout')->middleware('auth');
