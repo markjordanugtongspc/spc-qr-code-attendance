@@ -32,7 +32,7 @@
     <div class="body container d-flex gap-4">
         <div class="student-details flex-column m-5">
             <div class="student-image d-flex align-items-end bg-light">
-                <p class="student-name bg-light m-3 p-1">Jerald Corbo <img class="p-1"src="/images/edit.png" alt=""></p>
+                <p class="student-name bg-light m-3 p-1">Jerald Corbo <img class="p-1"src="images/edit.png" alt=""></p>
             </div>
             <div class="student-info bg-light  p-2">
                 <div class="role d-flex justify-content-center">
@@ -41,13 +41,13 @@
                 <h6>Department : <span>CCS</span></h6>
                 <h6>ID-Number : <span>12345</span></h6>
                 <h6>Phone : <span>1231231231</span></h6>
-                <h6>Address : <span>asdasfasfa adfasf</span></h6>
+                <h6>Address : <span>Lorem ipsum dolor sit.</span></h6>
                 <h6>Gender : <span>male</span></h6>
                 <h6>Course : <span>bsit</span></h6>
                 <h6>Year Level : <span>2nd year</span></h6>
             </div>
         </div>
-        <div class="student-time flex-column pt-3 w-75 ">
+        <div class="student-time flex-column pt-3 w-75">
             <div class="d-flex gap-4 ">
                 <div class="qr-time text-light gap-1 align-content-center">       
                     <h6><img src="images/qr-code.png" id="spcqr"><span> SCAN QR CODE</span></h6>
@@ -56,45 +56,47 @@
                     <!-- <h6><a class="scan w-100 text-black" style="background-color: #fff;" href="#">scan qr code</a></h6> -->
                 </div>
                 <div class="logo justify-content-center ">
-                    <img class="w-50 h-70 d-flex justify-content-center" src="/images/spc-logo.png" alt="">
+                    <img class="w-50 h-70 d-flex justify-content-center" src="images/spc-logo.png" alt="">
                 </div>
             </div>
-            <table class="table table-striped table-bordered mt-4 w-100">
-                <thead class="tablehead ">
-                    <tr>
-                        <th scope="col" class="text-center">Subject</th>
-                        <th scope="col" class="text-center">Date</th>
-                        <th scope="col" class="text-center">Time In</th>
-                        <th scope="col" class="text-center">Time Out</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td class="text-center">CC106</td>
-                        <td class="text-center">March 11,2004</td>
-                        <td class="text-center">10:00am</td>
-                        <td class="text-center">11:00am</td>
-                    </tr>
-                    <tr>
-                        <td class="text-center">CC106</td>
-                        <td class="text-center">March 11,2004</td>
-                        <td class="text-center">10:00am</td>
-                        <td class="text-center">11:00am</td>
-                    </tr>
-                    <tr>
-                        <td class="text-center">CC106</td>
-                        <td class="text-center">March 11,2004</td>
-                        <td class="text-center">10:00am</td>
-                        <td class="text-center">11:00am</td>
-                    </tr>
-                    <tr>
-                        <td class="text-center">CC106</td>
-                        <td class="text-center">March 11,2004</td>
-                        <td class="text-center">10:00am</td>
-                        <td class="text-center">11:00am</td>
-                    </tr>
-                </tbody>
-            </table>
+            <div class="container">
+                <table class="table table-striped table-bordered mt-5 w-100">
+                    <thead class="tablehead ">
+                        <tr>
+                            <th scope="col" class="text-center">Subject</th>
+                            <th scope="col" class="text-center">Date</th>
+                            <th scope="col" class="text-center">Time In</th>
+                            <th scope="col" class="text-center">Time Out</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="text-center">CC106</td>
+                            <td class="text-center">March 11,2004</td>
+                            <td class="text-center">10:00am</td>
+                            <td class="text-center">11:00am</td>
+                        </tr>
+                        <tr>
+                            <td class="text-center">CC106</td>
+                            <td class="text-center">March 11,2004</td>
+                            <td class="text-center">10:00am</td>
+                            <td class="text-center">11:00am</td>
+                        </tr>
+                        <tr>
+                            <td class="text-center">CC106</td>
+                            <td class="text-center">March 11,2004</td>
+                            <td class="text-center">10:00am</td>
+                            <td class="text-center">11:00am</td>
+                        </tr>
+                        <tr>
+                            <td class="text-center">CC106</td>
+                            <td class="text-center">March 11,2004</td>
+                            <td class="text-center">10:00am</td>
+                            <td class="text-center">11:00am</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
     </div>
     <script>
@@ -102,6 +104,6 @@
             document.getElementById("showdate").innerHTML = Date();
         }, 1000);
     </script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 </html>
