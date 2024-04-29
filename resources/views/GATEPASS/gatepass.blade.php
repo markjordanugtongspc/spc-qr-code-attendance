@@ -16,8 +16,8 @@
 
   <!-- Styles -->
   <link rel="stylesheet" href="https://unpkg.com/animate.css@4.1.1/animate.css" />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&amp;display=swap" data-tag="font" />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Goblin+One:wght@400&amp;display=swap" data-tag="font" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" data-tag="font" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Goblin+One:wght@400&display=swap" data-tag="font" />
   <link rel="stylesheet" href="https://unpkg.com/@teleporthq/teleport-custom-scripts/dist/style.css" />
   <link rel="stylesheet" href="css/gatepass/gatepass.css" />
 </head>
@@ -44,56 +44,7 @@
     <div id="output"></div>
 
     <script src="js/gatepass/gatepass.js"></script>
-    <script>
-      const modal = document.createElement('div');
-      modal.classList.add('modal');
-
-      const modalContent = document.createElement('div');
-      modalContent.classList.add('modal-content');
-
-      const modalHeader = document.createElement('div');
-      modalHeader.classList.add('modal-header');
-
-      const modalTitle = document.createElement('h2');
-      modalTitle.classList.add('modal-title');
-      modalTitle.textContent = 'Where do you want to go?';
-
-      const modalBody = document.createElement('div');
-      modalBody.classList.add('modal-body');
-
-      const adminButton = document.createElement('button');
-      adminButton.classList.add('btn', 'btn-primary');
-      adminButton.textContent = 'Admin';
-
-      const loginButton = document.createElement('button');
-      loginButton.classList.add('btn', 'btn-secondary');
-      loginButton.textContent = 'Login';
-
-      modalBody.appendChild(adminButton);
-      modalBody.appendChild(loginButton);
-
-      modalContent.appendChild(modalHeader);
-      modalContent.appendChild(modalTitle);
-      modalContent.appendChild(modalBody);
-
-      modal.appendChild(modalContent);
-
-      document.body.appendChild(modal);
-
-      const spcLogo = document.querySelector('.spc-logo');
-      spcLogo.addEventListener('click', () => {
-        modal.style.display = 'block';
-
-        adminButton.addEventListener('click', () => {
-          window.location.href = "{{ route('admin') }}";
-        });
-
-        loginButton.addEventListener('click', () => {
-          window.location.href = "{{ route('login') }}";
-        });
-      });
-    </script>
-
+  </div>
 </body>
 
 </html>

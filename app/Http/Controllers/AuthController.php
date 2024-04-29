@@ -71,25 +71,38 @@ class AuthController extends Controller
         $validator = Validator::make($request->all(), $rules);
 
         if ($validator->fails()) {
-            return redirect('login')
-                ->withErrors($validator)
-                ->withInput();
+            return redirect('login')->withErrors($validator)->withInput();
         }
 
         // Attempt to authenticate the user
-        $credentials = $request->only('email', 'password');
-        if (Auth::attempt($credentials)) {
-            if (Auth::user()->userType == 'admin') {
-                return redirect()->intended('/admin'); // Change to the correct admin route
-            } else {
-                return redirect()->intended('/instructordashboard');
-            }
+        $user = User::where('email', $request->email)->orWhere('guardian_email', $request->email)->first();
+
+        if (!$user) {
+            return redirect('login')->withErrors(['email' => 'No account found with that email.'])->withInput();
         }
 
-        // Authentication failed
-        return redirect('login')
-            ->withErrors(['email' => 'Invalid email or password.'])
-            ->withInput();
+        if ($user->userType == 'parent' && $request->password == $user->guardian_phone_number) {
+            Auth::login($user);
+            return redirect()->intended('/parentsdashboard');
+        } elseif (Auth::attempt(['email' => $request->email, 'password' => $request->password])) {
+            return redirect()->intended($this->redirectPath($user->userType));
+        } else {
+            return redirect('login')->withErrors(['email' => 'Invalid email or password.'])->withInput();
+        }
+    }
+
+    private function redirectPath($userType)
+    {
+        switch ($userType) {
+            case 'admin':
+                return '/admin';
+            case 'student':
+                return '/studentdashboard';
+            case 'instructor':
+                return '/instructordashboard';
+            default:
+                return '/login';
+        }
     }
 
     public function logout(Request $request)
