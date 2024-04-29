@@ -9,7 +9,14 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&amp;display=swap" />
   <link rel="stylesheet" href="css/users/admin/style/admin_style.css">
   <link rel="stylesheet" href="css/users/admin/main/admin_main.css">
-  <style>.admin-dashboard-text02:hover,.admin-dashboard-text04:hover,.admin-dashboard-text06:hover,.admin-dashboard-text14:hover{transform: scale(1.1)}</style>
+  <style>
+    .admin-dashboard-text02:hover,
+    .admin-dashboard-text04:hover,
+    .admin-dashboard-text06:hover,
+    .admin-dashboard-text14:hover {
+      transform: scale(1.1)
+    }
+  </style>
 </head>
 
 <body class="h-screen box-border">
@@ -56,7 +63,12 @@
         <img src="images/ced.png" class="admin-dashboard-ced1" />
       </div <img src="images/rec-t6g.svg" class="admin-dashboard-rectangle164" />
       <img src="images/rec-c9kq.svg" class="admin-dashboard-rectangle165" />
-      <a href="/logout" class="admin-dashboard-text14">Log out</a>
+      <form id="admin-dashboard-text14" action="{{ route('logout') }}" method="POST" style="display: none;">
+        @csrf
+      </form>
+
+      <a href="#" class="admin-dashboard-text14" onclick="document.getElementById('admin-dashboard-text14').submit()">Log out</a>
+
     </div>
   </div>
 

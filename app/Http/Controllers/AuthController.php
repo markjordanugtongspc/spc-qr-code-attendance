@@ -79,8 +79,11 @@ class AuthController extends Controller
         // Attempt to authenticate the user
         $credentials = $request->only('email', 'password');
         if (Auth::attempt($credentials)) {
-            // Authentication passed
-            return redirect()->intended('/instructordashboard');
+            if (Auth::user()->userType == 'admin') {
+                return redirect()->intended('/admin'); // Change to the correct admin route
+            } else {
+                return redirect()->intended('/instructordashboard');
+            }
         }
 
         // Authentication failed
