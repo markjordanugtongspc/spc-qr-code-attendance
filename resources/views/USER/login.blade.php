@@ -15,11 +15,11 @@
 
 		<div class="form-container sign-up-container">
 			<div class="role">
-                <div class="btn_content" id="btn">
-                    <h2>I'am a </h2>
-                    <button class="role_btn" id="student">student</button>
-                    <button class="role_btn"id="instructor">Instructor</button>
-                </div>
+				<div class="btn_content" id="btn">
+					<h2>I'am a </h2>
+					<button class="role_btn" id="student">student</button>
+					<button class="role_btn" id="instructor">Instructor</button>
+				</div>
 				<div class="role_form">
 					<div class="form-container student_sign_up" id="student_form">
 						<form class="formsignup" action="{{ route('register') }}" method="POST" enctype="multipart/form-data" onsubmit="return reloadAfterSubmit(this)">
@@ -31,6 +31,7 @@
 										<h4>Personal Information</h4>
 										<input type="text" name="name" placeholder="Full Name" required />
 										<input type="text" name="student_id" placeholder="Student ID" required />
+										<input type="hidden" name="userType" value="student">
 
 										<!-- Input with suggestions for Course -->
 										<input list="courses" name="course" placeholder="Course" required />
@@ -72,25 +73,27 @@
 						</form>
 					</div>
 					<div class="form-container instructor_sign_up" id="instructor_form">
-						<form class="formsignup" action="#">
+						<form class="formsignup" action="{{ route('register') }}" method="POST" enctype="multipart/form-data" onsubmit="return reloadAfterSubmit(this)">
+							@csrf
 							<div class="con0">
 								<h1>Create Account</h1>
-									<div class="form-con1">
-										<div class="instructor_personalinfo">
-											<h4>Personal Informaton</h4>
-											<input type="text" placeholder="Name" />
-											<input type="text" placeholder="Department" />
-											<input type="email" placeholder="Email" />
-											<input type="password" placeholder="Password" />
-											<input type="text" placeholder="Phone NUmber" />
-											<input type="text" placeholder="Status" />
-											<input type="date" placeholder="Birthday" />
-											<input type="text" placeholder="Address" />
-											<input type="text" placeholder="Job Status" />
-											<input type="file" placeholder="Image" />
-										</div>
+								<div class="form-con1">
+									<div class="instructor_personalinfo">
+										<h4>Personal Information</h4>
+										<input type="text" name="name" placeholder="Name" required />
+										<input type="hidden" name="userType" value="instructor">
+										<input type="text" name="department" placeholder="Department" required />
+										<input type="email" name="email" placeholder="Email" required />
+										<input type="password" name="password" placeholder="Password" required />
+										<input type="text" name="phone_number" placeholder="Phone Number" required />
+										<input type="text" name="status" placeholder="Status" required />
+										<input type="date" name="birthday" placeholder="Birthday" required />
+										<input type="text" name="address" placeholder="Address" required />
+										<input type="text" name="job_status" placeholder="Job Status" required />
+										<input type="file" name="profile_picture" required />
 									</div>
-								<div class="btn"><button>sign up</button></div>
+								</div>
+								<div class="btn"><button type="submit">Sign Up</button></div>
 							</div>
 						</form>
 					</div>

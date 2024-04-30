@@ -19,6 +19,9 @@ return new class extends Migration
             $table->string('userType')->nullable(); // Users Roles
             $table->string('student_id')->unique(); // Assuming student ID is unique
             $table->string('course')->nullable();
+            $table->string('department')->nullable();
+            $table->string('status')->unique();
+            $table->string('job_status')->nullable();
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');

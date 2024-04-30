@@ -20,36 +20,41 @@
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">Menu</a>
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                    <li><a class="dropdown-item" href="#">Ryan E. Balisi</a></li>
+                    <li><a class="dropdown-item" href="#">{{ Auth::user()->name }}</a></li>
                     <li>
                         <hr class="dropdown-divider">
                     </li>
                     <li><a class="dropdown-item" href="#">View Profile</a></li>
                     <li><a class="dropdown-item" href="#">Settings</a></li>
                     <li><a class="dropdown-item" href="#" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a></li>
-            </ul>
-        </li>
+                </ul>
+            </li>
         </div>
     </nav>
     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
         @csrf
     </form>
     <div class="body container d-flex">
-        <div class="student-details flex-column m-5">
-            <div class="student-image d-flex align-items-end bg-light">
-                <p class="student-name bg-light m-3 p-1">Ryan E. Balisi <img class="p-1" src="/images/edit.png" alt=""></p>
+        <div class="instructor-details flex-column m-5">
+            <!-- Wrap the name and edit icon in a container div -->
+            <div class="instructor-name-container">
+                <p class="instructor-name">{{ Auth::user()->name }}
+                    <img src="{{ asset('images/svgs/pen-to-square-sharp-light.svg') }}" alt="Edit" class="edit-icon">
+                </p>
             </div>
-            <div class="student-info bg-light  p-2">
+            <!-- The instructor image div now comes after the name container -->
+            <div class="instructor-image" style="background-image: url('{{ asset('storage/profile_pictures/' . Auth::user()->profile_picture) }}');"></div>
+            <div class="instructor-info bg-light  p-2">
                 <div class="role d-flex justify-content-center">
-                    <h6>INSTRUCTOR<span></span></h6>
+                    <h6>Instructor<img src="https://add.pics/images/2024/04/30/imageabd0f4d5a4a733ba.png" alt="Verified" class="verified-mark"></h6>
                 </div>
-                <h6>Department : <span>CCS</span></h6>
-                <h6>Email Address : <span>ryan_balisi.0000@spc.com</span></h6>
-                <h6>Phone : <span>+63 9201929382</span></h6>
-                <h6>Address : <span>St.Peters Sabayle</span></h6>
-                <h6>Status : <span>Married</span></h6>
-                <h6>Job Status : <span>Full Time Instructor</span></h6>
-                <h6>Birthday: <span>May 8, 1980</span></h6>
+                <h6>Department: <span>{{ Auth::user()->department }}</span></h6>
+                <h6>Email Address: <span>{{ Auth::user()->email }}</span></h6>
+                <h6>Phone: <span>{{ Auth::user()->phone_number }}</span></h6>
+                <h6>Address: <span>{{ Auth::user()->address }}</span></h6>
+                <h6>Status: <span>{{ Auth::user()->status }}</span></h6>
+                <h6>Job Status: <span>{{ Auth::user()->job_status }}</span></h6>
+                <h6>Birthday: <span>{{ Auth::user()->birthday }}</span></h6>
                 <div class="list d-flex justify-content-center">
                     <h6 class="bg-success p-2 rounded-pill">List of Student<span></span></h6>
                 </div>
@@ -60,7 +65,7 @@
                 <p class="d-flex justify-content-center"><a class="bg-success text-black p-1" href="#">Select Subject</a></p>
             </div>
         </div>
-        <div class="student-time flex-column pt-3 w-75 ">
+        <div class="instructor-time flex-column pt-3 w-75 ">
             <div class="d-flex gap-4 ">
                 <div class="qr-time text-light gap-1 align-content-center">
                     <h6><img src="/images/qr-code.png" id="spcqr"><span> SCAN QR CODE</span></h6>
