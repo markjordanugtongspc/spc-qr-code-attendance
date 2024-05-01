@@ -7,6 +7,8 @@ use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 use App\Http\Controllers\AttendanceController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\StudentController;
+use App\Http\Controllers\RegisterController;
 use Illuminate\Support\Facades\Auth;
 
 // Route::post('/verify-student', [AttendanceController::class, 'verifyStudent'])->name('verify-student');
@@ -142,9 +144,18 @@ Route::get('/studentnotes', function () {
     return view('USER/studentnotes');
 })->name('studentnotes');
 
+// Route for Instructor register
+// Route::get('/instructorregister', function () {
+//     return view('USER/instructorregister');
+// })->name('instructor.register');
+
+
 // Authentication Routes
 Route::get('/signup', [AuthController::class, 'showRegistrationForm'])->name('signup');
-Route::post('/signup', [AuthController::class, 'register'])->name('register');
+Route::post('/signup', [StudentController::class, 'create'])->name('register');
+Route::post('/signup', [RegisterController::class, 'studentRegister'])->name('student.register');
+Route::post('instructorregister', [RegisterController::class, 'instructorRegister'])->name('instructor.register');
+
 Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');
 Route::post('/login', [AuthController::class, 'login'])->name('login');
 Route::post('/logout', [AuthController::class, 'logout'])->name('logout')->middleware('auth');

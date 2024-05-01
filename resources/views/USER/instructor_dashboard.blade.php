@@ -43,7 +43,7 @@
                 </p>
             </div>
             <!-- The instructor image div now comes after the name container -->
-            <div class="instructor-image" style="background-image: url('{{ asset('storage/profile_pictures/' . Auth::user()->profile_picture) }}');"></div>
+            <div class="instructor-image" style="background-image: url('{{ asset('/' . Auth::user()->profile_picture) }}');"></div>
             <div class="instructor-info bg-light  p-2">
                 <div class="role d-flex justify-content-center">
                     <h6>Instructor<img src="https://add.pics/images/2024/04/30/imageabd0f4d5a4a733ba.png" alt="Verified" class="verified-mark"></h6>
