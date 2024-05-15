@@ -7,6 +7,8 @@ use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 use App\Http\Controllers\AttendanceController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\StudentController;
+use App\Http\Controllers\RegisterController;
 use Illuminate\Support\Facades\Auth;
 
 // Route::post('/verify-student', [AttendanceController::class, 'verifyStudent'])->name('verify-student');
@@ -46,52 +48,52 @@ Route::get('/', function () {
 // ..................................ADMIN
 // Route for the admin page
 Route::get('/admin', function () {
-    return view('ADMIN/admin');
+    return view('ADMINISTRATOR/Admin');
 })->name('admin')->middleware(['auth', 'admin']);
 
 // Route for the instructor page
 Route::get('/instructor', function () {
-    return view('ADMIN/instructor_admin');
+    return view('ADMINISTRATOR/InstructorAdministrator');
 })->name('instructor');
 
 // Route for the student page
 Route::get('/student', function () {
-    return view('ADMIN/student_admin');
+    return view('ADMINISTRATOR/StudentAdministrator');
 })->name('student');
 
 // Route for the attendance log page
 Route::get('/attendancelog', function () {
-    return view('ADMIN/attendance_log');
+    return view('ADMINISTRATOR/AttendanceLog');
 })->name('attendancelog');
 
 // Route for the studentlist
 Route::get('/coe', function () {
-    return view('ADMIN/coe_stud_list');
+    return view('ADMINISTRATOR/StudentList/coe_stud_list');
 })->name('coe');
 
 // Route for the studentlist
 Route::get('/cba', function () {
-    return view('ADMIN/cba_stud_list');
+    return view('ADMINISTRATOR/StudentList/cba_stud_list');
 })->name('cba');
 
 // Route for the studentlist
 Route::get('/coc', function () {
-    return view('ADMIN/coc_stud_list');
+    return view('ADMINISTRATOR/StudentList/coc_stud_list');
 })->name('coc');
 
 // Route for the studentlist
 Route::get('/ccs', function () {
-    return view('ADMIN/ccs_stud_list');
+    return view('ADMINISTRATOR/StudentList/ccs_stud_list');
 })->name('ccs');
 
 // Route for the studentlist
 Route::get('/cas', function () {
-    return view('ADMIN/cas_stud_list');
+    return view('ADMINISTRATOR/StudentList/cas_stud_list');
 })->name('cas');
 
 // Route for the studentlist
 Route::get('/ced', function () {
-    return view('ADMIN/ced_stud_list');
+    return view('ADMINISTRATOR/StudentList/ced_stud_list');
 })->name('ced');
 
 
@@ -99,52 +101,61 @@ Route::get('/ced', function () {
 // .................................USER
 // Route for the signup
 Route::get('/signup', function () {
-    return view('signup');
+    return view('USER/signup');
 })->name('signup');
 
 // Route for the Login
 Route::get('/login', function () {
-    return view('USER/login');
+    return view('USER/Authentication/login');
 })->name('login');
 
 // Route for the parent dashboard
 Route::get('/parents', function () {
-    return view('USER/parents_dashboard');
+    return view('USER/Parents');
 })->name('parents_dashboard');
 
 // Route for the instructor dashboard
 Route::get('/instructordashboard', function () {
-    return view('USER/instructor_dashboard');
+    return view('USER/Instructor/instructor_dashboard');
 })->name('instructordashboard');
 
 // Route for the instructor sub views
 Route::get('/instructor_sub_views', function () {
-    return view('USER/instructor_sub_views');
+    return view('USER/Instructor/instructor_sub_views');
 })->name('instructor_sub_views');
 
 // Route for the Srudent dashboard
 Route::get('/studentdashboard', function () {
-    return view('USER/studentdashboard');
+    return view('USER/Student/studentdashboard');
 })->name('studentdashboard');
 
 // Route for forgot password
 Route::get('/forgotpassword', function () {
-    return view('USER/forgotpassword');
+    return view('USER/Authentication/forgotpassword');
 })->name('forgotpassword');
 
 // Route for Reset password
 Route::get('/resetpassword', function () {
-    return view('USER/resetpassword');
+    return view('USER/Authentication/resetpassword');
 })->name('resetpassword');
 
 // Route for Student Notes
 Route::get('/studentnotes', function () {
-    return view('USER/studentnotes');
+    return view('USER/Student/studentnotes');
 })->name('studentnotes');
+
+// Route for Instructor register
+// Route::get('/instructorregister', function () {
+//     return view('USER/instructorregister');
+// })->name('instructor.register');
+
 
 // Authentication Routes
 Route::get('/signup', [AuthController::class, 'showRegistrationForm'])->name('signup');
-Route::post('/signup', [AuthController::class, 'register'])->name('register');
+Route::post('/signup', [StudentController::class, 'create'])->name('register');
+Route::post('/signup', [RegisterController::class, 'studentRegister'])->name('student.register');
+Route::post('instructorregister', [RegisterController::class, 'instructorRegister'])->name('instructor.register');
+
 Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');
 Route::post('/login', [AuthController::class, 'login'])->name('login');
 Route::post('/logout', [AuthController::class, 'logout'])->name('logout')->middleware('auth');

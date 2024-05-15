@@ -11,7 +11,7 @@ class User extends Authenticatable
     use HasFactory, Notifiable;
 
     /**
-     *
+     * The attributes that are mass assignable.
      *
      * @var array
      */
@@ -31,10 +31,13 @@ class User extends Authenticatable
         'guardian_relationship',
         'guardian_phone_number',
         'guardian_email',
+        'department', 
+        'status',
+        'job_status' 
     ];
 
     /**
-     *
+     * The attributes that should be hidden for arrays.
      *
      * @var array<int, string>
      */
@@ -44,7 +47,7 @@ class User extends Authenticatable
     ];
 
     /**
-     *
+     * The attributes that should be cast to native types.
      *
      * @var array<string, string>
      */
