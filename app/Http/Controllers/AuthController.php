@@ -100,7 +100,7 @@ class AuthController extends Controller
 
     public function showLoginForm()
     {
-        return view('USER/login');
+        return view('USER/Authentication/login');
     }
 
     public function login(Request $request)
