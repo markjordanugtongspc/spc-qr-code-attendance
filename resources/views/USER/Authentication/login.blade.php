@@ -53,7 +53,7 @@
 										<input type="text" name="address" placeholder="Address" required />
 
 										<!-- Input with suggestions for Gender -->
-										<input list="genders" name="gender" placeholder="Gender" required />
+										<input list="gender" name="gender" placeholder="Gender" required />
 										<datalist id="genders">
 											<option value="Male">
 											<option value="Female">

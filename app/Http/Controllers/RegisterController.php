@@ -41,6 +41,7 @@ class RegisterController extends Controller
             'phone_number' => $request->input('phone_number'),
             'birthday' => $request->input('birthday'),
             'address' => $request->input('address'),
+            'gender' => $request->gender,
             'profile_picture' =>
             'storage/' .
                 $request
