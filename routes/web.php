@@ -143,10 +143,13 @@ Route::get('/studentnotes', function () {
     return view('USER/Student/studentnotes');
 })->name('studentnotes');
 
-
 // Edit Route
 Route::get('/students/{id}/edit', [StudentController::class, 'edit'])->name('students.edit');
 Route::put('/students/{id}', [StudentController::class, 'update'])->name('students.update');
+
+// Delete Routes
+Route::delete('/students/{id}', [StudentController::class, 'destroy'])->name('students.destroy');
+Route::post('/students/{id}/restore', [StudentController::class, 'restore'])->name('students.restore');
 
 // Authentication Routes
 Route::get('/signup', [AuthController::class, 'showRegistrationForm'])->name('signup');
