@@ -85,7 +85,6 @@ Route::get('/coc', function () {
 // Route for the ccs studentlist
 Route::get('/ccs', [StudentController::class, 'showStudentList'])->name('ccs');
 
-
 // Route for the studentlist
 Route::get('/cas', function () {
     return view('ADMINISTRATOR/StudentList/cas_stud_list');
@@ -143,11 +142,6 @@ Route::get('/resetpassword', function () {
 Route::get('/studentnotes', function () {
     return view('USER/Student/studentnotes');
 })->name('studentnotes');
-
-// Route for Instructor register
-// Route::get('/instructorregister', function () {
-//     return view('USER/instructorregister');
-// })->name('instructor.register');
 
 
 // Edit Route

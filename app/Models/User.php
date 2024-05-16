@@ -35,7 +35,8 @@ class User extends Authenticatable
         'guardian_email',
         'department', 
         'stats',
-        'job_status'
+        'status',
+        'job_status' 
     ];
 
     /**

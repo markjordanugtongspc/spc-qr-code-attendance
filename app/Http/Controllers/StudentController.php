@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 
 class StudentController extends Controller
 {
+  
     public function showStudentList()
     {
         $students = User::where('userType', 'student')
@@ -63,5 +64,29 @@ class StudentController extends Controller
         $student->update($validatedData);
 
         return redirect()->route('ccs')->with('success', 'Student updated successfully');
+
+        ];
+
+        $this->validate($request, $rules);
+
+        $student = User::create([
+            'name' => $request->input('name'),
+            'student_id' => $request->input('student_id'),
+            'course' => $request->input('course'),
+            'email' => $request->input('email'),
+            'phone_number' => $request->input('phone_number'),
+            'birthday' => $request->input('birthday'),
+            'address' => $request->input('address'),
+            'profile_picture' => $request->file('profile_picture')->store('profile_pictures'),
+            'userType' => $request->input('userType'),
+            'password' => bcrypt($request->input('password')),
+            // 'confirm_password' => bcrypt($request->input('confirm_password')),
+            'guardian_name' => $request->input('guardian_name'),
+            'guardian_relationship' => $request->input('guardian_relationship'),
+            'guardian_phone_number' => $request->input('guardian_phone_number'),
+            'guardian_email' => $request->input('guardian_email'),
+        ]);
+
+        dd($student);
     }
 }

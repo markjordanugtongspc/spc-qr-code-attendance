@@ -75,7 +75,7 @@
         </tr>
         @endforeach
     </table>
-
+    
     <div class="absolute bottom-0 left-0 ml-4 mb-4 flex items-center">
         <button class="px-2 py-1 rounded-full bg-red-700 rounded-md hover:bg-red-500" onclick="randomizeRoute()">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
