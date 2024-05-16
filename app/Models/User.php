@@ -26,12 +26,15 @@ class User extends Authenticatable
         'birthday',
         'address',
         'gender',
+        'year_level',
+        'status',
         'profile_picture',
         'guardian_name',
         'guardian_relationship',
         'guardian_phone_number',
         'guardian_email',
         'department', 
+        'stats',
         'status',
         'job_status' 
     ];

@@ -58,7 +58,7 @@
               <a href="{{ route('student') }}" class="student-text02">STUDENTS</a>
             </button>
             <button class="students-text04 bg-blue-500">
-              <a href="{{ route('instructordashboard') }}" class="student-text04">INSTRUCTOR</a>
+              <a href="{{ route('instructor') }}" class="student-text04">INSTRUCTOR</a>
             </button>
             <button class="students-text06">
               <a href="{{ route('attendancelog') }}" class="ins_stud_adm-text06">ATTENDANCE LOG</a>
@@ -102,7 +102,7 @@
           <span>College of Education</span>
         </span>
         <img src="images/ins_stud_adm/cas.png" alt="cas34828" class="students-cas3">
-        <form action="" method="POST">@csrf <button type="submit" class="students-text28 logout-button">
+        <form action="{{ route('logout') }}" method="POST">@csrf <button type="submit" class="students-text28 logout-button">
             <span>Log out</span>
           </button>
         </form>

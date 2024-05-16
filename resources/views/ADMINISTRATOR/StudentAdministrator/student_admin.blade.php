@@ -78,7 +78,7 @@
         </span>
         <span class="students-text26"><span>College of Education</span></span>
         <img src="images/ins_stud_adm/cas.png" class="students-cas3" />
-        <form action="" method="POST">
+        <form action="{{ route('logout') }}" method="POST">
           @csrf
           <button type="submit" class="students-text28 logout-button">
             <span>Log out</span>

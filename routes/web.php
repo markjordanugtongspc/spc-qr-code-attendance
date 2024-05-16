@@ -10,6 +10,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\RegisterController;
 use Illuminate\Support\Facades\Auth;
+use App\Models\User;
 
 // Route::post('/verify-student', [AttendanceController::class, 'verifyStudent'])->name('verify-student');
 
@@ -48,22 +49,22 @@ Route::get('/', function () {
 // ..................................ADMIN
 // Route for the admin page
 Route::get('/admin', function () {
-    return view('ADMINISTRATOR/Admin');
+    return view('ADMINISTRATOR/Admin/admin');
 })->name('admin')->middleware(['auth', 'admin']);
 
 // Route for the instructor page
 Route::get('/instructor', function () {
-    return view('ADMINISTRATOR/InstructorAdministrator');
+    return view('ADMINISTRATOR/InstructorAdministrator/instructor_admin');
 })->name('instructor');
 
 // Route for the student page
 Route::get('/student', function () {
-    return view('ADMINISTRATOR/StudentAdministrator');
+    return view('ADMINISTRATOR/StudentAdministrator/student_admin');
 })->name('student');
 
 // Route for the attendance log page
 Route::get('/attendancelog', function () {
-    return view('ADMINISTRATOR/AttendanceLog');
+    return view('ADMINISTRATOR/AttendanceLog/attendance_log');
 })->name('attendancelog');
 
 // Route for the studentlist
@@ -81,10 +82,8 @@ Route::get('/coc', function () {
     return view('ADMINISTRATOR/StudentList/coc_stud_list');
 })->name('coc');
 
-// Route for the studentlist
-Route::get('/ccs', function () {
-    return view('ADMINISTRATOR/StudentList/ccs_stud_list');
-})->name('ccs');
+// Route for the ccs studentlist
+Route::get('/ccs', [StudentController::class, 'showStudentList'])->name('ccs');
 
 // Route for the studentlist
 Route::get('/cas', function () {
@@ -144,11 +143,10 @@ Route::get('/studentnotes', function () {
     return view('USER/Student/studentnotes');
 })->name('studentnotes');
 
-// Route for Instructor register
-// Route::get('/instructorregister', function () {
-//     return view('USER/instructorregister');
-// })->name('instructor.register');
 
+// Edit Route
+Route::get('/students/{id}/edit', [StudentController::class, 'edit'])->name('students.edit');
+Route::put('/students/{id}', [StudentController::class, 'update'])->name('students.update');
 
 // Authentication Routes
 Route::get('/signup', [AuthController::class, 'showRegistrationForm'])->name('signup');
