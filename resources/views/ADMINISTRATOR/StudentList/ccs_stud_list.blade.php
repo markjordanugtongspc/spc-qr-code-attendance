@@ -64,18 +64,27 @@
                 <a href="{{ route('students.edit', $student->id) }}" class="inline-block">
                     <img src="https://add.pics/images/2024/05/16/image4553449d24d095cd.png" alt="Edit" class="mx-2" width="20" height="20">
                 </a>
-                <form action="" method="POST" class="inline-block">
+                <form action="{{ route('students.destroy', $student->id) }}" method="POST" class="inline-block">
                     @csrf
                     @method('DELETE')
                     <button type="submit" class="p-0 border-none bg-transparent">
                         <img src="https://add.pics/images/2024/05/16/imagebf37507decf00dd9.png" alt="Delete" class="mx-2" width="20" height="20">
                     </button>
                 </form>
+                <!-- Add a restore button if the student is soft-deleted -->
+                @if($student->trashed())
+                <form action="{{ route('students.restore', $student->id) }}" method="POST" class="inline-block">
+                    @csrf
+                    <button type="submit" class="p-0 border-none bg-transparent">
+                        Restore
+                    </button>
+                </form>
+                @endif
             </td>
         </tr>
         @endforeach
     </table>
-    
+
     <div class="absolute bottom-0 left-0 ml-4 mb-4 flex items-center">
         <button class="px-2 py-1 rounded-full bg-red-700 rounded-md hover:bg-red-500" onclick="randomizeRoute()">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">

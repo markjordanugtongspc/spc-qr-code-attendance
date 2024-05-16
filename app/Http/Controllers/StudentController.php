@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 
 class StudentController extends Controller
 {
-  
+
     public function showStudentList()
     {
         $students = User::where('userType', 'student')
@@ -48,6 +48,23 @@ class StudentController extends Controller
         $student = User::findOrFail($id);
         return view('ADMINISTRATOR.StudentList.Edit.edit', compact('student'));
     }
+    public function destroy($id)
+    {
+        $student = User::findOrFail($id);
+        $student->delete(); // Soft delete the student
+
+        return redirect()->route('ccs')->with('success', 'Student deleted successfully.');
+    }
+
+    public function restore($id)
+    {
+        $student = User::withTrashed()->findOrFail($id);
+        $student->restore(); // Restore the soft-deleted student
+
+        return redirect()->route('ccs')->with('success', 'Student restored successfully.');
+    }
+
+
 
     public function update(Request $request, $id)
     {
@@ -64,9 +81,6 @@ class StudentController extends Controller
         $student->update($validatedData);
 
         return redirect()->route('ccs')->with('success', 'Student updated successfully');
-
-        ];
-
         $this->validate($request, $rules);
 
         $student = User::create([
