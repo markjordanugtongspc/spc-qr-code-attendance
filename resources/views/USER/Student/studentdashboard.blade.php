@@ -39,7 +39,7 @@
 
     <div class="body container d-flex gap-4">
         <div class="student-details flex-column m-5">
-            <div class="student-image" style="background-image: url('{{ asset('storage/profile_pictures/' . Auth::user()->profile_picture) }}');">
+            <div class="student-image" style="background-image: url('{{ asset('/'.Auth::user()->profile_picture) }}');">
                 <p class="student-name">
                     {{ Auth::user()->name }}
                     <img src="{{ asset('images/svgs/pen-to-square-sharp-light.svg') }}" alt="Edit" class="edit-icon">

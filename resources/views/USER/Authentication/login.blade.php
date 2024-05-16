@@ -20,9 +20,10 @@
 					<button class="role_btn" id="student">student</button>
 					<button class="role_btn" id="instructor">Instructor</button>
 				</div>
+
 				<div class="role_form">
 					<div class="form-container student_sign_up" id="student_form">
-						<form class="formsignup" action="{{ route('register') }}" method="POST" enctype="multipart/form-data" onsubmit="return reloadAfterSubmit(this)">
+						<form class="formsignup" action="{{ route('student.register') }}" method="POST" enctype="multipart/form-data" onsubmit="return reloadAfterSubmit(this)">
 							@csrf
 							<div class="con0">
 								<h1>Create Account</h1>
@@ -42,9 +43,11 @@
 											<option value="BSCE">
 										</datalist>
 
+										<!-- Katong ga AI ko kol kay need daw nag conditional logic para ma separate ang instructor ug student -->
+										<!-- ohh bai pero unsaon?? hahahaha -->
 										<input type="email" name="email" placeholder="Email" required />
 										<input type="password" name="password" placeholder="Password" required />
-										<input type="password" name="password_confirmation" placeholder="Re-Password" required />
+										<!-- <input type="password" name="password_confirmation" placeholder="Re-Password" required /> -->
 										<input type="text" name="phone_number" placeholder="Phone Number" required />
 										<input type="date" name="birthday" placeholder="Birthday" required />
 										<input type="text" name="address" placeholder="Address" required />
@@ -73,7 +76,7 @@
 						</form>
 					</div>
 					<div class="form-container instructor_sign_up" id="instructor_form">
-						<form class="formsignup" action="{{ route('register') }}" method="POST" enctype="multipart/form-data" onsubmit="return reloadAfterSubmit(this)">
+						<form class="formsignup" action="{{ route('instructor.register') }}" method="POST" enctype="multipart/form-data" onsubmit="return reloadAfterSubmit(this)">
 							@csrf
 							<div class="con0">
 								<h1>Create Account</h1>
