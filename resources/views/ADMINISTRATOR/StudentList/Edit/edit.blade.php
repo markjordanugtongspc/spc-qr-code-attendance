@@ -38,10 +38,16 @@
                 <input type="text" name="year_level" id="year_level" placeholder="Enter year level" value="{{ $student->year_level }}" class="w-full px-3 py-2 placeholder-gray-300 border border-gray-300 rounded-md focus:outline-none focus:ring focus:border-blue-100" />
             </div>
 
-            <!-- Status -->
             <div class="mb-6">
                 <label for="stats" class="block mb-2 text-sm text-gray-600 dark:text-gray-400">Status</label>
                 <input type="text" name="stats" id="stats" placeholder="Enter Status" value="{{ $student->stats }}" class="w-full px-3 py-2 placeholder-gray-300 border border-gray-300 rounded-md focus:outline-none focus:ring focus:border-blue-100" />
+            </div>
+
+            <!-- QR Code Display -->
+            <div class="mb-6 text-center">
+                <label for="qr_code" class="block mb-2 text-sm text-gray-600 dark:text-gray-400">QR Code</label>
+                <div id="qrCode" class="mb-4"></div>
+                <button type="button" onclick="generateQrCode()" class="px-3 py-2 text-white bg-blue-500 rounded-md focus:bg-blue-600 focus:outline-none">Generate QR Code</button>
             </div>
 
             <div class="mb-6">
@@ -50,4 +56,23 @@
         </form>
     </div>
 </div>
+
+<script>
+    function generateQrCode() {
+        // Combine the data fields into a single string
+        var data = [
+            'ID: ' + document.getElementById('student_id').value,
+            'Name: ' + document.getElementById('name').value,
+            'Course: ' + document.getElementById('course').value,
+            'Year Level: ' + document.getElementById('year_level').value,
+            'Status: ' + document.getElementById('stats').value
+        ].join('; ');
+
+        // Generate the QR code URL
+        const qrCodeUrl = `https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=${encodeURIComponent(data)}`;
+
+        // Display the QR code
+        document.getElementById('qrCode').innerHTML = `<img src="${qrCodeUrl}" alt="QR Code" style="margin: auto; display: block;">`;
+    }
+</script>
 @endsection

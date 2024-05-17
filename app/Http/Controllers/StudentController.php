@@ -4,10 +4,11 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
+use SimpleSoftwareIO\QrCode\Facades\QrCode;
+use Illuminate\Support\Facades\Storage;
 
 class StudentController extends Controller
 {
-
     public function showStudentList()
     {
         $students = User::where('userType', 'student')
@@ -48,23 +49,20 @@ class StudentController extends Controller
         $student = User::findOrFail($id);
         return view('ADMINISTRATOR.StudentList.Edit.edit', compact('student'));
     }
+
     public function destroy($id)
     {
         $student = User::findOrFail($id);
-        $student->delete(); // Soft delete the student
-
+        $student->delete();
         return redirect()->route('ccs')->with('success', 'Student deleted successfully.');
     }
 
     public function restore($id)
     {
         $student = User::withTrashed()->findOrFail($id);
-        $student->restore(); // Restore the soft-deleted student
-
+        $student->restore();
         return redirect()->route('ccs')->with('success', 'Student restored successfully.');
     }
-
-
 
     public function update(Request $request, $id)
     {
@@ -74,33 +72,29 @@ class StudentController extends Controller
             'course' => 'required',
             'gender' => 'required|in:male,female,other',
             'year_level' => 'nullable',
-            'stats' => 'nullable', // Use 'stats' to match your column name
+            'stats' => 'nullable',
         ]);
 
         $student = User::findOrFail($id);
         $student->update($validatedData);
 
-        return redirect()->route('ccs')->with('success', 'Student updated successfully');
-        $this->validate($request, $rules);
+        // Generate QR code data
+        $qrData = [
+            'ID' => $request->student_id,
+            'Name' => $request->name,
+            'Course' => $request->course,
+            'Year Level' => $request->year_level,
+            'Status' => $request->stats,
+        ];
+        // Generate the QR code and convert it to a base64 string
+        $qrCode = QrCode::format('png')->size(200)->generate(implode(';', $qrData));
+        $filename = 'qrcode/' . $student->id . '.png'; // Unique filename
+        Storage::disk('public')->put($filename, $qrCode);
 
-        $student = User::create([
-            'name' => $request->input('name'),
-            'student_id' => $request->input('student_id'),
-            'course' => $request->input('course'),
-            'email' => $request->input('email'),
-            'phone_number' => $request->input('phone_number'),
-            'birthday' => $request->input('birthday'),
-            'address' => $request->input('address'),
-            'profile_picture' => $request->file('profile_picture')->store('profile_pictures'),
-            'userType' => $request->input('userType'),
-            'password' => bcrypt($request->input('password')),
-            // 'confirm_password' => bcrypt($request->input('confirm_password')),
-            'guardian_name' => $request->input('guardian_name'),
-            'guardian_relationship' => $request->input('guardian_relationship'),
-            'guardian_phone_number' => $request->input('guardian_phone_number'),
-            'guardian_email' => $request->input('guardian_email'),
-        ]);
+        // Save QR code data as base64 string in the database
+        $student->qr_code = $filename; // Store only filename in database
+        $student->save();
 
-        dd($student);
+        return redirect()->route('ccs')->with('success', 'Student updated successfully.');
     }
 }
