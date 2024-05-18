@@ -3,8 +3,8 @@
 @section('title', 'Edit Student')
 
 @section('content')
-<div class="container mx-auto px-4">
-    <div class="w-full max-w-lg mx-auto my-10 bg-white p-8 border border-gray-200 rounded-lg shadow-xl">
+<div class="container px-4">
+    <div class="w-full max-w-lg mx-auto bg-white p-8 border border-gray-200 rounded-lg shadow-xl">
         <form action="{{ route('students.update', $student->id) }}" method="POST">
             @csrf
             @method('PUT')

@@ -1,4 +1,3 @@
-<!-- Using tailwind Css for styling and added php foreach loop to display the data from the database. -->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -6,65 +5,63 @@
     <title>Student List</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 </head>
 
-<body class="bg-gray-200" style="background-color: rgb(217, 217, 217);">
+<body class="bg-light">
 
-    <body class="bg-gray-200" style="background-color: rgb(217, 217, 217);">
-        <div class="bg-red-700 h-10" style="background-color: rgb(74, 3, 11);"></div>
-        <div class="flex items-center justify-center mx-10 mt-5"> <!-- Modified justify-between to justify-center and reduced margin-top to mt-5 -->
-            <img src="images/ced.png" alt="ced Logo" class="h-12 mr-5">
-            <h1 class="text-3xl font-bold">LIST OF STUDENTS</h1>
-            <img src="images/ced.png" alt="ced Logo" class="h-12 ml-5">
-        </div>
-        <div class="flex items-center justify-between mx-10 mt-4"> <!-- Added new div for the small text and menu bar -->
-            <div class="flex items-center space-x-2"> <!-- Small text and menu bar -->
-                <span class="text-sm">SHOW</span>
-                <select class="px-2 py-1 rounded-md">
-                    <option>1</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                    <option>5</option>
-                    <option>6</option>
-                    <option>7</option>
-                    <option>8</option>
-                    <option>9</option>
-                    <option>10</option>
-                </select>
-            </div>
-            <div> <!-- Time in code -->
-                <span></span>
-                <input class="px-2 py-1 ml-2 rounded-md" type="search" placeholder="search">
-                <button class="px-4 py-2 ml-4 font-medium text-white bg-red-700 rounded-md hover:bg-red-500">Search</button>
-            </div>
-        </div>
-    </body>
-    <table class="w-full mx-auto mt-4 center">
-        <tr>
-            <th class="px-6 py-3 border" style="background-color: rgb(198, 170, 170);">ID NUMBER</th>
-            <th class="px-6 py-3 border" style="background-color: rgb(198, 170, 170);">NAME</th>
-            <th class="px-6 py-3 border" style="background-color: rgb(198, 170, 170);">COURSE</th>
-            <th class="px-6 py-3 border" style="background-color: rgb(198, 170, 170);">GENDER</th>
-            <th class="px-6 py-3 border" style="background-color: rgb(198, 170, 170);">YEAR LEVEL</th>
-            <th class="px-6 py-3 border" style="background-color: rgb(198, 170, 170);">STATUS</th>
-            <th class="px-6 py-3 border" style="background-color: rgb(198, 170, 170);">ACTION</th>
-        </tr>
-
-
-    </table>
-    <div class="absolute bottom-0 left-0 ml-4 mb-4 flex items-center">
-        <button class="px-2 py-1 rounded-full bg-red-700 rounded-md hover:bg-red-500" onclick="randomizeRoute()">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
-            </svg>
-        </button>
-        <span class="ml-4 py-1">Showing 0 to 0 of 0 entries</span>
+    <div style="height: 40px; background-color: #800000;"></div>
+    <div class="d-flex justify-content-center align-items-center mx-5 mt-3 gap-3">
+        <img src="images/ccs.png" alt="ccs Logo"  style="height: 80px; width: 80px;">
+        <h1 class="text-center fs-3 fw-bold">LIST OF STUDENTS</h1>
+        <img src="images/ccs.png" alt="ccs Logo" style="height: 80px; width: 80px;">
     </div>
-    <div class="absolute bottom-0 right-0 mb-3 mr-4">
-        <button class="px-4 py-2 ml-1 font-medium text-white bg-red-700 rounded-md hover:bg-red-500">Previous</button>
-        <button class="px-4 py-2 ml-1 font-medium text-white bg-red-700 rounded-md hover:bg-red-500">Next</button>
+    <div class="d-flex justify-content-between mx-5 mt-4">
+        <div class="d-flex align-items-center">
+            <span class="me-2">SHOW</span>
+            <select class="form-select">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+                <option>6</option>
+                <option>7</option>
+                <option>8</option>
+                <option>9</option>
+                <option>10</option>
+            </select>
+        </div>
+        <div class="d-flex">
+            <input class="form-control" type="search" placeholder="search">
+            <button class="btn ms-3 text-light" style="background-color: #800000;">Search</button>
+        </div>
+    </div>
+
+    <table class="table table-bordered mx-auto mt-4">
+        <thead class="table-light">
+            <tr>
+                <th class="text-center">ID NUMBER</th>
+                <th class="text-center">NAME</th>
+                <th class="text-center">COURSE</th>
+                <th class="text-center">GENDER</th>
+                <th class="text-center">YEAR LEVEL</th>
+                <th class="text-center">STATUS</th>
+                <th class="text-center">ACTION</th>
+            </tr>
+        </thead>
+        <!-- student code just like CCS List Student table -->
+    </table>
+
+    <div class="position-absolute bottom-0 start-0 ms-3 mb-3 d-flex align-items-center">
+        <button class="btn btn-danger me-2" onclick="randomizeRoute()">
+            Back
+        </button>
+        <span class="ms-4">Showing 0 to 0 of 0 entries</span>
+    </div>
+    <div class="position-absolute bottom-0 end-0 me-3 mb-3">
+        <button class="btn text-light me-1" style="background-color: #800000;">Previous</button>
+        <button class="btn text-light ms-1" style="background-color: #800000;">Next</button>
     </div>
 
     <script>
