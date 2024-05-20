@@ -8,6 +8,7 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
   <script src="https://unpkg.com/html5-qrcode"></script>
 
+
   <!-- Metas -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta charset="utf8" />
@@ -31,18 +32,18 @@
     <div class="student-info-container container">
       <h2 class="student-info-heading">Gate Pass ID</h2>
       <hr class="student-info-line" />
-      <div class="student-info-svg-container">
-        <img src="/images/gatepass/vector2221-2hxt.svg" alt="Student Info" class="student-info-svg" />
+      <div id="output-container" class="output-container">
+        <!-- The QR code scan result will be displayed here -->
+        <p id="qr-code-result" class="qr-code-result"></p>
+        <!-- File input for QR code image upload -->
+        <input type="file" id="qr-code-files" accept="image/*" class="qr-code-file-input">
       </div>
-      <p class="scan-here-text">Scanner Here</p>
-      <p class="scan-first-text">Scan First</p>
     </div>
     <video id="camera-preview"></video>
-
-    <input type="file" id="qr-code-input" accept="image/png, image/jpeg" />
-
     <div id="output"></div>
-
+    <!-- Include the html5-qrcode library -->
+    <script src="https://unpkg.com/html5-qrcode"></script>
+    <!-- Include your custom JavaScript file -->
     <script src="js/gatepass/gatepass.js"></script>
   </div>
 </body>
