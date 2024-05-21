@@ -19,7 +19,7 @@ body{
 }
 .nav-item{
   list-style: none;
-  margin-right: -5px;
+  margin-right: 5px;
 }
 .tablehead tr th{
   background-color: #2773F2;
@@ -50,17 +50,16 @@ body{
 .instructor-name {
   border-radius: 10px;
   position: absolute;
-  top: 10%; /* Increase the percentage to move the text further down */
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: auto;
-  background-color: rgba(255, 255, 255, 0.5);
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgb(255, 255, 255);
   color: #000;
-  padding: 5px 10px;
+  text-align: center;
+  padding: 5px 0;
   display: flex;
-  justify-content: center;
-  align-items: end;
-  gap: 15px;
+  justify-content: center; /* Center the name and edit icon */
+  align-items: center;
 }
 
 .edit-icon {
@@ -71,7 +70,6 @@ body{
 
 
 .instructor-name img{
-  border-left: 1px solid #000000;
   width: 25px;
   height: 25px;
 }
@@ -116,10 +114,4 @@ body{
   color: green; /* Green color for the verified check mark */
   width: 20px; /* Set the size of the verified check mark */
   height: 20px;
-}
-.instructor-name-container {
-  position: relative;
-  z-index: 2; /* Ensure it's above the image */
-  text-align: center; /* Center the content */
-  /* Add other styles from .student-name here */
 }

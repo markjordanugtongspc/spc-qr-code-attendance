@@ -12,9 +12,9 @@
 
     <div style="height: 40px; background-color: #800000;"></div>
     <div class="d-flex justify-content-center align-items-center mx-5 mt-3 gap-3">
-        <img src="images/ccs.png" alt="ccs Logo"  style="height: 80px; width: 80px;">
+        <img src="images/ced.png" alt="ced Logo"  style="height: 80px; width: 80px;">
         <h1 class="text-center fs-3 fw-bold">LIST OF STUDENTS</h1>
-        <img src="images/ccs.png" alt="ccs Logo" style="height: 80px; width: 80px;">
+        <img src="images/ced.png" alt="ced Logo" style="height: 80px; width: 80px;">
     </div>
     <div class="d-flex justify-content-between mx-5 mt-4">
         <div class="d-flex align-items-center">
@@ -54,8 +54,8 @@
     </table>
 
     <div class="position-absolute bottom-0 start-0 ms-3 mb-3 d-flex align-items-center">
-        <button class="btn btn-danger me-2" onclick="randomizeRoute()">
-            Back
+        <button class="btn " style="background-color: #800000;" onclick="randomizeRoute()">
+            <img src="images/back1.png" alt="back-button" class="d-flex align-items-center" style="height: 20px;">
         </button>
         <span class="ms-4">Showing 0 to 0 of 0 entries</span>
     </div>
@@ -66,7 +66,7 @@
 
     <script>
         function randomizeRoute() {
-            var routes = ["instructor", "student"];
+            var routes = ["admin"];
             var randomIndex = Math.floor(Math.random() * routes.length);
             var randomRoute = routes[randomIndex];
 
