@@ -96,6 +96,37 @@ Route::get('/ced', function () {
 })->name('ced');
 
 
+// Route for the Instructor list
+Route::get('/instructor_coe', function () {
+    return view('ADMINISTRATOR\InstructorAdministrator\coe_instuctor_list');
+})->name('instructor_coe');
+
+// Route for the Instructor list
+Route::get('/instructor_cba', function () {
+    return view('ADMINISTRATOR\InstructorAdministrator\cba_instuctor_list');
+})->name('instructor_cba');
+
+// Route for the Instructor list
+Route::get('/instructor_coc', function () {
+    return view('ADMINISTRATOR\InstructorAdministrator\coc_instuctor_list');
+})->name('instructor_coc');
+
+// Route for the ccs Instructor list
+Route::get('/instructor_ccs', function () {
+    return view('ADMINISTRATOR\InstructorAdministrator\ccs_instuctor_list');
+})->name('instructor_ccs');
+
+// Route for the Instructor list
+Route::get('/instructor_cas', function () {
+    return view('ADMINISTRATOR\InstructorAdministrator\cas_instuctor_list');
+})->name('instructor_cas');
+
+// Route for the Instructor list
+Route::get('/instructor_ced', function () {
+    return view('ADMINISTRATOR\InstructorAdministrator\ced_instuctor_list');
+})->name('instructor_ced');
+
+
 
 // .................................USER
 // Route for the signup
