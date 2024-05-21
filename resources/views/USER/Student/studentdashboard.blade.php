@@ -18,8 +18,8 @@
             </a>
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">Menu</a>
-                <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                    <li><a class="dropdown-item" href="#">{{ Auth::user()->name }}</a></li>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" style="max-width: 100px;"> <!-- Adjust max-width as needed -->
+                    <li><a class="dropdown-item text-truncate" href="#">{{ Auth::user()->name }}</a></li>
                     <li>
                         <hr class="dropdown-divider">
                     </li>
@@ -29,9 +29,9 @@
                     <li><a class="dropdown-item" href="#" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a></li>
                 </ul>
             </li>
+
         </div>
     </nav>
-
     <!-- Add this form somewhere within your HTML body where it won't be displayed -->
     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
         @csrf
@@ -40,7 +40,7 @@
     <div class="body container d-flex gap-4">
         <div class="student-details flex-column m-5">
             <div class="student-image" style="background-image: url('{{ asset('/'.Auth::user()->profile_picture) }}');">
-                <p class="student-name">
+                <p class="student-name gap-1">
                     {{ Auth::user()->name }}
                     <img src="{{ asset('images/svgs/pen-to-square-sharp-light.svg') }}" alt="Edit" class="edit-icon">
                 </p>
@@ -59,7 +59,7 @@
             </div>
         </div>
 
-        <div class="student-time flex-column pt-3 w-75">
+        <div class="student-time flex-column pt-3 w-75 ">
             <div class="d-flex gap-4 ">
                 <div class="qr-time text-light gap-1 align-content-center">
                     <h6><img src="images/qr-code.png" id="spcqr"><span> SCAN QR CODE</span></h6>
@@ -71,9 +71,9 @@
                     <img class="w-50 h-70 d-flex justify-content-center" src="images/spc-logo.png" alt="">
                 </div>
             </div>
-            <div class="container">
-                <table class="table table-striped table-bordered mt-5 w-100">
-                    <thead class="tablehead ">
+            <div class="container mt-5 pt-5">
+                <table class="table table-striped table-bordered w-100">
+                    <thead class="tablehead">
                         <tr>
                             <th scope="col" class="text-center">Subject</th>
                             <th scope="col" class="text-center">Date</th>

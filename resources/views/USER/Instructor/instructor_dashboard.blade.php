@@ -11,24 +11,25 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg">
+<nav class="navbar">
         <div class="container">
-            <a class="navbar-brand">
-                <span class="text-light shift-text-left">SPC Student Attendance Monitoring System</span>
+            <a class="navbar-brand" href="#">
+                <span class="text-light">SPC Student Attendance Monitoring System</span>
             </a>
-
             <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">Menu</a>
-                <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                    <li><a class="dropdown-item" href="#">{{ Auth::user()->name }}</a></li>
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">Menu</a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" style="max-width: 100px;"> <!-- Adjust max-width as needed -->
+                    <li><a class="dropdown-item text-truncate" href="#">{{ Auth::user()->name }}</a></li>
                     <li>
                         <hr class="dropdown-divider">
                     </li>
                     <li><a class="dropdown-item" href="#">View Profile</a></li>
                     <li><a class="dropdown-item" href="#">Settings</a></li>
+                    <!-- Update this line -->
                     <li><a class="dropdown-item" href="#" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a></li>
                 </ul>
             </li>
+
         </div>
     </nav>
     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
@@ -37,13 +38,13 @@
     <div class="body container d-flex">
         <div class="instructor-details flex-column m-5">
             <!-- Wrap the name and edit icon in a container div -->
-            <div class="instructor-name-container">
-                <p class="instructor-name">{{ Auth::user()->name }}
+            <div class="instructor-image" style="background-image: url('{{ asset('/'.Auth::user()->profile_picture) }}');">
+                <p class="instructor-name gap-1">
+                    {{ Auth::user()->name }}
                     <img src="{{ asset('images/svgs/pen-to-square-sharp-light.svg') }}" alt="Edit" class="edit-icon">
                 </p>
             </div>
             <!-- The instructor image div now comes after the name container -->
-            <div class="instructor-image" style="background-image: url('{{ asset('/' . Auth::user()->profile_picture) }}');"></div>
             <div class="instructor-info bg-light  p-2">
                 <div class="role d-flex justify-content-center">
                     <h6>Instructor<img src="https://add.pics/images/2024/04/30/imageabd0f4d5a4a733ba.png" alt="Verified" class="verified-mark"></h6>
