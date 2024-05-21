@@ -82,8 +82,8 @@
     </table>
 
     <div class="position-absolute bottom-0 start-0 ms-3 mb-3 d-flex align-items-center">
-        <button class="btn btn-danger me-2" onclick="randomizeRoute()">
-            Back
+        <button class="btn " style="background-color: #800000;" onclick="randomizeRoute()">
+            <img src="images/back1.png" alt="back-button" class="d-flex align-items-center" style="height: 20px;">
         </button>
         <span class="ms-4">Showing 0 to 0 of 0 entries</span>
     </div>
@@ -94,7 +94,7 @@
 
     <script>
         function randomizeRoute() {
-            var routes = ["instructor", "student"];
+            var routes = ["admin"];
             var randomIndex = Math.floor(Math.random() * routes.length);
             var randomRoute = routes[randomIndex];
 
