@@ -12,7 +12,7 @@
 
     <div style="height: 40px; background-color: #800000;"></div>
     <div class="d-flex justify-content-center align-items-center mx-5 mt-3 gap-3">
-        <img src="images/ccs.png" alt="ccs Logo"  style="height: 80px; width: 80px;">
+        <img src="images/ccs.png" alt="ccs Logo" style="height: 80px; width: 80px;">
         <h1 class="text-center fs-3 fw-bold">LIST OF STUDENTS</h1>
         <img src="images/ccs.png" alt="ccs Logo" style="height: 80px; width: 80px;">
     </div>
@@ -57,8 +57,13 @@
             <td class="align-content-center text-center">{{ $student->course }}</td>
             <td class="align-content-center text-center">{{ $student->gender }}</td>
             <td class="align-content-center text-center">{{ $student->year_level }}</td>
-            <td class="align-content-center text-center">{{ $student->status }}</td>
+            <td class="align-content-center text-center">{{ $student->stats }}</td>
             <td class="align-content-center text-center">
+                <!-- QR Code Button Trigger -->
+                <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#qrModal{{ $student->id }}">
+                    <img src="https://add.pics/images/2024/05/17/image45b9828e33046807.png" alt="QR Code" width="20" height="20">
+                </button>
+
                 <a href="{{ route('students.edit', $student->id) }}" class="btn btn-primary">
                     <img src="https://add.pics/images/2024/05/16/image4553449d24d095cd.png" alt="Edit" class="mx-2" width="20" height="20">
                 </a>
@@ -81,6 +86,23 @@
         @endforeach
     </table>
 
+    <!-- QR Code Modals -->
+    @foreach($students as $student)
+    <div class="modal fade" id="qrModal{{ $student->id }}" tabindex="-1" aria-labelledby="qrModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="qrModalLabel">Student QR Code</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <img src="{{ asset('storage/' . $student->qr_code) }}" alt="Student QR Code">
+                </div>
+            </div>
+        </div>
+    </div>
+    @endforeach
+
     <div class="position-absolute bottom-0 start-0 ms-3 mb-3 d-flex align-items-center">
         <button class="btn " style="background-color: #800000;" onclick="randomizeRoute()">
             <img src="images/back1.png" alt="back-button" class="d-flex align-items-center" style="height: 20px;">
@@ -91,7 +113,7 @@
         <button class="btn text-light me-1" style="background-color: #800000;">Previous</button>
         <button class="btn text-light ms-1" style="background-color: #800000;">Next</button>
     </div>
-
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script>
         function randomizeRoute() {
             var routes = ["admin"];

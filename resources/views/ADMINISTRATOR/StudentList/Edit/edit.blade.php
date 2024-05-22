@@ -59,18 +59,10 @@
 
 <script>
     function generateQrCode() {
-        // Combine the data fields into a single string
-        var data = [
-            'ID: ' + document.getElementById('student_id').value,
-            'Name: ' + document.getElementById('name').value,
-            'Course: ' + document.getElementById('course').value,
-            'Year Level: ' + document.getElementById('year_level').value,
-            'Status: ' + document.getElementById('stats').value
-        ].join('; ');
-
-        // Generate the QR code URL
-        const qrCodeUrl = `https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=${encodeURIComponent(data)}`;
-
+        // Get the student_id value
+        var studentId = document.getElementById('student_id').value;
+        // Generate the QR code URL with only the student_id
+        const qrCodeUrl = `https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=${encodeURIComponent(studentId)}`;
         // Display the QR code
         document.getElementById('qrCode').innerHTML = `<img src="${qrCodeUrl}" alt="QR Code" style="margin: auto; display: block;">`;
     }
