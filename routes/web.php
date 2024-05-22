@@ -191,3 +191,6 @@ Route::post('instructorregister', [RegisterController::class, 'instructorRegiste
 Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');
 Route::post('/login', [AuthController::class, 'login'])->name('login');
 Route::post('/logout', [AuthController::class, 'logout'])->name('logout')->middleware('auth');
+
+// Check Student Route
+Route::post('/check-enrollment', [StudentController::class, 'checkEnrollment']);

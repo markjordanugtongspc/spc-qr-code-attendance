@@ -64,6 +64,18 @@ class StudentController extends Controller
         return redirect()->route('ccs')->with('success', 'Student restored successfully.');
     }
 
+    // Add this method to your StudentController
+    public function checkEnrollment(Request $request)
+    {
+        $studentId = $request->input('student_id');
+        $student = User::where('student_id', $studentId)->first();
+
+        if ($student && $student->stats === 'Enrolled') {
+            return response()->json(['enrolled' => true]);
+        } else {
+            return response()->json(['enrolled' => false]);
+        }
+    }
     public function update(Request $request, $id)
     {
         $validatedData = $request->validate([

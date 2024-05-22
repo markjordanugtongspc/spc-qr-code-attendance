@@ -6,6 +6,8 @@ body {
 .student-info-container {
   background-color: #fff;
   border: 1px solid #233A57;
+  padding: 15px;
+  border-radius: 10px;
 }
 
 /* Header styles */
@@ -27,13 +29,13 @@ h1 {
 
 /* Student info container styles */
 .student-info-container {
+  /* Adjusted positioning */
   position: absolute;
-  top: 48%;
-  left: 75%;
+  top: 45%; /* Adjust as needed */
+  left: 75%; /* Adjust as needed */
   transform: translate(-50%, -50%);
-  width: 600px;
+  width: 500px;
   height: 500px;
-  padding: 3px;
   margin-bottom: 3px;
 }
 
@@ -96,7 +98,7 @@ h1 {
 
 #camera-preview {
   position: static;
-  width: 40vw;
+  width: 10vw;
   height: 40vh;
   margin-top: 6rem;
   margin-left: 2rem;
@@ -127,9 +129,9 @@ h1 {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 210px;
-  margin-top: 50px;
-  padding: 20px;
+  height: 110px;
+  margin-top: 20px;
+  padding: 10px;
   border: 1px solid black;
   border-radius: 10px;
   background-color: #fff;
@@ -143,8 +145,28 @@ h1 {
 
 /* Additional styles for file input */
 .qr-code-file-input {
-  position: absolute;
-  bottom: 10px;
-  left: 50%;
-  transform: translateX(-50%);
+  /* Ensure visibility and correct positioning */
+  display: block;
+  position: relative;
+  margin-top: 20px; /* Adjust as needed */
+}
+
+#qr-reader {
+  /* Adjusted size for a square shape */
+  width: 300px; /* Adjust as needed */
+  height: 300px; /* Adjust as needed */
+
+}
+/* Centering the text, QR reader, and logo */
+.row.align-items-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Additional styles for responsiveness and alignment */
+@media (max-width: 768px) {
+  .row.align-items-center {
+    flex-direction: column;
+  }
 }
