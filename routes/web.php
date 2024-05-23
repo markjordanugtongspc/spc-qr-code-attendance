@@ -141,7 +141,7 @@ Route::get('/login', function () {
 
 // Route for the parent dashboard
 Route::get('/parents', function () {
-    return view('USER/Parents');
+    return view('USER/Parents/parents_dashboard');
 })->name('parents_dashboard');
 
 // Route for the instructor dashboard
