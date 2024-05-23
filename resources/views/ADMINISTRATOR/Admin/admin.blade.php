@@ -10,25 +10,26 @@
 </head>
 
 <body class="d-flex">
-  <div calss="left gap-5" style="background-color: #800000; width: 25%; height: 100%;">
-    <div class="d-flex gap-3 m-3 justify-content-center">
+  <div calss="left gap-5" style="background-color: #800000; width: 25%; height: 100vh;">
+    <div class="d-flex gap-3 mt-5 justify-content-center">
       <img class="leftlogo" src="images/spc-logo.png" alt="SPC Logo">
       <span class="text-light d-flex align-items-center">Admin Dashboard</span>
     </div>
-    <div class="admin_link d-flex flex-column align-items-center gap-3 mt-5">
-      <a class="content d-flex justify-content-center text-decoration-none" id="btn_student">Student</a>
-      <a class="content d-flex justify-content-center text-decoration-none" id="btn_instructor">Instructor</a>
-      <a class="content d-flex justify-content-center text-decoration-none" href="attendancelog">Attendance Log</a>
+    <div class="admin_link d-flex flex-column align-items-center gap-4 mt-5">
+      <a class="content d-flex justify-content-center text-decoration-none pt-2 pb-2" id="btn_student">Student</a>
+      <a class="content d-flex justify-content-center text-decoration-none pt-2 pb-2" id="btn_instructor">Instructor</a>
+      <a class="content d-flex justify-content-center text-decoration-none pt-2 pb-2" href="attendancelog">Attendance Log</a>
     </div>
+
 
     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
       @csrf
     </form>
-    <div class="gap-3 mt-5 ms-3">
-      <a class="logout btn p-1 bg-light" style="font-weight:700;" href="#" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
+    <div class="gap-3 d-flex justify-content-center">
+      <a class="logout btn bg-light" style="font-weight:700;" href="#" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
     </div>
 
-    <div class="d-flex flex-column justify-content-end ms-2 h-50">
+    <div class="d-flex flex-column justify-content-end mt-4 ms-2 h-50">
       <p class="text-secondary">spcregistrar@gmail.com</p>
       <p class="text-secondary">(+63) 221-6246</p>
       <p class="text-secondary">my.spc.edu.ph</p>
