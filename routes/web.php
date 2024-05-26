@@ -11,6 +11,7 @@ use App\Http\Controllers\StudentController;
 use App\Http\Controllers\RegisterController;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User;
+use App\Http\Controllers\EnrollmentController;
 
 // Route::post('/verify-student', [AttendanceController::class, 'verifyStudent'])->name('verify-student');
 
@@ -197,5 +198,5 @@ Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');
 Route::post('/login', [AuthController::class, 'login'])->name('login');
 Route::post('/logout', [AuthController::class, 'logout'])->name('logout')->middleware('auth');
 
-// Check Student Route
-Route::post('/check-enrollment', [StudentController::class, 'checkEnrollment']);
+// Temporarily bypass middleware for testing
+Route::post('/check-enrollment', [EnrollmentController::class, 'check'])->withoutMiddleware(['admin', 'auth']);

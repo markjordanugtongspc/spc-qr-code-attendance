@@ -38,6 +38,7 @@
         <input type="file" id="qr-code-files" accept="image/*" class="form-control mb-3">
         <div id="output-container" class="output-container">
           <p id="qr-code-result" class="qr-code-result"></p>
+          <div id="profile-container" class="profile-container"></div>
         </div>
       </div>
     </div>
