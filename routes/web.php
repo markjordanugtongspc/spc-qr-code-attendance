@@ -144,6 +144,11 @@ Route::get('/parents', function () {
     return view('USER/Parents/parents_dashboard');
 })->name('parents_dashboard');
 
+Route::get('/test', function () {
+    return view('USER/Parents/testdrive');
+})->name('testdrive');
+
+
 // Route for the instructor dashboard
 Route::get('/instructordashboard', function () {
     return view('USER/Instructor/instructor_dashboard');
