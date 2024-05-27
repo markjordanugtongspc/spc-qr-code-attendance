@@ -12,6 +12,7 @@ use App\Http\Controllers\RegisterController;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User;
 use App\Http\Controllers\EnrollmentController;
+use App\Http\Controllers\ScannerController;
 
 // Route::post('/verify-student', [AttendanceController::class, 'verifyStudent'])->name('verify-student');
 
@@ -43,9 +44,8 @@ use App\Http\Controllers\EnrollmentController;
 
 // ..................................GATE PASS
 // Route for default branch//
-Route::get('/', function () {
-    return view('GATEPASS/gatepass');
-});
+Route::get('/', [ScannerController::class, 'index']);
+Route::post('/store', [ScannerController::class, 'store'])->name('scan');
 
 // ..................................ADMIN
 // Route for the admin page
@@ -145,11 +145,6 @@ Route::get('/parents', function () {
     return view('USER/Parents/parents_dashboard');
 })->name('parents_dashboard');
 
-Route::get('/test', function () {
-    return view('USER/Parents/testdrive');
-})->name('testdrive');
-
-
 // Route for the instructor dashboard
 Route::get('/instructordashboard', function () {
     return view('USER/Instructor/instructor_dashboard');
@@ -180,6 +175,12 @@ Route::get('/studentnotes', function () {
     return view('USER/Student/studentnotes');
 })->name('studentnotes');
 
+// Route for Sample Layout
+Route::get('/sample', function () {
+    return view('ADMINISTRATOR.StudentList.Sample.sample');
+});
+
+
 // Edit Route
 Route::get('/students/{id}/edit', [StudentController::class, 'edit'])->name('students.edit');
 Route::put('/students/{id}', [StudentController::class, 'update'])->name('students.update');
@@ -200,3 +201,8 @@ Route::post('/logout', [AuthController::class, 'logout'])->name('logout')->middl
 
 // Temporarily bypass middleware for testing
 Route::post('/check-enrollment', [EnrollmentController::class, 'check'])->withoutMiddleware(['admin', 'auth']);
+
+
+// ///Scanner
+// Route::get('/', [ScannerController::class, 'index']);
+// Route::post('/store', [ScannerController::class, 'store'])->name('scan');

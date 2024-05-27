@@ -34,10 +34,10 @@ class User extends Authenticatable
         'guardian_relationship',
         'guardian_phone_number',
         'guardian_email',
-        'department', 
+        'department',
         'stats',
         'status',
-        'job_status' 
+        'job_status'
     ];
 
     /**
@@ -58,4 +58,9 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function logs()
+    {
+        return $this->hasMany(Logs::class, 'student_id', 'student_id');
+    }
 }
