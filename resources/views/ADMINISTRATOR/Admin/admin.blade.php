@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="css/users/admin/style/admin_style.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-  <title>Document</title>
+  <title>Admin Dashboard</title>
 </head>
 
 <body class="d-flex">
@@ -123,6 +123,24 @@
   </div>
   </div>
   <script src="js/admin/admin.js"></script>
+  <script>
+    window.addEventListener('load', function() {
+      const urlParams = new URLSearchParams(window.location.search);
+      const redirectTo = urlParams.get('redirect_to');
+
+      if (redirectTo === 'student') {
+        const studentButton = document.getElementById('btn_student');
+        if (studentButton) {
+          studentButton.click();
+        }
+      } else if (redirectTo === 'instructor') {
+        const instructorButton = document.getElementById('btn_instructor');
+        if (instructorButton) {
+          instructorButton.click();
+        }
+      }
+    });
+  </script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 

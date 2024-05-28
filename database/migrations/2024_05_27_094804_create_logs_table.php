@@ -6,28 +6,19 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
-    /**
-     * Run the migrations.
-     *
-     * @return void
-     */
     public function up()
     {
         Schema::create('logs', function (Blueprint $table) {
             $table->id();
-            $table->string('student_id');
-            $table->time('login_time')->nullable();
-            $table->time('logout_time')->nullable();
+            $table->string('student_id')->nullable(); // Allow 'student_id' to be nullable
+            $table->string('instructor_name')->nullable();
+            $table->time('signin_time')->nullable();
+            $table->time('signout_time')->nullable();
             $table->date('date');
             $table->timestamps();
         });
     }
 
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
     public function down()
     {
         Schema::dropIfExists('logs');

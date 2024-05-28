@@ -5,7 +5,9 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use Illuminate\Http\Request;
 use SimpleSoftwareIO\QrCode\Facades\QrCode;
+use App\Models\Logs;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Auth;
 
 class StudentController extends Controller
 {
@@ -64,18 +66,13 @@ class StudentController extends Controller
         return redirect()->route('ccs')->with('success', 'Student restored successfully.');
     }
 
-    // Add this method to your StudentController
-    public function checkEnrollment(Request $request)
+    public function showStudentDashboard()
     {
-        $studentId = $request->input('student_id');
-        $student = User::where('student_id', $studentId)->first();
+        $attendanceLogs = Logs::all();
 
-        if ($student && $student->stats === 'Enrolled') {
-            return response()->json(['enrolled' => true]);
-        } else {
-            return response()->json(['enrolled' => false]);
-        }
+        return view('USER.Student.studentdashboard', compact('attendanceLogs'));
     }
+
     public function update(Request $request, $id)
     {
         $validatedData = $request->validate([
@@ -93,10 +90,6 @@ class StudentController extends Controller
         // Generate QR code data
         $qrData = [
             'ID' => $request->student_id,
-            'Name' => $request->name,
-            'Course' => $request->course,
-            'Year Level' => $request->year_level,
-            'Status' => $request->stats,
         ];
         // Generate the QR code and convert it to a base64 string
         $qrCode = QrCode::format('png')->size(200)->generate(implode(';', $qrData));

@@ -5,7 +5,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="css/authentication/login.css">
-	<title>Document</title>
+	<title>Login Page</title>
 </head>
 
 <body>
@@ -43,8 +43,6 @@
 											<option value="BSCE">
 										</datalist>
 
-										<!-- Katong ga AI ko kol kay need daw nag conditional logic para ma separate ang instructor ug student -->
-										<!-- ohh bai pero unsaon?? hahahaha -->
 										<input type="email" name="email" placeholder="Email" required />
 										<input type="password" name="password" placeholder="Password" required />
 										<!-- <input type="password" name="password_confirmation" placeholder="Re-Password" required /> -->
