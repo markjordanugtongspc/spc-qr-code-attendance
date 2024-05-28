@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Student Dashboard</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="css/users/student/dashboard/studentdashboard.css">
     <!-- <link rel="stylesheet" href="css/users/student/dashboard/studentdashboard.css"> -->
@@ -39,7 +39,7 @@
 
     <div class="body container d-flex gap-4">
         <div class="student-details flex-column m-5">
-            <div class="student-image" style="background-image: url('{{ asset('/'.Auth::user()->profile_picture) }}');">
+            <div class="student-image" style="background-image: url('{{ str_replace('/public', '', asset('/' . Auth::user()->profile_picture)) }}');">
                 <p class="student-name gap-1">
                     {{ Auth::user()->name }}
                     <img src="{{ asset('images/svgs/pen-to-square-sharp-light.svg') }}" alt="Edit" class="edit-icon">
@@ -82,30 +82,14 @@
                         </tr>
                     </thead>
                     <tbody>
+                        @foreach ($attendanceLogs as $log)
                         <tr>
                             <td class="text-center">CC106</td>
-                            <td class="text-center">March 11,2004</td>
-                            <td class="text-center">10:00am</td>
-                            <td class="text-center">11:00am</td>
+                            <td class="text-center">{{ $log->date }}</td>
+                            <td class="text-center">{{ $log->signin_time ? \Carbon\Carbon::parse($log->signin_time)->format('h:ia') : 'N/A' }}</td>
+                            <td class="text-center">{{ $log->signout_time ? \Carbon\Carbon::parse($log->signout_time)->format('h:ia') : 'N/A' }}</td>
                         </tr>
-                        <tr>
-                            <td class="text-center">CC106</td>
-                            <td class="text-center">March 11,2004</td>
-                            <td class="text-center">10:00am</td>
-                            <td class="text-center">11:00am</td>
-                        </tr>
-                        <tr>
-                            <td class="text-center">CC106</td>
-                            <td class="text-center">March 11,2004</td>
-                            <td class="text-center">10:00am</td>
-                            <td class="text-center">11:00am</td>
-                        </tr>
-                        <tr>
-                            <td class="text-center">CC106</td>
-                            <td class="text-center">March 11,2004</td>
-                            <td class="text-center">10:00am</td>
-                            <td class="text-center">11:00am</td>
-                        </tr>
+                        @endforeach
                     </tbody>
                 </table>
             </div>

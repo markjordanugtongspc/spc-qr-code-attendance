@@ -13,8 +13,8 @@ body {
 /* Header styles */
 h1 {
   position: absolute;
-  top: 9%;
-  left: 22%;
+  top: 11%;
+  left: 23%;
   transform: translate(-50%, -50%);
   font-size: 2rem;
   color: #FFFFFF;
@@ -35,7 +35,7 @@ h1 {
   left: 75%; /* Adjust as needed */
   transform: translate(-50%, -50%);
   width: 500px;
-  height: 500px;
+  height: 520px;
   margin-bottom: 3px;
 }
 
@@ -83,7 +83,7 @@ h1 {
 /* SPC logo styles */
 .spc-logo {
   position: absolute;
-  top: 57%;
+  top: 56%;
   left: 16.1%;
   width: 198px;
   height: 195px;
@@ -96,12 +96,18 @@ h1 {
   align-items: center;
 }
 
-#camera-preview {
-  position: static;
-  width: 10vw;
-  height: 40vh;
-  margin-top: 6rem;
-  margin-left: 2rem;
+#preview {
+  width: 400px;
+  height: 300px;
+  margin-top: 50px; /* Adjust as needed */
+}
+
+@media (max-width: 768px) {
+  #preview {
+    width: 300px;
+    height: 225px;
+    margin-top: 30px; /* Adjust as needed */
+  }
 }
 
 #qr-code-input {
@@ -125,22 +131,50 @@ h1 {
 
 /* Output container styles */
 .output-container {
-  position: relative;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
-  height: 110px;
   margin-top: 20px;
   padding: 10px;
   border: 1px solid black;
   border-radius: 10px;
   background-color: #fff;
-  margin-top: 20px;
 }
 
-.qr-code-result {
-  font-size: 1.5rem;
-  color: #333;
+/* Profile picture styles */
+.card-img-top {
+  max-height: 54mm;
+  width: auto;
+  margin: 0 auto; /* Centers the image horizontally */
+}
+
+/* Success Message Alert Styles */
+.alert-success {
+  padding: 10px;
+  background-color: #d4edda; /* Green background */
+  color: #155724; /* Dark green text */
+  border: 1px solid #c3e6cb; /* Green border */
+  border-radius: 5px; /* Rounded corners */
+  margin: 10px 0; /* Margin top and bottom */
+  text-align: center; /* Centered text */
+  transition: all 0.3s ease-in-out; /* Smooth transition for hover effect */
+  width: 85%; /* Adjust the width as needed */
+  margin-top: 10px; /* Adds space between the image and the alert */
+}
+
+/* Hover effect */
+.alert-success:hover {
+  background-color: #c3e6cb; /* Lighter green background on hover */
+  color: #0f3920; /* Darker green text on hover */
+  cursor: pointer; /* Change cursor to pointer */
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+  .alert-success {
+    padding: 8px;
+    font-size: 14px; /* Smaller text on small screens */
+  }
 }
 
 /* Additional styles for file input */

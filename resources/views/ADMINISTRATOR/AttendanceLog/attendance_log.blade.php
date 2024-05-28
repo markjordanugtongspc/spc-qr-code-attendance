@@ -44,9 +44,22 @@
                     <th class="text-center">TIME OUT</th>
                 </tr>
             </thead>
+
             <tbody>
-                <!-- You can populate the table rows dynamically here using PHP -->
+                @foreach ($attendanceLogs as $log)
+                <tr>
+                    <td class="text-center">{{ $log->student->student_id }}</td>
+                    <td class="text-center">{{ $log->student->userType }}</td>
+                    <td class="text-center">{{ $log->student->name }}</td>
+                    <td class="text-center">{{ $log->student->course }}</td>
+                    <td class="text-center">{{ $log->student->department }}</td>
+                    <td class="text-center">{{ $log->date }}</td>
+                    <td class="text-center">{{ $log->created_at->format('H:i:s') }}</td>
+                    <td class="text-center">{{ $log->signout_time ? \Carbon\Carbon::parse($log->signout_time)->format('H:i:s') : 'N/A' }}</td>
+                </tr>
+                @endforeach
             </tbody>
+
         </table>
         <div class="position-absolute bottom-0 start-0 ms-3 mb-3 d-flex align-items-center">
             <button class="btn " style="background-color: #800000;" onclick="randomizeRoute()">
@@ -54,25 +67,25 @@
             </button>
             <span class="ms-4">Showing 0 to 0 of 0 entries</span>
         </div>
-    <div class="position-absolute bottom-0 end-0 me-3 mb-3">
-        <button class="btn text-light me-1" style="background-color: #800000;">Previous</button>
-        <button class="btn text-light ms-1" style="background-color: #800000;">Next</button>
-    </div>
+        <div class="position-absolute bottom-0 end-0 me-3 mb-3">
+            <button class="btn text-light me-1" style="background-color: #800000;">Previous</button>
+            <button class="btn text-light ms-1" style="background-color: #800000;">Next</button>
+        </div>
 
 
-    <!-- Include Bootstrap JS (Optional, if you need JavaScript functionality) -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+        <!-- Include Bootstrap JS (Optional, if you need JavaScript functionality) -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 
-    <script>
-        function randomizeRoute() {
-            var routes = ["admin"];
-            var randomIndex = Math.floor(Math.random() * routes.length);
-            var randomRoute = routes[randomIndex];
+        <script>
+            function randomizeRoute() {
+                var routes = ["admin"];
+                var randomIndex = Math.floor(Math.random() * routes.length);
+                var randomRoute = routes[randomIndex];
 
-            // Redirect to the random route
-            window.location.href = "/" + randomRoute;
-        }
-    </script>
+                // Redirect to the random route
+                window.location.href = "/" + randomRoute;
+            }
+        </script>
 
 </body>
 

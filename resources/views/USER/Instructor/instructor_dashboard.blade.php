@@ -4,14 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Instructor Dashboard</title>
     <link rel="stylesheet" href="css/users/instructor/instructordashboard.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 
 </head>
 
 <body>
-<nav class="navbar">
+    <nav class="navbar">
         <div class="container">
             <a class="navbar-brand" href="#">
                 <span class="text-light">SPC Student Attendance Monitoring System</span>
@@ -38,7 +38,7 @@
     <div class="body container d-flex">
         <div class="instructor-details flex-column m-5">
             <!-- Wrap the name and edit icon in a container div -->
-            <div class="instructor-image" style="background-image: url('{{ asset('/'.Auth::user()->profile_picture) }}');">
+            <div class="instructor-image" style="background-image: url('{{ Storage::url(Auth::user()->profile_picture) }}');">
                 <p class="instructor-name gap-1">
                     {{ Auth::user()->name }}
                     <img src="{{ asset('images/svgs/pen-to-square-sharp-light.svg') }}" alt="Edit" class="edit-icon">
@@ -113,42 +113,18 @@
                     </tr>
                 </thead>
                 <tbody>
+                    @foreach ($attendanceLogs as $log)
                     <tr>
-                        <td class="text-center">18-0553</td>
-                        <td class="text-center">Christian Bolohan Maglangit</td>
-                        <td class="text-center">BSIT</td>
-                        <td class="text-center">Male</td>
-                        <td class="text-center">Second Year</td>
-                        <td class="text-center">10:00am</td>
-                        <td class="text-center">11:00am</td>
+                        <td class="text-center">{{ $log->student->student_id }}</td>
+                        <td class="text-center">{{ $log->student->name }}</td>
+                        <td class="text-center">{{ $log->student->course }}</td>
+                        <td class="text-center">{{ $log->student->gender }}</td>
+                        <!-- Access the year_level from the related student object -->
+                        <td class="text-center">{{ $log->student->year_level }}</td>
+                        <td class="text-center">{{ $log->created_at->format('H:i:s') }}</td>
+                        <td class="text-center">{{ $log->signout_time ? \Carbon\Carbon::parse($log->signout_time)->format('H:i:s') : 'N/A' }}</td>
                     </tr>
-                    <tr>
-                        <td class="text-center">2000-2021</td>
-                        <td class="text-center">Jerald C. Corbo</td>
-                        <td class="text-center">BSIT</td>
-                        <td class="text-center">Male</td>
-                        <td class="text-center">Second Year</td>
-                        <td class="text-center">11:00am</td>
-                        <td class="text-center">12:00pm</td>
-                    </tr>
-                    <tr>
-                        <td class="text-center">2000-2022</td>
-                        <td class="text-center">Mark Jordan Ugtong</td>
-                        <td class="text-center">BSIT</td>
-                        <td class="text-center">Male</td>
-                        <td class="text-center">Second Year</td>
-                        <td class="text-center">12:00pm</td>
-                        <td class="text-center">01:00pm</td>
-                    </tr>
-                    <tr>
-                        <td class="text-center">2000-2023</td>
-                        <td class="text-center">Sherie Darlene Barila</td>
-                        <td class="text-center">BSIT</td>
-                        <td class="text-center">Male</td>
-                        <td class="text-center">Second Year</td>
-                        <td class="text-center">02:00pm</td>
-                        <td class="text-center">03:00pm</td>
-                    </tr>
+                    @endforeach
                 </tbody>
             </table>
         </div>

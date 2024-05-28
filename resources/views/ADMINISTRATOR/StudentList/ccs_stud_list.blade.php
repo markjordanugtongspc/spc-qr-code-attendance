@@ -88,15 +88,21 @@
 
     <!-- QR Code Modals -->
     @foreach($students as $student)
-    <div class="modal fade" id="qrModal{{ $student->id }}" tabindex="-1" aria-labelledby="qrModalLabel" aria-hidden="true">
+    <div class="modal fade" id="qrModal{{ $student->id }}" tabindex="-1" aria-labelledby="qrModalLabel{{ $student->id }}" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
+                <!-- Modal Header -->
                 <div class="modal-header">
-                    <h5 class="modal-title" id="qrModalLabel">Student QR Code</h5>
+                    <h5 class="modal-title" id="qrModalLabel{{ $student->id }}">Student QR Code</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <div class="modal-body">
-                    <img src="{{ asset('storage/' . $student->qr_code) }}" alt="Student QR Code">
+                <!-- Modal Body -->
+                <div class="modal-body d-flex justify-content-center align-items-center" style="min-height: 200px;">
+                    <img id="studentQrCode{{ $student->id }}" src="{{ asset('storage/' . $student->qr_code) }}" alt="Student QR Code" class="img-fluid">
+                </div>
+                <!-- Modal Footer -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                 </div>
             </div>
         </div>
@@ -104,7 +110,7 @@
     @endforeach
 
     <div class="position-absolute bottom-0 start-0 ms-3 mb-3 d-flex align-items-center">
-        <button class="btn " style="background-color: #800000;" onclick="randomizeRoute()">
+        <button class="btn " style="background-color: #800000;" onclick="navigateToStudent()">
             <img src="images/back1.png" alt="back-button" class="d-flex align-items-center" style="height: 20px;">
         </button>
         <span class="ms-4">Showing 0 to 0 of 0 entries</span>
@@ -115,13 +121,8 @@
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-        function randomizeRoute() {
-            var routes = ["admin"];
-            var randomIndex = Math.floor(Math.random() * routes.length);
-            var randomRoute = routes[randomIndex];
-
-            // Redirect to the random route
-            window.location.href = "/" + randomRoute;
+        function navigateToStudent() {
+            window.location.href = "{{ route('admin') }}?redirect_to=student";
         }
     </script>
 </body>
