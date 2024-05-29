@@ -115,17 +115,19 @@
                 <tbody>
                     @foreach ($attendanceLogs as $log)
                     <tr>
+                        @if($log->student)
                         <td class="text-center">{{ $log->student->student_id }}</td>
                         <td class="text-center">{{ $log->student->name }}</td>
                         <td class="text-center">{{ $log->student->course }}</td>
                         <td class="text-center">{{ $log->student->gender }}</td>
-                        <!-- Access the year_level from the related student object -->
                         <td class="text-center">{{ $log->student->year_level }}</td>
                         <td class="text-center">{{ $log->created_at->format('H:i:s') }}</td>
                         <td class="text-center">{{ $log->signout_time ? \Carbon\Carbon::parse($log->signout_time)->format('H:i:s') : 'N/A' }}</td>
+                        @endif
                     </tr>
                     @endforeach
                 </tbody>
+
             </table>
         </div>
     </div>

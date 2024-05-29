@@ -39,6 +39,9 @@ Route::get('/student', function () {
 // Route for the attendance log page
 Route::get('/attendancelog', [ScannerController::class, 'showAttendanceLogs'])->name('attendancelog');
 
+// Route for the instructor attendance log
+Route::get('/instructor-attendance-log', [InstructorController::class, 'showAttendanceLogss'])->name('instructor.attendance.log');
+
 // Route for the studentlist
 Route::get('/coe', function () {
     return view('ADMINISTRATOR/StudentList/coe_stud_list');

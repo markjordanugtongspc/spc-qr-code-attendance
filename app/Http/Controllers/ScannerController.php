@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Auth;
 use App\Models\User;
 use App\Models\Logs;
 
@@ -19,47 +20,46 @@ class ScannerController extends Controller
     {
         // Find the user by student_id or name
         $user = User::where('student_id', $request->id_student)
-            ->orWhere('name', $request->name)->first();
+            ->orWhere('name', $request->id_student)->first();
 
         if (!$user) {
-            return redirect('/')->with('error', 'User is not recognized');
+            return redirect('/')->with('error', 'User not recognized');
         }
 
-        // Check if the user is already logged for today
+        // Check if the user has already signed in today
         $log = Logs::where('date', date('Y-m-d'))
             ->where(function ($query) use ($user) {
                 $query->where('student_id', $user->student_id)
                     ->orWhere('instructor_name', $user->name);
             })->first();
 
-        // Get the enrollment status and profile picture path
-        $enrollmentStatus = $user->stats; // Assuming 'stats' is the column name
-        $profilePicturePath = str_replace('/public', '', asset('/' . $user->profile_picture));
-
-        // Check if the log exists for sign-in or sign-out
-        if ($log) {
-            $log->update([
-                'signout_time' => now(),
-            ]);
-            $message = 'User has signed out successfully';
+        if ($log && !$log->signout_time) {
+            // If a log exists and signout_time is null, update the sign-out time
+            $log->update(['signout_time' => now()]);
+            $message = $user->userType === 'instructor' ? 'Instructor has signed out successfully' : 'Student has signed out successfully';
         } else {
-            // Create a new log entry based on user type
-            $newLogData = [
+            // If no log exists or signout_time is not null, create a new log entry for sign-in
+            $newLog = [
                 'date' => date('Y-m-d'),
                 'signin_time' => now(),
+                'signout_time' => null
             ];
 
             if ($user->userType === 'student') {
-                $newLogData['student_id'] = $user->student_id;
+                $newLog['student_id'] = $user->student_id;
             } elseif ($user->userType === 'instructor') {
-                // For instructors, we don't need to log here as we'll handle instructor scanning separately
-                return redirect('/')->with('error', 'Instructor scanning should be done separately.');
+                // Assign a default value of "1" to student_id for instructors
+                $newLog['student_id'] = 1;
+                $newLog['instructor_name'] = $user->name;
             }
 
-            Logs::create($newLogData);
-
-            $message = 'User has signed in successfully';
+            Logs::create($newLog);
+            $message = $user->userType === 'instructor' ? 'Instructor has signed in successfully' : 'Student has signed in successfully';
         }
+
+        // Get the enrollment status and profile picture path
+        $enrollmentStatus = $user->stats; // Assuming 'stats' is the column name
+        $profilePicturePath = str_replace('/public', '', asset('/' . $user->profile_picture));
 
         // Redirect with a success message
         return redirect('/')->with([
@@ -125,7 +125,8 @@ class ScannerController extends Controller
     public function showAttendanceLogs()
     {
         $today = date('Y-m-d');
-        $attendanceLogs = Logs::with('student')
+        // Retrieve all logs for today and filter them in the view
+        $attendanceLogs = Logs::with(['student', 'instructor'])
             ->whereDate('date', $today)
             ->get();
 

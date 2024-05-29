@@ -56,16 +56,14 @@
           <div class="row justify-content-center">
             @if(session('profilePicturePath'))
             <div class="card mb-3 mx-auto" style="max-width: 85mm;">
-              <img src="{{ session('profilePicturePath') }}" class="card-img-top" alt="Student Profile Picture">
+              <img src="{{ session('profilePicturePath') }}" class="card-img-top" alt="{{ session('userType') === 'student' ? 'Student' : 'Instructor' }} Profile Picture">
               <div class="card-body text-center">
-                @if(session('studentName'))
-                <h5 class="card-title">{{ session('studentName') }}</h5>
+                @if(session('userName'))
+                <h5 class="card-title">{{ session('userName') }}</h5>
                 @else
-                <h5 class="card-title">Student Information</h5>
+                <h5 class="card-title">{{ session('userType') === 'instructor' ? 'Instructor Information' : 'Student Information' }}</h5>
                 @endif
-                <!-- Additional student information can go here -->
               </div>
-
             </div>
             @endif
           </div>

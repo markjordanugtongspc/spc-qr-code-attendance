@@ -48,13 +48,13 @@
             <tbody>
                 @foreach ($attendanceLogs as $log)
                 <tr>
-                    <td class="text-center">{{ $log->student->student_id }}</td>
-                    <td class="text-center">{{ $log->student->userType }}</td>
-                    <td class="text-center">{{ $log->student->name }}</td>
-                    <td class="text-center">{{ $log->student->course }}</td>
-                    <td class="text-center">{{ $log->student->department }}</td>
+                    <td class="text-center">{{ $log->student_id ?? $log->instructor_name ?? 'N/A' }}</td>
+                    <td class="text-center">{{ $log->student ? 'student' : 'instructor' }}</td>
+                    <td class="text-center">{{ $log->student ? $log->student->name : $log->instructor_name }}</td>
+                    <td class="text-center">{{ $log->student ? ($log->student->course ?? 'N/A') : 'N/A' }}</td>
+                    <td class="text-center">{{ $log->student ? ($log->student->department ?? 'N/A') : ($log->instructor ? $log->instructor->department : 'N/A') }}</td>
                     <td class="text-center">{{ $log->date }}</td>
-                    <td class="text-center">{{ $log->created_at->format('H:i:s') }}</td>
+                    <td class="text-center">{{ $log->signin_time ? \Carbon\Carbon::parse($log->signin_time)->format('H:i:s') : 'N/A' }}</td>
                     <td class="text-center">{{ $log->signout_time ? \Carbon\Carbon::parse($log->signout_time)->format('H:i:s') : 'N/A' }}</td>
                 </tr>
                 @endforeach
