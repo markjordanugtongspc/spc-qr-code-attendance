@@ -33,12 +33,16 @@ class ScannerController extends Controller
                     ->orWhere('instructor_name', $user->name);
             })->first();
 
-        if ($log && !$log->signout_time) {
+        // Check if the user has already signed out today
+        if ($log && $log->signout_time) {
+            // If a log exists and signout_time is not null, the user has already signed out today
+            return redirect('/')->with('error', 'This User is Already Sign Out Today');
+        } elseif ($log && !$log->signout_time) {
             // If a log exists and signout_time is null, update the sign-out time
             $log->update(['signout_time' => now()]);
             $message = $user->userType === 'instructor' ? 'Instructor has signed out successfully' : 'Student has signed out successfully';
         } else {
-            // If no log exists or signout_time is not null, create a new log entry for sign-in
+            // If no log exists, create a new log entry for sign-in
             $newLog = [
                 'date' => date('Y-m-d'),
                 'signin_time' => now(),
@@ -48,8 +52,7 @@ class ScannerController extends Controller
             if ($user->userType === 'student') {
                 $newLog['student_id'] = $user->student_id;
             } elseif ($user->userType === 'instructor') {
-                // Assign a default value of "1" to student_id for instructors
-                $newLog['student_id'] = 1;
+                $newLog['student_id'] = 1; // Assign a default value of "1" to student_id for instructors
                 $newLog['instructor_name'] = $user->name;
             }
 

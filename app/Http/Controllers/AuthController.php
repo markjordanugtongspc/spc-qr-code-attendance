@@ -118,20 +118,29 @@ class AuthController extends Controller
         }
 
         // Attempt to authenticate the user
-        $user = User::where('email', $request->email)->orWhere('guardian_email', $request->email)->first();
+        $user = User::where('email', $request->email)
+            ->orWhere('guardian_email', $request->email)
+            ->first();
 
         if (!$user) {
             return redirect('login')->withErrors(['email' => 'No account found with that email.'])->withInput();
         }
 
-        if ($user->userType == 'parent' && $request->password == $user->guardian_phone_number) {
-            Auth::login($user);
-            return redirect()->intended('/parentsdashboard');
-        } elseif (Auth::attempt(['email' => $request->email, 'password' => $request->password])) {
-            return redirect()->intended($this->redirectPath($user->userType));
+        // Check if a guardian is trying to log in
+        if ($user->userType == 'student' && $request->email == $user->guardian_email) {
+            // Verify the guardian's generated password
+            if (Hash::check($request->password, $user->guardian_generated_password)) {
+                Auth::login($user);
+                return redirect('/parents');
+            }
         } else {
-            return redirect('login')->withErrors(['email' => 'Invalid email or password.'])->withInput();
+            // Regular user or instructor login
+            if (Auth::attempt(['email' => $request->email, 'password' => $request->password])) {
+                return redirect($this->redirectPath(Auth::user()->userType));
+            }
         }
+
+        return redirect('login')->withErrors(['email' => 'Invalid email or password.'])->withInput();
     }
 
     private function redirectPath($userType)
