@@ -162,11 +162,10 @@ Route::post('/instructor-scan', [ScannerController::class, 'scanInstructor'])->n
 
 // Authentication Routes
 Route::get('/signup', [AuthController::class, 'showRegistrationForm'])->name('signup');
-Route::post('/signup', [StudentController::class, 'create'])->name('register');
 Route::post('/signup', [RegisterController::class, 'studentRegister'])->name('student.register');
 Route::post('instructorregister', [RegisterController::class, 'instructorRegister'])->name('instructor.register');
 
-Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');
+Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');  // Change to showLoginForm
 Route::post('/login', [AuthController::class, 'login'])->name('login');
 Route::post('/logout', [AuthController::class, 'logout'])->name('logout')->middleware('auth');
 
