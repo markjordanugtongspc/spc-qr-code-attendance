@@ -14,6 +14,7 @@ use App\Models\User;
 use App\Http\Controllers\EnrollmentController;
 use App\Http\Controllers\ScannerController;
 use App\Http\Controllers\InstructorController;
+use App\Models\Logs2;
 
 // ..................................GATE PASS
 // Route for default branch//
@@ -144,6 +145,9 @@ Route::get('/studentnotes', function () {
     return view('USER/Student/studentnotes');
 })->name('studentnotes');
 
+// Ensure authentication for these routes
+Route::get('/student/dashboard', [AttendanceController::class, 'getAttendanceLogs'])->middleware('auth');
+Route::post('/student/attendance', [AttendanceController::class, 'store'])->middleware('auth');
 
 // Edit Route
 Route::get('/students/{id}/edit', [StudentController::class, 'edit'])->name('students.edit');
@@ -168,6 +172,9 @@ Route::post('instructorregister', [RegisterController::class, 'instructorRegiste
 Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');  // Change to showLoginForm
 Route::post('/login', [AuthController::class, 'login'])->name('login');
 Route::post('/logout', [AuthController::class, 'logout'])->name('logout')->middleware('auth');
+
+// Student Attendance Route
+Route::post('/submit-attendance', [AttendanceController::class, 'store'])->name('attendance.store');
 
 // Temporarily bypass middleware for testing
 Route::post('/check-enrollment', [EnrollmentController::class, 'check'])->withoutMiddleware(['admin', 'auth']);

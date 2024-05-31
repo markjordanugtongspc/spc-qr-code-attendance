@@ -115,3 +115,8 @@ body{
   width: 20px; /* Set the size of the verified check mark */
   height: 20px;
 }
+.highlight {
+    background-color: #e3e1e1;
+    padding: 2px 5px;
+    border-radius: 3px;
+}
