@@ -6,6 +6,73 @@
   background-color: #800000;
   border-bottom: 1px solid #ffffff;
 }
+
+.navbar li {
+  list-style-type: none;
+  color: #ffffffff;
+}
+
+.navbar .dropdown-menu {
+  background-color: #800000;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.navbar .dropdown-item {
+  color: #ffffff;
+  padding: 10px 15px;
+  transition: background-color 0.3s ease;
+}
+
+.navbar .dropdown-item:hover {
+  background-color: #660000;
+}
+
+.navbar .dropdown-item.active,
+.navbar .dropdown-item:active {
+  background-color: #4d0000;
+}
+
+.navbar .dropdown-item:focus {
+  outline: none;
+}
+
+.navbar .dropdown-menu a {
+  text-decoration: none;
+}
+
+.navbar .dropdown-toggle::after {
+  display: none;
+}
+
+.navbar .dropdown-toggle {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.navbar .dropdown-toggle span {
+  margin-right: 5px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .navbar .dropdown-menu {
+    width: 100%;
+  }
+}
+
+/* Center the dropdown menu */
+.navbar .dropdown {
+  position: relative;
+}
+
+.navbar .dropdown-menu {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
 body {
   background: linear-gradient(#800000 32%, #f1e3e3 10% 80%, #f1e3e3 80%);
   width: 100vw;
@@ -52,10 +119,6 @@ body {
   gap: 0; /* Remove any gap between elements */
 }
 
-.navbar li {
-  list-style-type: none;
-  color: #ffffffff;
-}
 .qr-time {
   width: 60%;
 }
@@ -79,4 +142,30 @@ body {
   color: green; /* Green color for the verified check mark */
   width: 20px; /* Set the size of the verified check mark */
   height: 20px;
+}
+/* Modal styles */
+.modal-content {
+  background-color: #f5f5f5;
+  border-radius: 5px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.modal-header {
+  background-color: #800000;
+  color: #ffffff;
+}
+
+.modal-title {
+  font-weight: bold;
+}
+
+.modal-body {
+  padding: 20px;
+}
+
+.modal-footer {
+  padding: 10px;
+  background-color: #f5f5f5;
+  display: flex; /* Enable flexbox for button alignment */
+  justify-content: space-between; /* Distribute buttons evenly */
 }

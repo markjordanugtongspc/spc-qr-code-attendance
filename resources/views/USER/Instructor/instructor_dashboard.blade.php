@@ -41,29 +41,52 @@
             <div class="instructor-image" style="background-image: url('{{ Storage::url(Auth::user()->profile_picture) }}');">
                 <p class="instructor-name gap-1">
                     {{ Auth::user()->name }}
-                    <img src="{{ asset('images/svgs/pen-to-square-sharp-light.svg') }}" alt="Edit" class="edit-icon">
                 </p>
             </div>
             <!-- The instructor image div now comes after the name container -->
-            <div class="instructor-info bg-light  p-2">
-                <div class="role d-flex justify-content-center">
-                    <h6>Instructor<img src="https://add.pics/images/2024/04/30/imageabd0f4d5a4a733ba.png" alt="Verified" class="verified-mark"></h6>
+            <div class="instructor-info bg-light p-3 rounded shadow-sm">
+                <div class="row mb-3">
+                    <div class="col-12 text-center">
+                        <h4 class="text-primary">Instructor
+                            <img src="https://add.pics/images/2024/04/30/imageabd0f4d5a4a733ba.png" alt="Verified" class="verified-mark">
+                        </h4>
+                    </div>
                 </div>
-                <h6>Department: <span>{{ Auth::user()->department }}</span></h6>
-                <h6>Email Address: <span>{{ Auth::user()->email }}</span></h6>
-                <h6>Phone: <span>{{ Auth::user()->phone_number }}</span></h6>
-                <h6>Address: <span>{{ Auth::user()->address }}</span></h6>
-                <h6>Status: <span>{{ Auth::user()->status }}</span></h6>
-                <h6>Job Status: <span>{{ Auth::user()->job_status }}</span></h6>
-                <h6>Birthday: <span>{{ Auth::user()->birthday }}</span></h6>
-                <div class="list d-flex justify-content-center">
-                    <h6 class="bg-success p-2 rounded-pill">List of Student<span></span></h6>
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="mb-2">
+                            <h6>Department: <span class="highlight">{{ Auth::user()->department }}</span></h6>
+                        </div>
+                        <div class="mb-2">
+                            <h6>Email Address: <span class="highlight">{{ Auth::user()->email }}</span></h6>
+                        </div>
+                        <div class="mb-2">
+                            <h6>Phone: <span class="highlight">{{ Auth::user()->phone_number }}</span></h6>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="mb-2">
+                            <h6>Address: <span class="highlight">{{ Auth::user()->address }}</span></h6>
+                        </div>
+                        <div class="mb-2">
+                            <h6>Status: <span class="highlight">{{ Auth::user()->status }}</span></h6>
+                        </div>
+                        <div class="mb-2">
+                            <h6>Job Status: <span class="highlight">{{ Auth::user()->job_status }}</span></h6>
+                        </div>
+                        <div class="mb-2">
+                            <h6>Birthday: <span class="highlight">{{ Auth::user()->birthday }}</span></h6>
+                        </div>
+                    </div>
                 </div>
             </div>
+
             <div class="generate-qr d-flex flex-column bg-white mt-3">
-                <p class="d-flex justify-content-center pt-3">GENERATE QR</p>
+                <p class="d-flex justify-content-center pt-3">QR VALIDATOR</p>
                 <p class="d-flex justify-content-center"><img src="/images/qr-code.png" alt=""></p>
-                <p class="d-flex justify-content-center"><a class="bg-success text-black p-1" href="#">Select Subject</a></p>
+                <p class="d-flex justify-content-center"><a class="bg-success text-black p-1" href="#">View List</a></p>
             </div>
         </div>
         <div class="instructor-time flex-column pt-3 w-75 ">
@@ -93,7 +116,6 @@
                     </select>
                     &nbsp;Entries
                 </h6>
-
 
                 <form class="form-inline d-flex">
                     <input class="form-control " type="search" placeholder="Search" aria-label="Search">

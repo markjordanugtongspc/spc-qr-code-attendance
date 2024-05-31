@@ -7,7 +7,7 @@
     <title>Student Dashboard</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="css/users/student/dashboard/studentdashboard.css">
-    <!-- <link rel="stylesheet" href="css/users/student/dashboard/studentdashboard.css"> -->
+    <meta name="csrf-token" content="{{ csrf_token() }}">
 </head>
 
 <body>
@@ -23,19 +23,59 @@
                     <li>
                         <hr class="dropdown-divider">
                     </li>
-                    <li><a class="dropdown-item" href="#">View Profile</a></li>
+                    <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#attendanceModal">Attendance Here</a></li>
                     <li><a class="dropdown-item" href="#">Settings</a></li>
-                    <!-- Update this line -->
                     <li><a class="dropdown-item" href="#" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a></li>
                 </ul>
             </li>
-
         </div>
     </nav>
     <!-- Add this form somewhere within your HTML body where it won't be displayed -->
     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
         @csrf
     </form>
+
+    <!-- Modal -->
+    <div class="modal fade" id="attendanceModal" tabindex="-1" aria-labelledby="attendanceModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="attendanceModalLabel">Attendance Here</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="attendanceForm">
+                        <div class="form-group">
+                            <label for="subjects">Select Subject:</label>
+                            <ul class="list-group">
+                                <li class="list-group-item">
+                                    <input type="radio" id="subject-cc106" name="subjects" value="CC 106">
+                                    <label for="subject-cc106">CC 106</label>
+                                </li>
+                                <li class="list-group-item">
+                                    <input type="radio" id="subject-sia101" name="subjects" value="SIA 101">
+                                    <label for="subject-sia101">SIA 101</label>
+                                </li>
+                                <li class="list-group-item">
+                                    <input type="radio" id="subject-pf102" name="subjects" value="PF 102">
+                                    <label for="subject-pf102">PF 102</label>
+                                </li>
+                                <li class="list-group-item">
+                                    <input type="radio" id="subject-im102" name="subjects" value="IM 102">
+                                    <label for="subject-im102">IM 102</label>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="submit" class="btn btn-primary ml-auto">Submit Attendance</button>
+                        </div>
+                    </form>
+                    <div id="attendanceMessage" class="mt-3"></div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <div class="body container d-flex gap-4">
         <div class="student-details flex-column m-5">
@@ -95,12 +135,49 @@
             </div>
         </div>
     </div>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function() {
+            $('#attendanceForm').submit(function(event) {
+                event.preventDefault();
+                var subject = $('input[name="subjects"]:checked').val();
+                if (!subject) {
+                    alert('Please select a subject.');
+                    return;
+                }
+                $.ajax({
+                    type: 'POST',
+                    url: '/submit-attendance',
+                    data: {
+                        _token: $('meta[name="csrf-token"]').attr('content'),
+                        subject: subject
+                    },
+                    success: function(response) {
+                        $('#attendanceMessage').removeClass().addClass('alert alert-success').text(response.message);
+
+                        // Close the modal after 3 seconds
+                        setTimeout(function() {
+                            $('#attendanceModal').modal('hide');
+                            // Clear the message and reset the form
+                            $('#attendanceMessage').text('').removeClass();
+                            $('#attendanceForm').trigger('reset');
+                        }, 3000); // 3000 milliseconds = 3 seconds
+                    },
+                    error: function(xhr, status, error) {
+                        $('#attendanceMessage').removeClass().addClass('alert alert-danger').text(xhr.responseJSON.message || 'There was an error submitting your attendance. Please try again.');
+                        console.error('Error:', error);
+                    }
+                });
+            });
+        });
+    </script>
+
     <script>
         setInterval(() => {
             document.getElementById("showdate").innerHTML = Date();
         }, 1000);
     </script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 
 </html>
