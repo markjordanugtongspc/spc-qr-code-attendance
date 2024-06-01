@@ -92,7 +92,7 @@ class AuthController extends Controller
         }
 
         // Create the user
-        $user = User::create($userData);
+        User::create($userData);
 
         // Redirect to success page
         return redirect('/login')->with('success', 'Registration successful!');
@@ -129,7 +129,8 @@ class AuthController extends Controller
         // Check if a guardian is trying to log in
         if ($user->userType == 'student' && $request->email == $user->guardian_email) {
             // Verify the guardian's generated password
-            if (Hash::check($request->password, $user->guardian_generated_password)) {
+
+            if (Hash::check($request->password, $user->password)) {
                 Auth::login($user);
                 return redirect('/parents');
             }
