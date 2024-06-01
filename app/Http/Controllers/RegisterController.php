@@ -53,7 +53,8 @@ class RegisterController extends Controller
             'guardian_name' => $request->input('guardian_name'),
             'guardian_relationship' => $request->input('guardian_relationship'),
             'guardian_phone_number' => $request->input('guardian_phone_number'),
-            'guardian_email' => $request->input('guardian_email')
+            'guardian_email' => $request->input('guardian_email'),
+            'guardian_generated_password' => bcrypt($request->input('password'))
         ]);
 
         Auth::login($student);
