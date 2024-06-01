@@ -9,6 +9,21 @@ use App\Models\Logs2;
 
 class AttendanceController extends Controller
 {
+    public function showLogs2($id = null) // Optional ID parameter for single log
+    {
+        if ($id) {
+            $log = Logs2::find($id); // Fetch a single log entry by ID
+
+            if (!$log) {
+                return abort(404); // Handle case if log not found
+            }
+
+            return view('USER.Student.studentdashboard', compact('log'));
+        } else {
+            $logs2 = Logs2::all();  // Fetch all log entries
+            return view('USER.Student.studentdashboard', compact('logs2')); // Pass data to the view
+        }
+    }
     public function store(Request $request)
     {
         $validatedData = $request->validate([

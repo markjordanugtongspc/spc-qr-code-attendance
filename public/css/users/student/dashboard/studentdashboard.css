@@ -58,8 +58,15 @@
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
+  .student-details,
+  .student-time {
+      width: 100%;
+  }
   .navbar .dropdown-menu {
-    width: 100%;
+      width: 100%;
+  }
+  .student-name {
+      font-size: smaller; /* Adjust font size for smaller screens */
   }
 }
 
@@ -129,6 +136,9 @@ body {
   padding: 2px 6px;
   border-radius: 4px;
   display: inline-block; /* Make span behave like an inline element with a background */
+  white-space: nowrap; /* Prevent text from wrapping */
+  overflow: hidden; /* Hide overflowing text */
+  text-overflow: ellipsis; /* Add ellipsis to indicate truncated text */
 }
 
 .edit-icon {

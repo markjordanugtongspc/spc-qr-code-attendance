@@ -86,25 +86,26 @@
                 </p>
             </div>
 
-            <div class="student-info bg-light p-2">
-                <div class="role d-flex justify-content-center">
-                    <h6>Student<img src="https://add.pics/images/2024/04/30/imageabd0f4d5a4a733ba.png" alt="Verified" class="verified-mark"></h6>
+            <div class="student-info bg-light p-3 my-4 border rounded">
+                <div class="role d-flex justify-content-center align-items-center mb-3">
+                    <h5 class="mb-0">Student<img src="https://add.pics/images/2024/04/30/imageabd0f4d5a4a733ba.png" alt="Verified" class="verified-mark"></h6>
                 </div>
-                <h6>ID-Number: <span class="user-info">{{ Auth::user()->student_id }}</span></h6>
-                <h6>Phone: <span class="user-info">{{ Auth::user()->phone_number }}</span></h6>
-                <h6>Course: <span class="user-info">{{ Auth::user()->course }}</span></h6>
-                <h6>Address: <span class="user-info">{{ Auth::user()->address }}</span></h6>
-                <h6>Gender: <span class="user-info">{{ Auth::user()->gender }}</span></h6>
-                <h6>Year Level: <span>2nd year</span></h6>
+                <h6>ID-Number: <span class="user-info text-nowrap">{{ Auth::user()->student_id }}</span></h6>
+                <h6>Email: <span class="user-info text-nowrap">{{ Auth::user()->email }}</span></h6>
+                <h6>Phone: <span class="user-info text-nowrap">{{ Auth::user()->phone_number }}</span></h6>
+                <h6>Course: <span class="user-info text-nowrap">{{ Auth::user()->course }}</span></h6>
+                <h6>Address: <span class="user-info text-nowrap">{{ Auth::user()->address }}</span></h6>
+                <h6>Gender: <span class="user-info text-nowrap">{{ Auth::user()->gender === 'male' ? 'Male' : (Auth::user()->gender === 'female' ? 'Female' : Auth::user()->gender) }}</span></h6>
+                <h6>Year Level: <span class="user-info text-nowrap">{{ Auth::user()->year_level }}</span></h6>
             </div>
         </div>
 
         <div class="student-time flex-column pt-3 w-75 ">
             <div class="d-flex gap-4 ">
                 <div class="qr-time text-light gap-1 align-content-center">
-                    <h6><img src="images/qr-code.png" id="spcqr"><span> SCAN QR CODE</span></h6>
+                    <h6 id="welcomeMessage"></h6>
                     <h6 id="showdate"></h6>
-                    <button class="scan w-100 d-flex justify-content-start" onclick="#">Scan QR Code</button>
+                    <button class="scan w-100 d-flex justify-content-start">Time to Grind Sunshine!</button>
                     <!-- <h6><a class="scan w-100 text-black" style="background-color: #fff;" href="#">scan qr code</a></h6> -->
                 </div>
                 <div class="logo justify-content-center ">
@@ -122,12 +123,12 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach ($attendanceLogs as $log)
+                        @foreach ($attendanceLogs2 as $log)
                         <tr>
-                            <td class="text-center">CC106</td>
+                            <td class="text-center">{{ $log->subject }}</td>
                             <td class="text-center">{{ $log->date }}</td>
-                            <td class="text-center">{{ $log->signin_time ? \Carbon\Carbon::parse($log->signin_time)->format('h:ia') : 'N/A' }}</td>
-                            <td class="text-center">{{ $log->signout_time ? \Carbon\Carbon::parse($log->signout_time)->format('h:ia') : 'N/A' }}</td>
+                            <td class="text-center">{{ $log->time_in ? \Carbon\Carbon::parse($log->time_in)->format('h:i A') : 'N/A' }}</td>
+                            <td class="text-center">{{ $log->time_out ? \Carbon\Carbon::parse($log->time_out)->format('h:i A') : 'N/A' }}</td>
                         </tr>
                         @endforeach
                     </tbody>
@@ -162,6 +163,11 @@
                             // Clear the message and reset the form
                             $('#attendanceMessage').text('').removeClass();
                             $('#attendanceForm').trigger('reset');
+
+                            // Refresh the page after 6 seconds (3 seconds for modal close + 3 seconds for cooldown)
+                            setTimeout(function() {
+                                location.reload();
+                            }, 3000);
                         }, 3000); // 3000 milliseconds = 3 seconds
                     },
                     error: function(xhr, status, error) {
@@ -175,9 +181,56 @@
 
     <script>
         setInterval(() => {
-            document.getElementById("showdate").innerHTML = Date();
+            const options = {
+                weekday: 'long',
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric',
+                hour: 'numeric',
+                minute: 'numeric',
+                second: 'numeric',
+                hour12: true,
+                timeZone: 'Asia/Manila',
+                timeZoneName: 'shortOffset'
+            };
+
+            const date = new Date();
+            const formattedDateTime = date.toLocaleString('en-US', options);
+
+            const timezoneSpan = document.createElement('span');
+            timezoneSpan.textContent = " (Philippine Standard Time)";
+            timezoneSpan.style.fontWeight = 'bold';
+            timezoneSpan.style.color = '#cc9900'; // Subtle golden color
+
+            const showdateElement = document.getElementById("showdate");
+            showdateElement.innerHTML = formattedDateTime;
+            showdateElement.appendChild(timezoneSpan);
         }, 1000);
+
+        function updateWelcomeMessage() {
+            const hour = new Date().getHours();
+            let message = "";
+            let iconLink = "";
+
+            if (hour >= 0 && hour < 12) {
+                message = "Good Morning, ";
+                iconLink = '<a>🌞</a>';
+            } else if (hour >= 12 && hour < 18) {
+                message = "Good Afternoon, ";
+                iconLink = '<a>😎</a>';
+            } else {
+                message = "Good Evening, ";
+                iconLink = '<a>🌙</a>';
+            }
+
+            const welcomeMessageElement = document.getElementById("welcomeMessage");
+            welcomeMessageElement.innerHTML = iconLink + " " + message + "{{ Auth::user()->name }}!"; // Include icon link
+        }
+
+        updateWelcomeMessage();
+        setInterval(updateWelcomeMessage, 60000);
     </script>
+
 </body>
 
 </html>
