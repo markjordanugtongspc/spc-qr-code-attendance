@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use Illuminate\Http\Request;
 use SimpleSoftwareIO\QrCode\Facades\QrCode;
-use App\Models\Logs;
+use App\Models\Logs2;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Auth;
 
@@ -68,9 +68,10 @@ class StudentController extends Controller
 
     public function showStudentDashboard()
     {
-        $attendanceLogs = Logs::all();
+        $user = auth()->user();
+        $attendanceLogs2 = Logs2::where('user_id', $user->id)->get();
 
-        return view('USER.Student.studentdashboard', compact('attendanceLogs'));
+        return view('USER.Student.studentdashboard', compact('attendanceLogs2'));
     }
 
     public function update(Request $request, $id)

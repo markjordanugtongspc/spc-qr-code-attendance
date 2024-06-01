@@ -178,3 +178,6 @@ Route::post('/submit-attendance', [AttendanceController::class, 'store'])->name(
 
 // Temporarily bypass middleware for testing
 Route::post('/check-enrollment', [EnrollmentController::class, 'check'])->withoutMiddleware(['admin', 'auth']);
+
+// Student Specific Subject Attendance
+Route::get('/logs2/{id?}', [AttendanceController::class, 'showLogs2'])->name('logs2');

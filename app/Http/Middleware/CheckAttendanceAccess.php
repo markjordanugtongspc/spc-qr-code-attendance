@@ -8,6 +8,12 @@ use App\Models\Logs2;
 
 class CheckAttendanceAccess
 {
+
+    public function showLogs2($attendanceId)
+    {
+        $log = Logs2::findOrFail($attendanceId);
+        return view('USER.Student.studentdashboard', compact('log')); // Pass single log to the view
+    }
     public function handle(Request $request, Closure $next)
     {
         $attendanceId = $request->route('attendanceId'); // Assuming you have a route parameter for the attendance ID

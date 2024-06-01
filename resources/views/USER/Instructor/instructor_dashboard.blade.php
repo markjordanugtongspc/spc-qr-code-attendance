@@ -84,17 +84,17 @@
             </div>
 
             <div class="generate-qr d-flex flex-column bg-white mt-3">
-                <p class="d-flex justify-content-center pt-3">QR VALIDATOR</p>
-                <p class="d-flex justify-content-center"><img src="/images/qr-code.png" alt=""></p>
+                <p class="d-flex justify-content-center pt-3">ATTENDANCE VALIDATOR</p>
+                <p class="d-flex justify-content-center"><img src="https://img.icons8.com/?size=100&id=KV88o2HqEMTt&format=png&color=000000" alt=""></p>
                 <p class="d-flex justify-content-center"><a class="bg-success text-black p-1" href="#">View List</a></p>
             </div>
         </div>
         <div class="instructor-time flex-column pt-3 w-75 ">
             <div class="d-flex gap-4 ">
                 <div class="qr-time text-light gap-1 align-content-center">
-                    <h6><img src="/images/qr-code.png" id="spcqr"><span> SCAN QR CODE</span></h6>
+                    <h6 id="welcomeMessage"></h6>
                     <h6 id="showdate"></h6>
-                    <button class="scan w-100 d-flex justify-content-start" onclick="#">Scan QR Code</button>
+                    <button class="scan w-100 d-flex justify-content-start">Inspire, empower, and ignite the minds of your students.</button>
                     <!-- <h6><a class="scan w-100 text-black" style="background-color: #fff;" href="#">scan qr code</a></h6> -->
                 </div>
                 <div class="logo justify-content-center ">
@@ -155,8 +155,54 @@
     </div>
     <script>
         setInterval(() => {
-            document.getElementById("showdate").innerHTML = Date();
+            const options = {
+                weekday: 'long',
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric',
+                hour: 'numeric',
+                minute: 'numeric',
+                second: 'numeric',
+                hour12: true,
+                timeZone: 'Asia/Manila',
+                timeZoneName: 'shortOffset'
+            };
+
+            const date = new Date();
+            const formattedDateTime = date.toLocaleString('en-US', options);
+
+            const timezoneSpan = document.createElement('span');
+            timezoneSpan.textContent = " (Philippine Standard Time)";
+            timezoneSpan.style.fontWeight = 'bold';
+            timezoneSpan.style.color = '#cc9900'; // Subtle golden color
+
+            const showdateElement = document.getElementById("showdate");
+            showdateElement.innerHTML = formattedDateTime;
+            showdateElement.appendChild(timezoneSpan);
         }, 1000);
+
+        function updateWelcomeMessage() {
+            const hour = new Date().getHours();
+            let message = "";
+            let iconLink = "";
+
+            if (hour >= 0 && hour < 12) {
+                message = "Good Morning, ";
+                iconLink = '<a>🌞</a>';
+            } else if (hour >= 12 && hour < 18) {
+                message = "Good Afternoon, ";
+                iconLink = '<a>😎</a>';
+            } else {
+                message = "Good Evening, ";
+                iconLink = '<a>🌙</a>';
+            }
+
+            const welcomeMessageElement = document.getElementById("welcomeMessage");
+            welcomeMessageElement.innerHTML = iconLink + " " + message + "{{ Auth::user()->name }}!"; // Include icon link
+        }
+
+        updateWelcomeMessage();
+        setInterval(updateWelcomeMessage, 60000);
     </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
