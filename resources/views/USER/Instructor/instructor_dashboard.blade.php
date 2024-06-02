@@ -38,7 +38,7 @@
     <div class="body container d-flex">
         <div class="instructor-details flex-column m-5">
             <!-- Wrap the name and edit icon in a container div -->
-            <div class="instructor-image" style="background-image: url('{{ Storage::url(Auth::user()->profile_picture) }}');">
+            <div class="instructor-image" style="background-image: url('{{ asset(str_replace('/storage/storage', '/storage', Storage::url(Auth::user()->profile_picture))) }}');">
                 <p class="instructor-name gap-1">
                     {{ Auth::user()->name }}
                 </p>
@@ -83,10 +83,71 @@
                 </div>
             </div>
 
+            <!-- 'View List' link that triggers the modal -->
             <div class="generate-qr d-flex flex-column bg-white mt-3">
                 <p class="d-flex justify-content-center pt-3">ATTENDANCE VALIDATOR</p>
-                <p class="d-flex justify-content-center"><img src="https://img.icons8.com/?size=100&id=KV88o2HqEMTt&format=png&color=000000" alt=""></p>
-                <p class="d-flex justify-content-center"><a class="bg-success text-black p-1" href="#">View List</a></p>
+                <p class="d-flex justify-content-center">
+                    <img src="https://img.icons8.com/?size=100&id=KV88o2HqEMTt&format=png&color=000000" alt="">
+                </p>
+                <p class="d-flex justify-content-center">
+                    <!-- This link will trigger the modal -->
+                    <a class="bg-success text-black p-1" href="#" data-bs-toggle="modal" data-bs-target="#studentListModal">View List</a>
+                </p>
+            </div>
+
+            <!-- Modal Structure -->
+            <div class="modal fade" id="studentListModal" tabindex="-1" aria-labelledby="studentListModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-xl">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="studentListModalLabel">Student Attendance List</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <!-- Table structure for student list -->
+                            <table class="table table-striped table-bordered w-100">
+                                <thead class="tablehead">
+                                    <tr>
+                                        <th scope="col" class="text-center">Subject</th>
+                                        <th scope="col" class="text-center">Student Name</th>
+                                        <th scope="col" class="text-center">Date</th>
+                                        <th scope="col" class="text-center">Time In</th>
+                                        <th scope="col" class="text-center">Time Out</th>
+                                        <th scope="col" class="text-center">Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach ($attendanceLogs2 as $log)
+                                    <tr>
+                                        <td class="text-center">{{ $log->subject }}</td>
+                                        <td class="text-center">{{ $log->user->name }}</td>
+                                        <td class="text-center">{{ $log->date }}</td>
+                                        <td class="text-center">{{ $log->time_in ? \Carbon\Carbon::parse($log->time_in)->format('h:i A') : 'N/A' }}</td>
+                                        <td class="text-center">{{ $log->time_out ? \Carbon\Carbon::parse($log->time_out)->format('h:i A') : 'N/A' }}</td>
+                                        <td class="text-center">
+                                            @if (!$log->trashed())
+                                            <form action="{{ route('logs2.softDelete', $log->id) }}" method="POST">
+                                                @csrf
+                                                @method('DELETE')
+                                                <button type="submit" class="btn btn-danger">Soft Delete</button>
+                                            </form>
+                                            @else
+                                            <form action="{{ route('logs2.restore', $log->id) }}" method="POST">
+                                                @csrf
+                                                <button type="submit" class="btn btn-primary">Restore</button>
+                                            </form>
+                                            @endif
+                                        </td>
+                                    </tr>
+                                    @endforeach
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
         <div class="instructor-time flex-column pt-3 w-75 ">
@@ -143,8 +204,8 @@
                         <td class="text-center">{{ $log->student->course }}</td>
                         <td class="text-center">{{ $log->student->gender }}</td>
                         <td class="text-center">{{ $log->student->year_level }}</td>
-                        <td class="text-center">{{ $log->created_at->format('H:i:s') }}</td>
-                        <td class="text-center">{{ $log->signout_time ? \Carbon\Carbon::parse($log->signout_time)->format('H:i:s') : 'N/A' }}</td>
+                        <td class="text-center">{{ $log->created_at->format('h:i A') }}</td>
+                        <td class="text-center">{{ $log->signout_time ? \Carbon\Carbon::parse($log->signout_time)->format('h:i A') : 'N/A' }}</td>
                         @endif
                     </tr>
                     @endforeach

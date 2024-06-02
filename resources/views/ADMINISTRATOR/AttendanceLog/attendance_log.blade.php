@@ -16,17 +16,17 @@
         <div class="d-flex gap-2 align-items-center">
             <div class="mr-3 mb-2">
                 <span class="font-weight-medium">Date Today:</span>
-                <input class="form-control ml-2" type="search" placeholder="March 11, 2024...">
+                <input id="dateInput" class="form-control ml-2" type="date" placeholder="March 11, 2024...">
             </div>
             <div class="mr-3 mb-2">
                 <span class="font-weight-medium">Last name contains:</span>
-                <input class="form-control ml-2" type="search" placeholder="Barila...">
+                <input id="lastNameInput" class="form-control ml-2" type="search" placeholder="Barila...">
             </div>
             <div class="mr-3 mb-2">
                 <span class="font-weight-medium">Time in contains:</span>
-                <input class="form-control ml-2" type="search" placeholder="7:00 am...">
+                <input id="timeInInput" class="form-control ml-2" type="search" placeholder="7:00 am...">
             </div>
-            <button class="btn btn-danger mt-3 ml-4">Search</button>
+            <button class="btn btn-danger mt-3 ml-4" onclick="performSearch()">Search</button>
         </div>
     </div>
 
@@ -84,6 +84,42 @@
 
                 // Redirect to the random route
                 window.location.href = "/" + randomRoute;
+            }
+        </script>
+        <script>
+            function performSearch() {
+                console.log('Search button clicked');
+
+                const date = document.getElementById('dateInput').value;
+                const name = document.getElementById('lastNameInput').value; // Assuming you have a field with id 'lastNameInput'
+                const timeIn = document.getElementById('timeInInput').value;
+                const student_id = document.getElementById('IDNumberInput').value; // Assuming you have a field with id 'IDNumberInput'
+
+                console.log('Search parameters:', date, name, timeIn);
+
+                const query = new URLSearchParams({
+                    date,
+                    name,
+                    timeIn,
+                    student_id
+                }).toString();
+
+                console.log('Search query:', query);
+
+                fetch(`/search-attendance?${query}`)
+                    .then(response => {
+                        if (!response.ok) {
+                            throw new Error('Network response was not ok');
+                        }
+                        return response.json();
+                    })
+                    .then(data => {
+                        console.log('Search results:', data);
+                        updateAttendanceLog(data);
+                    })
+                    .catch(error => {
+                        console.error('Error:', error);
+                    });
             }
         </script>
 

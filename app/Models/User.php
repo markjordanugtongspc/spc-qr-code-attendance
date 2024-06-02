@@ -65,6 +65,11 @@ class User extends Authenticatable
         return $this->hasMany(Logs::class, 'student_id', 'student_id');
     }
 
+    public function logs2()
+    {
+        return $this->hasMany(Logs::class);
+    }
+
     public function getInstructorProfilePictureUrlAttribute()
     {
         if ($this->userType === 'instructor') {

@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Logs;
+use App\Models\Logs2;
 use Illuminate\Support\Facades\Storage;
 use SimpleSoftwareIO\QrCode\Facades\QrCode;
 
@@ -40,8 +41,9 @@ class InstructorController extends Controller
     public function showDashboard()
     {
         $attendanceLogs = Logs::all();
+        $attendanceLogs2 = Logs2::all();
 
-        return view('USER.Instructor.instructor_dashboard', compact('attendanceLogs'));
+        return view('USER.Instructor.instructor_dashboard', compact('attendanceLogs', 'attendanceLogs2'));
     }
 
 
