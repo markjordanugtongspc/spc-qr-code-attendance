@@ -35,13 +35,14 @@ Route::get('/instructor', function () {
 // Route for the student page
 Route::get('/student', function () {
     return view('ADMINISTRATOR/StudentAdministrator/student_admin');
-})->name('student');
+})->name('student'); 
 
 // Route for the attendance log page
 Route::get('/attendancelog', [ScannerController::class, 'showAttendanceLogs'])->name('attendancelog');
 
 // Route for the instructor attendance log
 Route::get('/instructor-attendance-log', [InstructorController::class, 'showAttendanceLogss'])->name('instructor.attendance.log');
+Route::get('/instructor-dashboard', 'InstructorController@showInstructorDashboard')->name('instructor.dashboard');
 
 // Route for the studentlist
 Route::get('/coe', function () {
@@ -181,3 +182,10 @@ Route::post('/check-enrollment', [EnrollmentController::class, 'check'])->withou
 
 // Student Specific Subject Attendance
 Route::get('/logs2/{id?}', [AttendanceController::class, 'showLogs2'])->name('logs2');
+
+// Soft Delete for Logs2
+Route::delete('/logs2/{id}/soft-delete', [AttendanceController::class, 'softDeleteLog'])->name('logs2.softDelete');
+Route::post('/logs2/{id}/restore', [AttendanceController::class, 'restoreLog'])->name('logs2.restore');
+
+// Search Dynamic
+Route::get('/search-attendance', [ScannerController::class, 'searchAttendance'])->name('search.attendance');

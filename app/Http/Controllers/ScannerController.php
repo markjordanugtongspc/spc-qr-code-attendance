@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Auth;
 use App\Models\User;
 use App\Models\Logs;
+use App\Models\AttendanceLog;
 
 class ScannerController extends Controller
 {
@@ -131,8 +132,41 @@ class ScannerController extends Controller
         // Retrieve all logs for today and filter them in the view
         $attendanceLogs = Logs::with(['student', 'instructor'])
             ->whereDate('date', $today)
-            ->get();
+            ->get(); // Use by in attendance log
 
+        //dd($attendanceLogs);
         return view('ADMINISTRATOR.AttendanceLog.attendance_log', compact('attendanceLogs'));
+    }
+
+    public function searchAttendance(Request $request)
+    {
+        try {
+            $date = $request->input('date');
+            $name = $request->input('name'); // Assuming you have a 'name' column
+            $timeIn = $request->input('timeIn');
+            $student_id = $request->input('student_id');
+
+            $query = AttendanceLog::query();
+
+            if ($date) {
+                $query->whereDate('date', $date);
+            }
+            if ($name) {
+                $query->where('name', 'like', "%{$name}%");
+            }
+            if ($timeIn) {
+                $query->whereTime('signin_time', 'like', "%{$timeIn}%");
+            }
+            if ($student_id) {
+                $query->where('student_id', 'like', "%{$student_id}%");
+            }
+
+            $attendanceLogs = $query->get();
+
+            return response()->json($attendanceLogs);
+        } catch (\Exception $e) {
+            \Log::error($e->getMessage());
+            return response()->json(['error' => 'An error occurred while performing the search.'], 500);
+        }
     }
 }
