@@ -8,6 +8,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="css/users/student/dashboard/studentdashboard.css">
     <meta name="csrf-token" content="{{ csrf_token() }}">
+    <script src="https://code.iconify.design/iconify-icon/1.0.2/iconify-icon.min.js"></script>
 </head>
 
 <body>
@@ -17,7 +18,7 @@
                 <span class="text-light">SPC Student Attendance Monitoring System</span>
             </a>
             <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">Menu</a>
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="margin-left: 100px;">Menu<iconify-icon icon="mdi:menu-down" style="margin-top: 2px;"></iconify-icon></a>
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" style="max-width: 100px;"> <!-- Adjust max-width as needed -->
                     <li><a class="dropdown-item text-truncate" href="#">{{ Auth::user()->name }}</a></li>
                     <li>
@@ -77,7 +78,7 @@
         </div>
     </div>
 
-    <div class="body container d-flex gap-4">
+    <div class="body container d-flex gap-4" style="margin-top: 12px;">
         <div class="student-details flex-column m-5">
             <div class="student-image" style="background-image: url('{{ str_replace('/public', '', asset('/' . Auth::user()->profile_picture)) }}');">
                 <p class="student-name gap-1">
@@ -88,15 +89,16 @@
 
             <div class="student-info bg-light p-3 my-4 border rounded">
                 <div class="role d-flex justify-content-center align-items-center mb-3">
-                    <h5 class="mb-0">Student<img src="https://add.pics/images/2024/04/30/imageabd0f4d5a4a733ba.png" alt="Verified" class="verified-mark"></h6>
+                    <h5 class="mb-0">Student</h6>
+                    <img src="https://add.pics/images/2024/04/30/imageabd0f4d5a4a733ba.png" alt="Verified" class="verified-mark">
                 </div>
-                <h6>ID-Number: <span class="user-info text-nowrap">{{ Auth::user()->student_id }}</span></h6>
-                <h6>Email: <span class="user-info text-nowrap">{{ Auth::user()->email }}</span></h6>
-                <h6>Phone: <span class="user-info text-nowrap">{{ Auth::user()->phone_number }}</span></h6>
-                <h6>Course: <span class="user-info text-nowrap">{{ Auth::user()->course }}</span></h6>
-                <h6>Address: <span class="user-info text-nowrap">{{ Auth::user()->address }}</span></h6>
-                <h6>Gender: <span class="user-info text-nowrap">{{ Auth::user()->gender === 'male' ? 'Male' : (Auth::user()->gender === 'female' ? 'Female' : Auth::user()->gender) }}</span></h6>
-                <h6>Year Level: <span class="user-info text-nowrap">{{ Auth::user()->year_level }}</span></h6>
+                <h6 style="display: flex; align-items: center;">ID-Number: <span class="user-info text-nowrap" style="margin-left: 4px;">{{ Auth::user()->student_id }}</span></h6>
+                <h6 style="display: flex; align-items: center;">Email: <span class="user-info text-nowrap" style="margin-left: 4px;">{{ Auth::user()->email }}</span></h6>
+                <h6 style="display: flex; align-items: center;">Phone: <span class="user-info text-nowrap" style="margin-left: 4px;">{{ Auth::user()->phone_number }}</span></h6>
+                <h6 style="display: flex; align-items: center;">Course: <span class="user-info text-nowrap" style="margin-left: 4px;">{{ Auth::user()->course }}</span></h6>
+                <h6 style="display: flex; align-items: center;">Address: <span class="user-info text-nowrap" style="margin-left: 4px;">{{ Auth::user()->address }}</span></h6>
+                <h6 style="display: flex; align-items: center;">Gender: <span class="user-info text-nowrap" style="margin-left: 4px;">{{ Auth::user()->gender === 'male' ? 'Male' : (Auth::user()->gender === 'female' ? 'Female' : Auth::user()->gender) }}</span></h6>
+                <h6 style="display: flex; align-items: center;">Year Level: <span class="user-info text-nowrap" style="margin-left: 4px;">{{ Auth::user()->year_level }}</span></h6>
             </div>
         </div>
 

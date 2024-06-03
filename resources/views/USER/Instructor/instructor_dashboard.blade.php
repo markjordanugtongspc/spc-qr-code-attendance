@@ -17,7 +17,7 @@
                 <span class="text-light">SPC Student Attendance Monitoring System</span>
             </a>
             <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">Menu</a>
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="margin-left: 100px;">Menu</a>
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" style="max-width: 100px;"> <!-- Adjust max-width as needed -->
                     <li><a class="dropdown-item text-truncate" href="#">{{ Auth::user()->name }}</a></li>
                     <li>
@@ -44,40 +44,24 @@
                 </p>
             </div>
             <!-- The instructor image div now comes after the name container -->
-            <div class="instructor-info bg-light p-3 rounded shadow-sm">
+            <div class="instructor-info bg-light p-3 rounded shadow-sm" style="width: 100%;">
                 <div class="row mb-3">
-                    <div class="col-12 text-center">
-                        <h4 class="text-primary">Instructor
-                            <img src="https://add.pics/images/2024/04/30/imageabd0f4d5a4a733ba.png" alt="Verified" class="verified-mark">
-                        </h4>
+                    <div class="col-12 text-center" style="display: flex; justify-content: center; align-items: center;">
+                        <h4 class="text-primary">Instructor</h4>
+                        <img src="https://add.pics/images/2024/04/30/imageabd0f4d5a4a733ba.png" alt="Verified" class="verified-mark">
                     </div>
                 </div>
 
                 <div class="row">
-                    <div class="col-md-6">
-                        <div class="mb-2">
-                            <h6>Department: <span class="highlight">{{ Auth::user()->department }}</span></h6>
-                        </div>
-                        <div class="mb-2">
-                            <h6>Email Address: <span class="highlight">{{ Auth::user()->email }}</span></h6>
-                        </div>
-                        <div class="mb-2">
-                            <h6>Phone: <span class="highlight">{{ Auth::user()->phone_number }}</span></h6>
-                        </div>
-                    </div>
-
-                    <div class="col-md-6">
-                        <div class="mb-2">
-                            <h6>Address: <span class="highlight">{{ Auth::user()->address }}</span></h6>
-                        </div>
-                        <div class="mb-2">
-                            <h6>Status: <span class="highlight">{{ Auth::user()->status }}</span></h6>
-                        </div>
-                        <div class="mb-2">
-                            <h6>Job Status: <span class="highlight">{{ Auth::user()->job_status }}</span></h6>
-                        </div>
-                        <div class="mb-2">
-                            <h6>Birthday: <span class="highlight">{{ Auth::user()->birthday }}</span></h6>
+                    <div class="col-md-6" style="width: 100%;">
+                        <div class="mb-2" style="display: flex; flex-direction: column; width: 100%; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
+                            <h6 style="display: flex; align-items: center;">Department: <span class="highlight">{{ Auth::user()->department }}</span></h6>
+                            <h6 style="display: flex; align-items: center;">Address: <span class="highlight">{{ Auth::user()->address }}</span></h6>
+                            <h6 style="display: flex; align-items: center;">Email Address: <span class="highlight">{{ Auth::user()->email }}</span></h6>
+                            <h6 style="display: flex; align-items: center;">Phone: <span class="highlight">{{ Auth::user()->phone_number }}</span></h6>
+                            <h6 style="display: flex; align-items: center;">Status: <span class="highlight">{{ Auth::user()->status }}</span></h6>
+                            <h6 style="display: flex; align-items: center;">Birthday: <span class="highlight">{{ Auth::user()->birthday }}</span></h6>
+                            <h6 style="display: flex; align-items: center;">Job Status: <span class="highlight">{{ Auth::user()->job_status }}</span></h6>
                         </div>
                     </div>
                 </div>
@@ -168,15 +152,16 @@
                 <a class="sub p-4 align-content-center bg-white text-black" href="">CC108 - 70000</a>
             </div>
             <div class="show-search d-flex d-flex justify-content-between padd-1">
-                <h6 class="d-flex align-items-end">SHOW&nbsp;
+                <div style="display: flex; align-items: center;">
+                    <span style="font-weight: 600; margin-right: 2px;">SHOW</span>
                     <select class="form-select form-select-sm d-flex align-items-end custom-dropdown-width" aria-label=".form-select-sm example">
                         <option selected>1</option>
                         <option value="2">2</option>
                         <option value="3">3</option>
                         <option value="4">4</option>
                     </select>
-                    &nbsp;Entries
-                </h6>
+                    <span style="font-weight: 600; margin-left: 2px;">Entries</span>
+                </div>
 
                 <form class="form-inline d-flex">
                     <input class="form-control " type="search" placeholder="Search" aria-label="Search">

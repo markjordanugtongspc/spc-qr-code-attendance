@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="css/users/admin/style/admin_style.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <script src="https://code.iconify.design/iconify-icon/1.0.2/iconify-icon.min.js"></script>
   <title>Admin Dashboard</title>
 </head>
 
@@ -25,14 +26,20 @@
     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
       @csrf
     </form>
-    <div class="gap-3 d-flex justify-content-center">
-      <a class="logout btn bg-light" style="font-weight:700;" href="#" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
-    </div>
-
     <div class="d-flex flex-column justify-content-end mt-4 ms-2 h-50">
-      <p class="text-secondary">spcregistrar@gmail.com</p>
-      <p class="text-secondary">(+63) 221-6246</p>
-      <p class="text-secondary">my.spc.edu.ph</p>
+      <a class="logout" style=" font-weight:700; color: white; font-size: 18px; text-decoration: none;" href="#" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Log out</a>
+      <div class="d-flex align-items-center">
+        <iconify-icon icon="gis:globe-alt-o" style="color: white; font-size: 18px; margin-right: 4px;"></iconify-icon>
+        <a href="https://www.spc.edu.ph/" target="_blank" style="text-decoration: none; color: white; font-weight: 600;">my.spc.edu.ph</a>
+      </div>
+      <div class="d-flex align-items-center">
+        <iconify-icon icon="hugeicons:telephone" style="color: white; font-size: 18px; margin-right: 4px;"></iconify-icon>
+        <span style="color: white; font-weight: 600; font-size: 15px;">(+63) 221-6246</span>
+      </div>
+      <div class="d-flex align-items-center">
+        <iconify-icon icon="fontisto:email" style="color: white; font-size: 18px; margin-right: 4px;"></iconify-icon>
+        <span style="color: white; font-weight: 600; font-size: 15px">spcregistrar@gmail.com</span>
+      </div>
     </div>
     <!-- <footer class="text-white-50">©College of Computer Studies - 2nd Year - GROUP 1 </footer> -->
   </div>
