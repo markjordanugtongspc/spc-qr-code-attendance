@@ -21,13 +21,6 @@ span{
   font-weight: bold;
   cursor: pointer;
 }
-.logout {
-  color: black;
-  background-color: #F1E3E3;
-  font-size: 15px;
-  position: absolute;
-  margin-top: 200px;
-}
 
 .content{
   width: 280px;
