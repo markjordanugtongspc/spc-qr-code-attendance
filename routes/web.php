@@ -115,10 +115,14 @@ Route::get('/login', function () {
     return view('USER/Authentication/login');
 })->name('login');
 
-// Route for the parent dashboard
-Route::get('/parents', function () {
-    return view('USER/Parents/parents_dashboard');
-})->name('parents_dashboard');
+// Update the route for the parent dashboard
+Route::get('/parents', [ScannerController::class, 'getGuardianName'])->name('parents_dashboard');
+// Route for the sub log page
+Route::get('/parents', [ScannerController::class, 'getGatepassAttendanceLog'])->name('parents_dashboard');
+
+// Specific Guardian Data
+Route::get('/guardian/{guardian_id}/attendance', 'GuardianController@getAttendanceData');
+
 
 // Route for the instructor dashboard
 Route::get('/instructordashboard', [InstructorController::class, 'showDashboard'])->name('instructordashboard');

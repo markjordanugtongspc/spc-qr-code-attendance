@@ -3,10 +3,12 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Auth;
 use App\Models\User;
 use App\Models\Logs;
+use App\Models\Logs2;
 use App\Models\AttendanceLog;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\View;
 
 class ScannerController extends Controller
 {
@@ -134,39 +136,23 @@ class ScannerController extends Controller
             ->whereDate('date', $today)
             ->get(); // Use by in attendance log
 
-        //dd($attendanceLogs);
         return view('ADMINISTRATOR.AttendanceLog.attendance_log', compact('attendanceLogs'));
     }
 
-    public function searchAttendance(Request $request)
+    public function getGatepassAttendanceLog() // Used in Parents Dashboard == Para sa Gatepass Logging [specific student]
     {
-        try {
-            $date = $request->input('date');
-            $name = $request->input('name'); // Assuming you have a 'name' column
-            $timeIn = $request->input('timeIn');
-            $student_id = $request->input('student_id');
+        $today = date('Y-m-d');
 
-            $query = AttendanceLog::query();
+        // Get the authenticated user (student/son/daughter and guardian name)
+        $guardian = Auth::user();
+        $guardianName = Auth::user()->guardian_name;
 
-            if ($date) {
-                $query->whereDate('date', $date);
-            }
-            if ($name) {
-                $query->where('name', 'like', "%{$name}%");
-            }
-            if ($timeIn) {
-                $query->whereTime('signin_time', 'like', "%{$timeIn}%");
-            }
-            if ($student_id) {
-                $query->where('student_id', 'like', "%{$student_id}%");
-            }
+        // Retrieve attendance logs for students related to the guardian
+        $attendanceLogs = Logs::with(['student'])
+            ->whereDate('date', $today)
+            ->where('student_id', $guardian->student_id)
+            ->get();
 
-            $attendanceLogs = $query->get();
-
-            return response()->json($attendanceLogs);
-        } catch (\Exception $e) {
-            \Log::error($e->getMessage());
-            return response()->json(['error' => 'An error occurred while performing the search.'], 500);
-        }
+        return view('USER.Parents.parents_dashboard', compact('guardianName', 'attendanceLogs'));
     }
 }

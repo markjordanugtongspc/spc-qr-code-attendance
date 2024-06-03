@@ -22,7 +22,7 @@
 
 <body>
     <div class="container" style="margin: 0px; padding-left: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; height: 600px; padding-bottom: 0px; padding-right: 0px; max-width: 100%;">
-        <div class="row" style="margin-right: 0px; margin-left: 0px; background: var(--bs-danger-text-emphasis); padding-bottom: 120px; display: flex; align-items: center; justify-content: space-between;">
+        <div class="row" style="margin-right: 0px; margin-left: 0px; padding-bottom: 120px; display: flex; align-items: center; justify-content: space-between;">
             <div class="col" style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid white; padding-bottom: 10px; margin-top: 4px;">
                 <h1 style="font-size: 17px; color: var(--bs-body-bg); margin-bottom: 0px;">Parent Dashboard</h1>
                 <div class="dropdown">
@@ -30,14 +30,16 @@
                         Menu
                     </button>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" style="max-width: 100px;"> <!-- Adjust max-width as needed -->
-                        <li><a class="dropdown-item text-truncate" href="#">sample name</a></li>
+                        <li><a class="dropdown-item text-truncate" href="#">{{ $guardianName ?? Auth::user()->name }}</a></li>
                         <li>
                             <hr class="dropdown-divider">
                         </li>
-                        <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#attendanceModal">Attendance Here</a></li>
                         <li><a class="dropdown-item" href="#">Settings</a></li>
                         <li><a class="dropdown-item" href="#" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a></li>
                     </ul>
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                        @csrf
+                    </form>
                 </div>
             </div>
         </div>
@@ -58,10 +60,10 @@
                 <div style="display: grid; grid-template-columns: auto auto auto auto; position: absolute; top: 0; margin-top: 78px">
                     <div style="width: 270px; height: 200px; background-color: white; display: flex; justify-content: center; box-shadow: 2px 2px 4px 1px gray; border-radius: 2px; margin-top: 40px; margin-right: 40px;">
                         <div style="display: flex; flex-direction: column">
-                            <img style="width: 270px; height: 120px" src="https://www.scu.edu/media/mobi/blog-variants/Ethics-Blog-760x550-760x550.png" alt="">
+                            <img style="width: 270px; height: 120px" src="https://add.pics/images/2024/06/03/image4261169653260bd7.png" alt="">
                             <div style="display: flex; flex-direction: column; margin: 10px 0 0 10px;">
-                                <span>GEC SUBJECTS</span>
-                                <span>Life and Works of Rizal</span>
+                                <span>CC 106</span>
+                                <span>Application Development & Emerging Technologies</span>
                             </div>
                         </div>
                     </div>
@@ -69,10 +71,10 @@
             <a href="#subject2" data-toggle="modal" data-target="#subject2Modal" style="text-decoration: none; color: inherit;">
                 <div style="width: 270px; height: 200px; background-color: white; display: flex; justify-content: center; box-shadow: 2px 2px 4px 1px gray; border-radius: 2px; margin-top: 40px; margin-right: 40px;">
                     <div style="display: flex; flex-direction: column">
-                        <img style="width: 270px; height: 120px" src="https://www.scu.edu/media/mobi/blog-variants/Ethics-Blog-760x550-760x550.png" alt="">
+                        <img style="width: 270px; height: 120px" src="https://add.pics/images/2024/06/03/image7f5e1401a541896d.png" alt="">
                         <div style="display: flex; flex-direction: column; margin: 10px 0 0 10px;">
-                            <span>GEC SUBJECTS</span>
-                            <span>Life and Works of Rizal</span>
+                            <span>SIA 101</span>
+                            <span>Fundamentals of System Integration & Architecture</span>
                         </div>
                     </div>
                 </div>
@@ -80,9 +82,9 @@
             <a href="#subject3" data-toggle="modal" data-target="#subject3Modal" style="text-decoration: none; color: inherit;">
                 <div style="width: 270px; height: 200px; background-color: white; display: flex; justify-content: center; box-shadow: 2px 2px 4px 1px gray; border-radius: 2px; margin-top: 40px; margin-right: 40px;">
                     <div style="display: flex; flex-direction: column">
-                        <img style="width: 270px; height: 120px" src="https://www.scu.edu/media/mobi/blog-variants/Ethics-Blog-760x550-760x550.png" alt="">
+                        <img style="width: 270px; height: 120px" src="https://add.pics/images/2024/06/03/image888ada38d44309ee.png" alt="">
                         <div style="display: flex; flex-direction: column; margin: 10px 0 0 10px;">
-                            <span>GEC SUBJECTS</span>
+                            <span>PF 102</span>
                             <span>Life and Works of Rizal</span>
                         </div>
                     </div>
@@ -91,20 +93,9 @@
             <a href="#subject4" data-toggle="modal" data-target="#subject4Modal" style="text-decoration: none; color: inherit;">
                 <div style="width: 270px; height: 200px; background-color: white; display: flex; justify-content: center; box-shadow: 2px 2px 4px 1px gray; border-radius: 2px; margin-top: 40px; margin-right: 40px;">
                     <div style="display: flex; flex-direction: column">
-                        <img style="width: 270px; height: 120px" src="https://www.scu.edu/media/mobi/blog-variants/Ethics-Blog-760x550-760x550.png" alt="">
+                        <img style="width: 270px; height: 120px" src="https://wallpapers.com/images/hd/subject-icons-hd-uhvujdwz08050y9z.jpg" alt="">
                         <div style="display: flex; flex-direction: column; margin: 10px 0 0 10px;">
-                            <span>GEC SUBJECTS</span>
-                            <span>Life and Works of Rizal</span>
-                        </div>
-                    </div>
-                </div>
-            </a>
-            <a href="#subject5" data-toggle="modal" data-target="#subject5Modal" style="text-decoration: none; color: inherit;">
-                <div style="width: 270px; height: 200px; background-color: white; display: flex; justify-content: center; box-shadow: 2px 2px 4px 1px gray; border-radius: 2px; margin-top: 40px; margin-right: 40px;">
-                    <div style="display: flex; flex-direction: column">
-                        <img style="width: 270px; height: 120px" src="https://www.scu.edu/media/mobi/blog-variants/Ethics-Blog-760x550-760x550.png" alt="">
-                        <div style="display: flex; flex-direction: column; margin: 10px 0 0 10px;">
-                            <span>GEC SUBJECTS</span>
+                            <span>IM 102</span>
                             <span>Life and Works of Rizal</span>
                         </div>
                     </div>
@@ -113,7 +104,7 @@
             <a href="#subject6" data-toggle="modal" data-target="#subject6Modal" style="text-decoration: none; color: inherit;">
                 <div style="width: 270px; height: 200px; background-color: white; display: flex; justify-content: center; box-shadow: 2px 2px 4px 1px gray; border-radius: 2px; margin-top: 40px; margin-right: 40px;">
                     <div style="display: flex; flex-direction: column">
-                        <img style="width: 270px; height: 120px" src="https://scontent.fmnl13-2.fna.fbcdn.net/v/t39.30808-6/277575661_292515559703525_6115086836585420856_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=5f2048&_nc_eui2=AeGNRsPiTdFRbT9xhnhN3mkb_AQgj38_jGj8BCCPfz-MaCu0BhNzBP2MKF7wAesQ5RRs3GwO_b0R_rA7NI87xs5C&_nc_ohc=n7dDPaQSW7QQ7kNvgHyFcYj&_nc_ht=scontent.fmnl13-2.fna&oh=00_AYDujLo-ZCFrL18Nn02sMorbBYdMcmLp1nU99WzqoBteJQ&oe=66635530" alt="">
+                        <img style="width: 270px; height: 120px" src="https://add.pics/images/2024/06/03/imageed5a26552bc82834.png" alt="">
                         <div style="display: flex; flex-direction: column; margin: 10px 0 0 10px;">
                             <span>GATE PASS</span>
                         </div>
@@ -123,18 +114,27 @@
         </div>
     </div>
 
-    <!-- Modal for subject1 -->
+    <!-- Modal for Subject 1 -->
     <div class="modal fade" id="subject1Modal" tabindex="-1" role="dialog" aria-labelledby="subject1ModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
+        <div class="modal-dialog modal-dialog-scrollable modal-xl" role="document">
             <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="subject1ModalLabel">Subject 1 Details</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
+                <div class="modal-header bg-danger text-white">
+                    <h5 class="modal-title" id="subject1ModalLabel">CC 106 Attendance</h5>
                     </button>
                 </div>
                 <div class="modal-body">
-                    <!-- Content for Subject 1 goes here -->
+                    <table class="table table-bordered table-striped table-hover">
+                        <thead class="thead-dark">
+                            <tr>
+                                <th class="text-center">SUBJECT</th>
+                                <th class="text-center">NAME</th>
+                                <th class="text-center">DATE</th>
+                                <th class="text-center">SIGN IN</th>
+                                <th class="text-center">SIGN OUT</th>
+                            </tr>
+                        </thead>
+
+                    </table>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -142,14 +142,13 @@
             </div>
         </div>
     </div>
-    <!-- Repeat for other subjects -->
+
+    <!-- Modal for Subject 2 -->
     <div class="modal fade" id="subject2Modal" tabindex="-1" role="dialog" aria-labelledby="subject2ModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
+        <div class="modal-dialog modal-dialog-scrollable modal-xl" role="document">
             <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="subject2ModalLabel">Subject 2 Details</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
+                <div class="modal-header bg-danger text-white">
+                    <h5 class="modal-title" id="subject2ModalLabel">SIA 101 Attendance</h5>
                     </button>
                 </div>
                 <div class="modal-body">
@@ -161,14 +160,13 @@
             </div>
         </div>
     </div>
-    <!-- Repeat for other subjects -->
+
+    <!-- Modal for Subject 3 -->
     <div class="modal fade" id="subject3Modal" tabindex="-1" role="dialog" aria-labelledby="subject3ModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
+        <div class="modal-dialog modal-dialog-scrollable modal-xl" role="document">
             <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="subject3ModalLabel">Subject 3 Details</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
+                <div class="modal-header bg-danger text-white">
+                    <h5 class="modal-title" id="subject3ModalLabel">PF 102 Attendance</h5>
                     </button>
                 </div>
                 <div class="modal-body">
@@ -180,14 +178,13 @@
             </div>
         </div>
     </div>
-    <!-- Repeat for other subjects -->
+
+    <!-- Modal for Subject 4 -->
     <div class="modal fade" id="subject4Modal" tabindex="-1" role="dialog" aria-labelledby="subject4ModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
+        <div class="modal-dialog modal-dialog-scrollable modal-xl" role="document">
             <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="subject4ModalLabel">Subject 4 Details</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
+                <div class="modal-header bg-danger text-white">
+                    <h5 class="modal-title" id="subject4ModalLabel">IM 102 Attendance</h5>
                     </button>
                 </div>
                 <div class="modal-body">
@@ -199,37 +196,42 @@
             </div>
         </div>
     </div>
-    <!-- Repeat for other subjects -->
-    <div class="modal fade" id="subject5Modal" tabindex="-1" role="dialog" aria-labelledby="subject5ModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="subject3ModalLabel">Subject 5 Details</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <!-- Content for Subject 5 goes here -->
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                </div>
-            </div>
-        </div>
-    </div>
+
     <!-- Repeat for other subjects -->
     <div class="modal fade" id="subject6Modal" tabindex="-1" role="dialog" aria-labelledby="subject6ModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
+        <div class="modal-dialog modal-dialog-scrollable modal-xl" role="document">
             <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="subject3ModalLabel">Gatepass Details</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
+                <div class="modal-header bg-danger text-white">
+                    <h5 class="modal-title" id="subject6ModalLabel">School Gatepass Logs</h5>
                     </button>
                 </div>
                 <div class="modal-body">
-                    <!-- Content for Gatepass goes here -->
+                    <table class="table table-bordered table-striped table-hover">
+                        <thead class="thead-dark">
+                            <tr>
+                                <th class="text-center">ID NUMBER</th>
+                                <th class="text-center">NAME</th>
+                                <th class="text-center">DATE</th>
+                                <th class="text-center">TIME IN</th>
+                                <th class="text-center">TIME OUT</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach ($attendanceLogs as $log)
+                            <tr>
+                                <td class="text-center">{{ $log->student->student_id }}</td>
+                                <td class="text-center">{{ $log->student->name }}</td>
+                                <td class="text-center">{{ $log->date }}</td>
+                                <td class="text-center">
+                                    {{ $log->signin_time ? \Carbon\Carbon::parse($log->signin_time)->format('h:i A') : 'N/A' }}
+                                </td>
+                                <td class="text-center">
+                                    {{ $log->signout_time ? \Carbon\Carbon::parse($log->signout_time)->format('h:i A') : 'N/A' }}
+                                </td>
+                            </tr>
+                            @endforeach
+                        </tbody>
+                    </table>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -241,6 +243,15 @@
     </div>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- jQuery Library -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Moment.js Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#subject6Modal').on('show.bs.modal', function(e) {});
+        });
+    </script>
 </body>
 
 </html>
