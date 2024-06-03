@@ -9,25 +9,26 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
     <!-- Custom Fonts -->
-    <!-- <link rel="stylesheet" href="assets/css/Goblin%20One.css?h=da5870ae798b40cb00e3f64eddded650">
-    <link rel="stylesheet" href="assets/css/Roboto.css?h=f01c4f84e687561c690c45bf4223d7be"> -->
+    <link rel="stylesheet" href="assets/css/Goblin%20One.css?h=da5870ae798b40cb00e3f64eddded650">
+    <link rel="stylesheet" href="assets/css/Roboto.css?h=f01c4f84e687561c690c45bf4223d7be">
     <!-- Custom Styles -->
-    <!-- <link rel="stylesheet" href="assets/css/Banner-Heading-Image-images.css?h=4f3cfa46e40e236365345fc77963f4b8"> -->
+    <link rel="stylesheet" href="assets/css/Banner-Heading-Image-images.css?h=4f3cfa46e40e236365345fc77963f4b8">
     <!-- Font Awesome Icons -->
-    <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"> -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <link rel="stylesheet" href="css/users/parents/parents_style.css">
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <link rel="stylesheet" href="css/users/parents/parents_style.css">
 </head>
 
 <body>
-    <nav class="navbar">
-            <div class="container">
-                <a class="navbar-brand" href="#">
-                    <span class="text-light">SPC Student Attendance Monitoring System</span>
-                </a>
-                <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="margin-left: 100px;">Menu<iconify-icon icon="mdi:menu-down" style="margin-top: 2px;"></iconify-icon></a>
+    <div class="container" style="margin: 0px; padding-left: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; height: 600px; padding-bottom: 0px; padding-right: 0px; max-width: 100%;">
+        <div class="row" style="margin-right: 0px; margin-left: 0px; background: var(--bs-danger-text-emphasis); padding-bottom: 120px; display: flex; align-items: center; justify-content: space-between;">
+            <div class="col" style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid white; padding-bottom: 10px; margin-top: 4px;">
+                <h1 style="font-size: 17px; color: var(--bs-body-bg); margin-bottom: 0px;">Parent Dashboard</h1>
+                <div class="dropdown">
+                    <button class="btn btn-link dropdown-toggle" type="button" id="menuButton" data-bs-toggle="dropdown" aria-expanded="false" style="background-color: #f8f9fa; color: #333; border: 1px solid #ddd; padding: 5px 10px; border-radius: 5px; box-shadow: 0 2px 5px rgba(0,0,0,0.2); cursor: pointer; text-decoration: none;">
+                        Menu
+                    </button>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" style="max-width: 100px;"> <!-- Adjust max-width as needed -->
                         <li><a class="dropdown-item text-truncate" href="#">sample name</a></li>
                         <li>
@@ -37,14 +38,14 @@
                         <li><a class="dropdown-item" href="#">Settings</a></li>
                         <li><a class="dropdown-item" href="#" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a></li>
                     </ul>
-                </li>
+                </div>
             </div>
-        </nav>
+        </div>
 
-        <div class="names" style="margin-right: 0px; margin-left: 140px; height: 45px; position: absolute; top: 0; margin-top: 70px">
+        <div class="row" style="margin-right: 0px; margin-left: 0px; height: 45px; position: absolute; top: 0; margin-top: 70px">
             <div class="col">
                 <select name="student-name" id="student-name" style="background: rgba(225,180,180,0.57); border-radius: 4px; cursor: pointer;">
-                    <option value="Jerald Corbo">Jerald Corbo</option>
+                    <option value="Student">{{ Auth::user()->name }}</option>
                     <option value="Sherie Barila">Sherie Barila</option>
                     <option value="Jordan Ugtong">Jordan Ugtong</option>
                     <option value="Cathy Amamampang">Cathy Amamampang</option>
@@ -53,33 +54,19 @@
         </div>
 
         <div style="display: flex; justify-content: center;">
-            <div style="display: grid; grid-template-columns: auto auto auto auto; position: absolute; top: 0; margin-top: 78px">
-                <button data-bs-toggle="modal" data-bs-target="#exampleModal" style="width: 270px; height: 200px; background-color: white; display: flex; justify-content: center; box-shadow: 2px 2px 4px 1px gray; border-radius: 2px; margin-top: 40px; margin-right: 40px;">
-                    <div style="display: flex; flex-direction: column">
-                        <img style="width: 270px; height: 120px" src="https://www.scu.edu/media/mobi/blog-variants/Ethics-Blog-760x550-760x550.png" alt="">
-                        <div style="display: flex; flex-direction: column; margin: 10px 0 0 10px;">
-                            <span>GEC SUBJECTS</span>
-                            <span>Life and Works of Rizal</span>
+            <a href="#subject1" data-toggle="modal" data-target="#subject1Modal" style="text-decoration: none; color: inherit;">
+                <div style="display: grid; grid-template-columns: auto auto auto auto; position: absolute; top: 0; margin-top: 78px">
+                    <div style="width: 270px; height: 200px; background-color: white; display: flex; justify-content: center; box-shadow: 2px 2px 4px 1px gray; border-radius: 2px; margin-top: 40px; margin-right: 40px;">
+                        <div style="display: flex; flex-direction: column">
+                            <img style="width: 270px; height: 120px" src="https://www.scu.edu/media/mobi/blog-variants/Ethics-Blog-760x550-760x550.png" alt="">
+                            <div style="display: flex; flex-direction: column; margin: 10px 0 0 10px;">
+                                <span>GEC SUBJECTS</span>
+                                <span>Life and Works of Rizal</span>
+                            </div>
                         </div>
                     </div>
-                </button>
-                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                        <div class="modal-header">
-                            <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <div class="modal-body">
-                            ...
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                            <button type="button" class="btn btn-primary">Save changes</button>
-                        </div>
-                        </div>
-                    </div>
-                </div>
+            </a>
+            <a href="#subject2" data-toggle="modal" data-target="#subject2Modal" style="text-decoration: none; color: inherit;">
                 <div style="width: 270px; height: 200px; background-color: white; display: flex; justify-content: center; box-shadow: 2px 2px 4px 1px gray; border-radius: 2px; margin-top: 40px; margin-right: 40px;">
                     <div style="display: flex; flex-direction: column">
                         <img style="width: 270px; height: 120px" src="https://www.scu.edu/media/mobi/blog-variants/Ethics-Blog-760x550-760x550.png" alt="">
@@ -89,6 +76,8 @@
                         </div>
                     </div>
                 </div>
+            </a>
+            <a href="#subject3" data-toggle="modal" data-target="#subject3Modal" style="text-decoration: none; color: inherit;">
                 <div style="width: 270px; height: 200px; background-color: white; display: flex; justify-content: center; box-shadow: 2px 2px 4px 1px gray; border-radius: 2px; margin-top: 40px; margin-right: 40px;">
                     <div style="display: flex; flex-direction: column">
                         <img style="width: 270px; height: 120px" src="https://www.scu.edu/media/mobi/blog-variants/Ethics-Blog-760x550-760x550.png" alt="">
@@ -98,6 +87,8 @@
                         </div>
                     </div>
                 </div>
+            </a>
+            <a href="#subject4" data-toggle="modal" data-target="#subject4Modal" style="text-decoration: none; color: inherit;">
                 <div style="width: 270px; height: 200px; background-color: white; display: flex; justify-content: center; box-shadow: 2px 2px 4px 1px gray; border-radius: 2px; margin-top: 40px; margin-right: 40px;">
                     <div style="display: flex; flex-direction: column">
                         <img style="width: 270px; height: 120px" src="https://www.scu.edu/media/mobi/blog-variants/Ethics-Blog-760x550-760x550.png" alt="">
@@ -107,6 +98,8 @@
                         </div>
                     </div>
                 </div>
+            </a>
+            <a href="#subject5" data-toggle="modal" data-target="#subject5Modal" style="text-decoration: none; color: inherit;">
                 <div style="width: 270px; height: 200px; background-color: white; display: flex; justify-content: center; box-shadow: 2px 2px 4px 1px gray; border-radius: 2px; margin-top: 40px; margin-right: 40px;">
                     <div style="display: flex; flex-direction: column">
                         <img style="width: 270px; height: 120px" src="https://www.scu.edu/media/mobi/blog-variants/Ethics-Blog-760x550-760x550.png" alt="">
@@ -115,10 +108,138 @@
                             <span>Life and Works of Rizal</span>
                         </div>
                     </div>
+                </div>
+            </a>
+            <a href="#subject6" data-toggle="modal" data-target="#subject6Modal" style="text-decoration: none; color: inherit;">
+                <div style="width: 270px; height: 200px; background-color: white; display: flex; justify-content: center; box-shadow: 2px 2px 4px 1px gray; border-radius: 2px; margin-top: 40px; margin-right: 40px;">
+                    <div style="display: flex; flex-direction: column">
+                        <img style="width: 270px; height: 120px" src="https://scontent.fmnl13-2.fna.fbcdn.net/v/t39.30808-6/277575661_292515559703525_6115086836585420856_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=5f2048&_nc_eui2=AeGNRsPiTdFRbT9xhnhN3mkb_AQgj38_jGj8BCCPfz-MaCu0BhNzBP2MKF7wAesQ5RRs3GwO_b0R_rA7NI87xs5C&_nc_ohc=n7dDPaQSW7QQ7kNvgHyFcYj&_nc_ht=scontent.fmnl13-2.fna&oh=00_AYDujLo-ZCFrL18Nn02sMorbBYdMcmLp1nU99WzqoBteJQ&oe=66635530" alt="">
+                        <div style="display: flex; flex-direction: column; margin: 10px 0 0 10px;">
+                            <span>GATE PASS</span>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+
+    <!-- Modal for subject1 -->
+    <div class="modal fade" id="subject1Modal" tabindex="-1" role="dialog" aria-labelledby="subject1ModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="subject1ModalLabel">Subject 1 Details</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <!-- Content for Subject 1 goes here -->
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                 </div>
             </div>
         </div>
     </div>
+    <!-- Repeat for other subjects -->
+    <div class="modal fade" id="subject2Modal" tabindex="-1" role="dialog" aria-labelledby="subject2ModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="subject2ModalLabel">Subject 2 Details</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <!-- Content for Subject 2 goes here -->
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Repeat for other subjects -->
+    <div class="modal fade" id="subject3Modal" tabindex="-1" role="dialog" aria-labelledby="subject3ModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="subject3ModalLabel">Subject 3 Details</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <!-- Content for Subject 3 goes here -->
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Repeat for other subjects -->
+    <div class="modal fade" id="subject4Modal" tabindex="-1" role="dialog" aria-labelledby="subject4ModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="subject4ModalLabel">Subject 4 Details</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <!-- Content for Subject 4 goes here -->
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Repeat for other subjects -->
+    <div class="modal fade" id="subject5Modal" tabindex="-1" role="dialog" aria-labelledby="subject5ModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="subject3ModalLabel">Subject 5 Details</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <!-- Content for Subject 5 goes here -->
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Repeat for other subjects -->
+    <div class="modal fade" id="subject6Modal" tabindex="-1" role="dialog" aria-labelledby="subject6ModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="subject3ModalLabel">Gatepass Details</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <!-- Content for Gatepass goes here -->
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End of Modals -->
+    </div>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
