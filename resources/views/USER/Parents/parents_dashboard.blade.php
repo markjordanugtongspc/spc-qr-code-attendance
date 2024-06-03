@@ -17,8 +17,7 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-    <style>.dropdown-menu{background-color: #D3CDCD;border: none;box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);border-radius: 4px;padding: 0}.dropdown-item{display: flex;align-items: center;padding: 10px 15px;color: #333;text-decoration: none;transition: background-color 0.2s ease-in-out}.dropdown-item:hover{background-color: #bcbcbc}.dropdown-item i{width: 20px;text-align: center;margin-right: 10px}</style>
-
+    <link rel="stylesheet" href="css/users/parents/parents_style.css">
 </head>
 
 <body>
@@ -30,27 +29,14 @@
                     <button class="btn btn-link dropdown-toggle" type="button" id="menuButton" data-bs-toggle="dropdown" aria-expanded="false" style="background-color: #f8f9fa; color: #333; border: 1px solid #ddd; padding: 5px 10px; border-radius: 5px; box-shadow: 0 2px 5px rgba(0,0,0,0.2); cursor: pointer; text-decoration: none;">
                         Menu
                     </button>
-                    <ul class="dropdown-menu" aria-labelledby="menuButton">
-                        <!-- User info section -->
-                        <li style="padding: 10px 15px; border-bottom: 1px solid #e1e1e1;">
-                            <img src="https://add.pics/images/2024/03/20/profile-icon.png" alt="Profile Image" class="profile-image" style="width: 20px; margin-right: 10px;">
-                            <span>Jerald Corbo<br>jerald_corbo0000@spc.com</span>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" style="max-width: 100px;"> <!-- Adjust max-width as needed -->
+                        <li><a class="dropdown-item text-truncate" href="#">sample name</a></li>
+                        <li>
+                            <hr class="dropdown-divider">
                         </li>
-                        <!-- Menu items -->
-                        <li><a class="dropdown-item" href="#"><i class="fas fa-user"></i> View profile</a></li>
-                        <li><a class="dropdown-item" href="#"><i class="fas fa-cog"></i> Settings</a></li>
-                        <li><a class="dropdown-item" href="#"><i class="fas fa-keyboard"></i> Keyboard shortcuts</a></li>
-                        <hr>
-                        <li><a class="dropdown-item" href="#"><i class="fas fa-building"></i> Company profile</a></li>
-                        <li><a class="dropdown-item" href="#"><i class="fas fa-users"></i> Team</a></li>
-                        <li><a class="dropdown-item" href="#"><i class="fas fa-envelope-open-text"></i> Invite colleagues</a></li>
-                        <hr>
-                        <li><a class="dropdown-item" href="#"><i class="fas fa-stream"></i> Changelog</a></li>
-                        <li><a class="dropdown-item" href="#"><i class="fas fa-globe"></i> Slack Community</a></li>
-                        <li><a class="dropdown-item" href="#"><i class="fas fa-life-ring"></i> Support</a></li>
-                        <li><a class="dropdown-item" href="#"><i class="fas fa-code"></i> API</a></li>
-                        <hr>
-                        <li><a class="dropdown-item" href="{{ route('login') }}"><i class="fas fa-sign-out-alt"></i>Log out</a></li>
+                        <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#attendanceModal">Attendance Here</a></li>
+                        <li><a class="dropdown-item" href="#">Settings</a></li>
+                        <li><a class="dropdown-item" href="#" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a></li>
                     </ul>
                 </div>
             </div>
