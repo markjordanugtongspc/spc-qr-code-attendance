@@ -146,13 +146,52 @@ class ScannerController extends Controller
         // Get the authenticated user (student/son/daughter and guardian name)
         $guardian = Auth::user();
         $guardianName = Auth::user()->guardian_name;
-
+        $guardianStudents = User::where('guardian_name', $guardianName)->get();
         // Retrieve attendance logs for students related to the guardian
         $attendanceLogs = Logs::with(['student'])
             ->whereDate('date', $today)
             ->where('student_id', $guardian->student_id)
             ->get();
 
-        return view('USER.Parents.parents_dashboard', compact('guardianName', 'attendanceLogs'));
+        $students = User::where('guardian_name', $guardianName)->get();
+
+        $cc106s = [];
+
+
+        foreach ($guardianStudents as $guardianStudent) {
+            foreach ($guardianStudent->logs2 as $log) {
+                $log['name'] =  $guardianStudent->name;
+                $cc106s[$log->id] = $log;
+            }
+        }
+
+        $sia101s = [];
+
+        foreach ($guardianStudents as $guardianStudent) {
+            foreach ($guardianStudent->logs2 as $log) {
+                $log['name'] =  $guardianStudent->name;
+                $sia101s[$log->id] = $log;
+            }
+        }
+
+        $pf102s = [];
+
+        foreach ($guardianStudents as $guardianStudent) {
+            foreach ($guardianStudent->logs2 as $log) {
+                $log['name'] =  $guardianStudent->name;
+                $pf102s[$log->id] = $log;
+            }
+        }
+
+        $im102s = [];
+
+        foreach ($guardianStudents as $guardianStudent) {
+            foreach ($guardianStudent->logs2 as $log) {
+                $log['name'] =  $guardianStudent->name;
+                $im102s[$log->id] = $log;
+            }
+        }
+        // dd($cc106s);
+        return view('USER.Parents.parents_dashboard', compact('guardianName', 'attendanceLogs', 'cc106s', 'sia101s', 'pf102s', 'im102s'));
     }
 }

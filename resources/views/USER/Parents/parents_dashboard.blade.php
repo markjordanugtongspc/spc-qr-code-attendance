@@ -133,7 +133,23 @@
                                 <th class="text-center">SIGN OUT</th>
                             </tr>
                         </thead>
-
+                        <tbody>
+                            @foreach ($cc106s as $cc106)
+                            @if ($cc106->subject == 'CC 106')
+                            <tr>
+                                <td class="text-center">{{ $cc106->subject}}</td>
+                                <td class="text-center">{{ $cc106->name }}</td>
+                                <td class="text-center">{{ $cc106->date }}</td>
+                                <td class="text-center">
+                                    {{ $cc106->time_in ? \Carbon\Carbon::parse($cc106->time_in)->format('h:i A') : 'N/A' }}
+                                </td>
+                                <td class="text-center">
+                                    {{ $cc106->signout_time ? \Carbon\Carbon::parse($cc106->signout_time)->format('h:i A') : 'N/A' }}
+                                </td>
+                            </tr>
+                            @endif
+                            @endforeach
+                        </tbody>
                     </table>
                 </div>
                 <div class="modal-footer">
@@ -152,7 +168,34 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <!-- Content for Subject 2 goes here -->
+                    <table class="table table-bordered table-striped table-hover">
+                        <thead class="thead-dark">
+                            <tr>
+                                <th class="text-center">SUBJECT</th>
+                                <th class="text-center">NAME</th>
+                                <th class="text-center">DATE</th>
+                                <th class="text-center">SIGN IN</th>
+                                <th class="text-center">SIGN OUT</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach ($sia101s as $sia101)
+                            @if ($sia101->subject == 'SIA 101')
+                            <tr>
+                                <td class="text-center">{{ $sia101->subject}}</td>
+                                <td class="text-center">{{ $sia101->name }}</td>
+                                <td class="text-center">{{ $sia101->date }}</td>
+                                <td class="text-center">
+                                    {{ $sia101->time_in ? \Carbon\Carbon::parse($sia101->time_in)->format('h:i A') : 'N/A' }}
+                                </td>
+                                <td class="text-center">
+                                    {{ $sia101->signout_time ? \Carbon\Carbon::parse($sia101->signout_time)->format('h:i A') : 'N/A' }}
+                                </td>
+                            </tr>
+                            @endif
+                            @endforeach
+                        </tbody>
+                    </table>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -170,7 +213,34 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <!-- Content for Subject 3 goes here -->
+                <table class="table table-bordered table-striped table-hover">
+                        <thead class="thead-dark">
+                            <tr>
+                                <th class="text-center">SUBJECT</th>
+                                <th class="text-center">NAME</th>
+                                <th class="text-center">DATE</th>
+                                <th class="text-center">SIGN IN</th>
+                                <th class="text-center">SIGN OUT</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach ($pf102s as $pf102)
+                            @if ($pf102->subject == 'PF 102')
+                            <tr>
+                                <td class="text-center">{{ $pf102->subject}}</td>
+                                <td class="text-center">{{ $pf102->name }}</td>
+                                <td class="text-center">{{ $pf102->date }}</td>
+                                <td class="text-center">
+                                    {{ $pf102->time_in ? \Carbon\Carbon::parse($pf102->time_in)->format('h:i A') : 'N/A' }}
+                                </td>
+                                <td class="text-center">
+                                    {{ $pf102->signout_time ? \Carbon\Carbon::parse($pf102->signout_time)->format('h:i A') : 'N/A' }}
+                                </td>
+                            </tr>
+                            @endif
+                            @endforeach
+                        </tbody>
+                    </table>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -188,7 +258,34 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <!-- Content for Subject 4 goes here -->
+                <table class="table table-bordered table-striped table-hover">
+                        <thead class="thead-dark">
+                            <tr>
+                                <th class="text-center">SUBJECT</th>
+                                <th class="text-center">NAME</th>
+                                <th class="text-center">DATE</th>
+                                <th class="text-center">SIGN IN</th>
+                                <th class="text-center">SIGN OUT</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach ($im102s as $im102)
+                            @if ($im102->subject == 'IM 102')
+                            <tr>
+                                <td class="text-center">{{ $im102->subject}}</td>
+                                <td class="text-center">{{ $im102->name }}</td>
+                                <td class="text-center">{{ $im102->date }}</td>
+                                <td class="text-center">
+                                    {{ $im102->time_in ? \Carbon\Carbon::parse($im102->time_in)->format('h:i A') : 'N/A' }}
+                                </td>
+                                <td class="text-center">
+                                    {{ $im102->signout_time ? \Carbon\Carbon::parse($im102->signout_time)->format('h:i A') : 'N/A' }}
+                                </td>
+                            </tr>
+                            @endif
+                            @endforeach
+                        </tbody>
+                    </table>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -197,7 +294,7 @@
         </div>
     </div>
 
-    <!-- Repeat for other subjects -->
+    <!-- School Gatepass Logs -->
     <div class="modal fade" id="subject6Modal" tabindex="-1" role="dialog" aria-labelledby="subject6ModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-scrollable modal-xl" role="document">
             <div class="modal-content">
@@ -219,7 +316,7 @@
                         <tbody>
                             @foreach ($attendanceLogs as $log)
                             <tr>
-                                <td class="text-center">{{ $log->student->student_id }}</td>
+                                <td class="text-center">{{ $log->student_id }}</td>
                                 <td class="text-center">{{ $log->student->name }}</td>
                                 <td class="text-center">{{ $log->date }}</td>
                                 <td class="text-center">

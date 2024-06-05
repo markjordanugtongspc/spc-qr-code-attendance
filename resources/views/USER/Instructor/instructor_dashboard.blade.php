@@ -133,6 +133,7 @@
                 </div>
             </div>
         </div>
+
         <div class="instructor-time flex-column pt-3 w-75 ">
             <div class="d-flex gap-4 ">
                 <div class="qr-time text-light gap-1 align-content-center">
@@ -145,11 +146,241 @@
                     <img class="w-50 h-70 d-flex justify-content-center" src="/images/spc-logo.png" alt="">
                 </div>
             </div>
+
             <div class="subject d-flex justify-content-center mt-5 gap-5">
-                <a class="sub p-4 align-content-center bg-white text-black" href="">CC106 - 50000</a>
-                <a class="sub p-4 align-content-center bg-white text-black" href="">CC107 - 60000</a>
-                <a class="sub p-4 align-content-center bg-white text-black" href="">CC108 - 70000</a>
+                <a class="sub p-4 align-content-center bg-white text-black" href="#" data-bs-toggle="modal" data-bs-target="#modalCC106">CC106 - 1000</a>
+                <a class="sub p-4 align-content-center bg-white text-black" href="#" data-bs-toggle="modal" data-bs-target="#modalSIA101">SIA101 - 2000</a>
+                <a class="sub p-4 align-content-center bg-white text-black" href="#" data-bs-toggle="modal" data-bs-target="#modalPF102">PF102 - 3000</a>
+                <a class="sub p-4 align-content-center bg-white text-black" href="#" data-bs-toggle="modal" data-bs-target="#modalIM102">IM102 - 4000</a>
             </div>
+
+            <!-- Modal for CC106 - 1000 -->
+            <div class="modal fade" id="modalCC106" tabindex="-1" aria-labelledby="modalCC106Label" aria-hidden="true">
+                <div class="modal-dialog modal-xl">
+                    <div class="modal-content">
+                        <div class="modal-header bg-primary text-white">
+                            <h5 class="modal-title" id="modalCC106Label">Student Attendance List for CC106 - 1000</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <!-- Table structure for student list -->
+                            <table class="table table-striped table-bordered w-100">
+                                <thead class="tablehead">
+                                    <tr>
+                                        <th scope="col" class="text-center">Subject</th>
+                                        <th scope="col" class="text-center">Student Name</th>
+                                        <th scope="col" class="text-center">Date</th>
+                                        <th scope="col" class="text-center">Time In</th>
+                                        <th scope="col" class="text-center">Time Out</th>
+                                        <th scope="col" class="text-center">Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach ($attendanceLogs2 as $log)
+                                    @if ($log->subject == 'CC 106')
+                                    <tr>
+                                        <td class="text-center">{{ $log->subject }}</td>
+                                        <td class="text-center">{{ $log->user->name }}</td>
+                                        <td class="text-center">{{ $log->date }}</td>
+                                        <td class="text-center">{{ $log->time_in ? \Carbon\Carbon::parse($log->time_in)->format('h:i A') : 'N/A' }}</td>
+                                        <td class="text-center">{{ $log->time_out ? \Carbon\Carbon::parse($log->time_out)->format('h:i A') : 'N/A' }}</td>
+                                        <td class="text-center">
+                                            @if (!$log->trashed())
+                                            <form action="{{ route('logs2.softDelete', $log->id) }}" method="POST">
+                                                @csrf
+                                                @method('DELETE')
+                                                <button type="submit" class="btn btn-danger">Soft Delete</button>
+                                            </form>
+                                            @else
+                                            <form action="{{ route('logs2.restore', $log->id) }}" method="POST">
+                                                @csrf
+                                                <button type="submit" class="btn btn-primary">Restore</button>
+                                            </form>
+                                            @endif
+                                        </td>
+                                    </tr>
+                                    @endif
+                                    @endforeach
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modal for SIA101 - 2000 -->
+            <div class="modal fade" id="modalSIA101" tabindex="-1" aria-labelledby="modalSIA101Label" aria-hidden="true">
+                <div class="modal-dialog modal-xl">
+                    <div class="modal-content">
+                        <div class="modal-header bg-success text-white">
+                            <h5 class="modal-title" id="modalSIA101Label">Student Attendance List for SIA101 - 2000</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <!-- Table structure for student list -->
+                            <table class="table table-striped table-bordered w-100">
+                                <thead class="tablehead">
+                                    <tr>
+                                        <th scope="col" class="text-center">Subject</th>
+                                        <th scope="col" class="text-center">Student Name</th>
+                                        <th scope="col" class="text-center">Date</th>
+                                        <th scope="col" class="text-center">Time In</th>
+                                        <th scope="col" class="text-center">Time Out</th>
+                                        <th scope="col" class="text-center">Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach ($attendanceLogs2 as $log)
+                                    @if ($log->subject == 'SIA 101')
+                                    <tr>
+                                        <td class="text-center">{{ $log->subject }}</td>
+                                        <td class="text-center">{{ $log->user->name }}</td>
+                                        <td class="text-center">{{ $log->date }}</td>
+                                        <td class="text-center">{{ $log->time_in ? \Carbon\Carbon::parse($log->time_in)->format('h:i A') : 'N/A' }}</td>
+                                        <td class="text-center">{{ $log->time_out ? \Carbon\Carbon::parse($log->time_out)->format('h:i A') : 'N/A' }}</td>
+                                        <td class="text-center">
+                                            @if (!$log->trashed())
+                                            <form action="{{ route('logs2.softDelete', $log->id) }}" method="POST">
+                                                @csrf
+                                                @method('DELETE')
+                                                <button type="submit" class="btn btn-danger">Soft Delete</button>
+                                            </form>
+                                            @else
+                                            <form action="{{ route('logs2.restore', $log->id) }}" method="POST">
+                                                @csrf
+                                                <button type="submit" class="btn btn-primary">Restore</button>
+                                            </form>
+                                            @endif
+                                        </td>
+                                    </tr>
+                                    @endif
+                                    @endforeach
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Modal for PF102 - 3000 -->
+            <div class="modal fade" id="modalPF102" tabindex="-1" aria-labelledby="modalPF102Label" aria-hidden="true">
+                <div class="modal-dialog modal-xl">
+                    <div class="modal-content">
+                        <div class="modal-header bg-warning text-white">
+                            <h5 class="modal-title" id="modalPF102Label">Student Attendance List for PF102 - 3000</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <!-- Table structure for student list -->
+                            <table class="table table-striped table-bordered w-100">
+                                <thead class="tablehead">
+                                    <tr>
+                                        <th scope="col" class="text-center">Subject</th>
+                                        <th scope="col" class="text-center">Student Name</th>
+                                        <th scope="col" class="text-center">Date</th>
+                                        <th scope="col" class="text-center">Time In</th>
+                                        <th scope="col" class="text-center">Time Out</th>
+                                        <th scope="col" class="text-center">Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach ($attendanceLogs2 as $log)
+                                    @if ($log->subject == 'PF 102')
+                                    <tr>
+                                        <td class="text-center">{{ $log->subject }}</td>
+                                        <td class="text-center">{{ $log->user->name }}</td>
+                                        <td class="text-center">{{ $log->date }}</td>
+                                        <td class="text-center">{{ $log->time_in ? \Carbon\Carbon::parse($log->time_in)->format('h:i A') : 'N/A' }}</td>
+                                        <td class="text-center">{{ $log->time_out ? \Carbon\Carbon::parse($log->time_out)->format('h:i A') : 'N/A' }}</td>
+                                        <td class="text-center">
+                                            @if (!$log->trashed())
+                                            <form action="{{ route('logs2.softDelete', $log->id) }}" method="POST">
+                                                @csrf
+                                                @method('DELETE')
+                                                <button type="submit" class="btn btn-danger">Soft Delete</button>
+                                            </form>
+                                            @else
+                                            <form action="{{ route('logs2.restore', $log->id) }}" method="POST">
+                                                @csrf
+                                                <button type="submit" class="btn btn-primary">Restore</button>
+                                            </form>
+                                            @endif
+                                        </td>
+                                    </tr>
+                                    @endif
+                                    @endforeach
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modal for IM102 - 4000 -->
+            <div class="modal fade" id="modalIM102" tabindex="-1" aria-labelledby="modalIM102Label" aria-hidden="true">
+                <div class="modal-dialog modal-xl">
+                    <div class="modal-content">
+                        <div class="modal-header bg-danger text-white">
+                            <h5 class="modal-title" id="modalIM102Label">Student Attendance List for IM102 - 4000</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <!-- Table structure for student list -->
+                            <table class="table table-striped table-bordered w-100">
+                                <thead class="tablehead">
+                                    <tr>
+                                        <th scope="col" class="text-center">Subject</th>
+                                        <th scope="col" class="text-center">Student Name</th>
+                                        <th scope="col" class="text-center">Date</th>
+                                        <th scope="col" class="text-center">Time In</th>
+                                        <th scope="col" class="text-center">Time Out</th>
+                                        <th scope="col" class="text-center">Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach ($attendanceLogs2 as $log)
+                                    @if ($log->subject == 'IM 102')
+                                    <tr>
+                                        <td class="text-center">{{ $log->subject }}</td>
+                                        <td class="text-center">{{ $log->user->name }}</td>
+                                        <td class="text-center">{{ $log->date }}</td>
+                                        <td class="text-center">{{ $log->time_in ? \Carbon\Carbon::parse($log->time_in)->format('h:i A') : 'N/A' }}</td>
+                                        <td class="text-center">{{ $log->time_out ? \Carbon\Carbon::parse($log->time_out)->format('h:i A') : 'N/A' }}</td>
+                                        <td class="text-center">
+                                            @if (!$log->trashed())
+                                            <form action="{{ route('logs2.softDelete', $log->id) }}" method="POST">
+                                                @csrf
+                                                @method('DELETE')
+                                                <button type="submit" class="btn btn-danger">Soft Delete</button>
+                                            </form>
+                                            @else
+                                            <form action="{{ route('logs2.restore', $log->id) }}" method="POST">
+                                                @csrf
+                                                <button type="submit" class="btn btn-primary">Restore</button>
+                                            </form>
+                                            @endif
+                                        </td>
+                                    </tr>
+                                    @endif
+                                    @endforeach
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             <div class="show-search d-flex d-flex justify-content-between padd-1">
                 <div style="display: flex; align-items: center;">
                     <span style="font-weight: 600; margin-right: 2px;">SHOW</span>
