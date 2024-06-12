@@ -14,7 +14,9 @@ use App\Models\User;
 use App\Http\Controllers\EnrollmentController;
 use App\Http\Controllers\ScannerController;
 use App\Http\Controllers\InstructorController;
+use App\Models\Logs;
 use App\Models\Logs2;
+use Illuminate\Foundation\Auth\EmailVerificationRequest;
 
 // ..................................GATE PASS
 // Route for default branch//
@@ -35,7 +37,7 @@ Route::get('/instructor', function () {
 // Route for the student page
 Route::get('/student', function () {
     return view('ADMINISTRATOR/StudentAdministrator/student_admin');
-})->name('student'); 
+})->name('student');
 
 // Route for the attendance log page
 Route::get('/attendancelog', [ScannerController::class, 'showAttendanceLogs'])->name('attendancelog');
@@ -114,6 +116,28 @@ Route::get('/signup', function () {
 Route::get('/login', function () {
     return view('USER/Authentication/login');
 })->name('login');
+
+// Email Verification Routes
+Route::get('/email/verify', function () {
+    return view('auth.verify-email');
+})->middleware('auth')->name('verification.notice');
+
+// Route::get('/email/verify', function () {
+//     return view('verify');
+// })->middleware('auth');
+
+Route::get('/email/verify/{id}/{hash}', function (EmailVerificationRequest $request) { // About tuod sa INFO ani kay ga add ko para makita daw kunohay iya information if mo gana bag di
+    //Logs::info('Email verification route hit.');
+    $request->fulfill();
+    //Logs::info('Email verified for user: ' . $request->user()->id);
+    $user = $request->user();
+    return redirect($user->userType === 'student' ? '/studentdashboard' : '/instructordashboard');
+})->name('verification.verify');
+
+Route::post('/email/verification-notification', function (Request $request) {
+    $request->user()->sendEmailVerificationNotification();
+    return back()->with('message', 'Verification link sent!');
+})->middleware(['auth', 'throttle:6,1'])->name('verification.send');
 
 // Update the route for the parent dashboard
 Route::get('/parents', [ScannerController::class, 'getGuardianName'])->name('parents_dashboard');

@@ -129,15 +129,22 @@ class AuthController extends Controller
         // Check if a guardian is trying to log in
         if ($user->userType == 'student' && $request->email == $user->guardian_email) {
             // Verify the guardian's generated password
-
-            if (Hash::check($request->password, $user->password)) {
+            if (Hash::check($request->password, $user->guardian_generated_password)) {
                 Auth::login($user);
                 return redirect('/parents');
             }
         } else {
             // Regular user or instructor login
             if (Auth::attempt(['email' => $request->email, 'password' => $request->password])) {
-                return redirect($this->redirectPath(Auth::user()->userType));
+                $user = Auth::user();
+
+                // Check if the user's email is verified
+                if (!$user->email_verified_at) {
+                    Auth::logout();
+                    return redirect('/login')->with('error', 'You need to verify your email address first.');
+                }
+
+                return redirect($this->redirectPath($user->userType));
             }
         }
 

@@ -6,11 +6,9 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Str;
 
 class RegisterController extends Controller
 {
-    //
     public function studentRegister(Request $request)
     {
         $rules = [
@@ -24,7 +22,6 @@ class RegisterController extends Controller
             'profile_picture' => 'image|required',
             'userType' => 'required|in:student,instructor',
             'password' => 'required',
-            // 'confirm_password' => 'required|same:password',
             'guardian_name' => 'required',
             'guardian_relationship' => 'required',
             'guardian_phone_number' => 'required',
@@ -41,30 +38,29 @@ class RegisterController extends Controller
             'phone_number' => $request->input('phone_number'),
             'birthday' => $request->input('birthday'),
             'address' => $request->input('address'),
-            'gender' => $request->gender,
-            'profile_picture' =>
-            'storage/' .
-                $request
-                ->file('profile_picture')
-                ->store('public/students/profile_pictures'), // For MySQL and File Upload method [separated from Instructor]
+            'gender' => $request->input('gender'),
+            'profile_picture' => $request->file('profile_picture')->store('public/students/profile_pictures'),
             'userType' => $request->input('userType'),
-            'password' => bcrypt($request->input('password')),
-            // 'confirm_password' => bcrypt($request->input('confirm_password')),
+            'password' => Hash::make($request->input('password')),
             'guardian_name' => $request->input('guardian_name'),
             'guardian_relationship' => $request->input('guardian_relationship'),
             'guardian_phone_number' => $request->input('guardian_phone_number'),
             'guardian_email' => $request->input('guardian_email'),
-            'guardian_generated_password' => bcrypt($request->input('password'))
+            'guardian_generated_password' => Hash::make($request->input('password'))
         ]);
 
-        Auth::login($student);
+        auth()->login($student);
 
-        return redirect()->route('login');
+        // Send email verification notification
+        $student->sendEmailVerificationNotification();
+
+        // Redirect to login page with success message
+        return redirect('/login')->with('success', 'Registration successful! Please verify your email to log in.');
     }
 
     public function instructorRegister(Request $request)
     {
-        $user = $request->validate([
+        $rules = [
             'name' => 'required',
             'userType' => 'required|in:student,instructor',
             'department' => 'required',
@@ -76,27 +72,30 @@ class RegisterController extends Controller
             'birthday' => 'required',
             'address' => 'required',
             'profile_picture' => 'image|required'
+        ];
+
+        $this->validate($request, $rules);
+
+        $instructor = User::create([
+            'name' => $request->input('name'),
+            'userType' => $request->input('userType'),
+            'department' => $request->input('department'),
+            'email' => $request->input('email'),
+            'password' => Hash::make($request->input('password')),
+            'phone_number' => $request->input('phone_number'),
+            'status' => $request->input('status'),
+            'job_status' => $request->input('job_status'),
+            'birthday' => $request->input('birthday'),
+            'address' => $request->input('address'),
+            'gender' => $request->input('gender'),
+            'profile_picture' => $request->file('profile_picture')->store('public/instructor/profile_pictures')
         ]);
 
-        $user = User::create([
-            'name' => $request->name,
-            'userType' => $request->userType,
-            'department' => $request->department,
-            'email' => $request->email,
-            'password' => Hash::make($request->password),
-            'phone_number' => $request->phone_number,
-            'status' => $request->status,
-            'job_status' => $request->job_status,
-            'birthday' => $request->birthday,
-            'address' => $request->address,
-            'gender' => $request->gender,
-            'profile_picture' => $request
-                ->file('profile_picture')
-                ->store('public/instructor/profile_pictures') // Corrected URL for instructor profile pictures
-        ]);
+        auth()->login($instructor);
+        // Send email verification notification
+        $instructor->sendEmailVerificationNotification();
 
-        Auth::login($user);
-
-        return redirect()->route('login');
+        // Redirect to login page with success message
+        return redirect('/login')->with('success', 'Registration successful! Please verify your email to log in.');
     }
 }
